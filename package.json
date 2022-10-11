@@ -1,6 +1,9 @@
 {
   "name": "solid-13373333-v2",
   "packageManager": "yarn@3.2.4",
+  "scripts": {
+    "dev": "vite"
+  },
   "dependencies": {
     "@solidjs/router": "0.5.0",
     "pixi.js": "^6.5.5",
@@ -19,5 +22,16 @@
     "vite-plugin-csp": "^1.1.2",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-solid": "2.3.9"
+  },
+  "optionalDependencies": {
+    "@pixi/constants": "^6.5.5",
+    "@pixi/core": "^6.5.5",
+    "@pixi/extensions": "^6.5.5",
+    "@pixi/math": "^6.5.5",
+    "@pixi/runner": "^6.5.5",
+    "@pixi/settings": "^6.5.5",
+    "@pixi/ticker": "^6.5.5",
+    "@pixi/unsafe-eval": "^6.5.5",
+    "@pixi/utils": "^6.5.5"
   }
 }
