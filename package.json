@@ -10,6 +10,7 @@
     "autoprefixer": "^10.4.12",
     "dotenv": "^16.0.3",
     "postcss": "^8.4.17",
+    "solid-meta": "^0.28.1",
     "typescript": "^4.8.4",
     "vite": "^3.1.7",
     "vite-plugin-csp": "^1.1.2",
