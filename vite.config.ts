@@ -67,6 +67,10 @@ export default defineConfig({
     port: Number(env.parsed?.["PORT"] || 5173)
   },
 
+  server: {
+    port: Number(env.parsed?.["DEVPORT"] || 5172)
+  },
+
   css: {
     postcss: {
       plugins: process.env.npm_lifecycle_event == "dev" ? [] : [ autoprefixer({ supports: true }) ],
