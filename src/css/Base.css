@@ -1,0 +1,11 @@
+:root {
+  --font: "Plus Jakarta Sans", "Arial", monospace;
+  --bg: #121112;
+  --expoOut: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body, html {
+  background: var(--bg);
+  overflow: hidden;
+  width: 100%;
+}
