@@ -2,7 +2,7 @@
   "name": "solid-13373333-v2",
   "packageManager": "yarn@3.2.4",
   "dependencies": {
-    "@solidjs/router": "^0.5.0",
+    "@solidjs/router": "0.5.0",
     "solid-js": "^1.5.7"
   },
   "devDependencies": {
@@ -11,10 +11,10 @@
     "dotenv": "^16.0.3",
     "postcss": "^8.4.17",
     "solid-meta": "^0.28.1",
-    "typescript": "^4.8.4",
-    "vite": "^3.1.7",
+    "typescript": "4.8.4",
+    "vite": "3.1.7",
     "vite-plugin-csp": "^1.1.2",
     "vite-plugin-html": "^3.2.0",
-    "vite-plugin-solid": "^2.3.9"
+    "vite-plugin-solid": "2.3.9"
   }
 }

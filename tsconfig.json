@@ -1,0 +1,21 @@
+{
+  "ts-node": {
+    "transpileOnly": true
+  },
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "types": ["vite/client"],
+    "noEmit": true,
+    "isolatedModules": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strictNullChecks": true
+  }
+}
