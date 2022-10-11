@@ -4,3 +4,4 @@ yarn.lock
 .pnp.loader.mjs
 node_modules/**/*
 .vscode/**/*
+*.env
