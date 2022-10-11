@@ -18,7 +18,12 @@ export default defineConfig({
 
     createHtmlPlugin({
       minify: false,
-      template: "/index.html"
+      template: "/index.html",
+      inject: {
+        data: {
+          "cssPreviewDevOnly": process.env.npm_lifecycle_event == "dev" ? `<link href="./src/css/Preview.css" rel="preload stylesheet" as="style"/>` : "",
+        }
+      }
     }),
 
     viteCSP({
