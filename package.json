@@ -34,6 +34,7 @@
     "@pixi/ticker": "^6.5.6",
     "@pixi/unsafe-eval": "^6.5.6",
     "@pixi/utils": "^6.5.6",
+    "animated-scroll-to": "^2.3.0",
     "locomotive-scroll": "^4.1.4",
     "simple-icons": "^7.15.0"
   }
