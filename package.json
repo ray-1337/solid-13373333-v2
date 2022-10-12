@@ -6,10 +6,11 @@
   },
   "dependencies": {
     "@solidjs/router": "0.5.0",
-    "pixi.js": "^6.5.5",
+    "pixi.js": "^6.5.6",
     "solid-js": "^1.5.7"
   },
   "devDependencies": {
+    "@types/locomotive-scroll": "^4.1.0",
     "@types/marked": "^4.0.7",
     "@types/node": "^18.8.4",
     "autoprefixer": "^10.4.12",
@@ -24,14 +25,15 @@
     "vite-plugin-solid": "2.3.9"
   },
   "optionalDependencies": {
-    "@pixi/constants": "^6.5.5",
-    "@pixi/core": "^6.5.5",
-    "@pixi/extensions": "^6.5.5",
-    "@pixi/math": "^6.5.5",
-    "@pixi/runner": "^6.5.5",
-    "@pixi/settings": "^6.5.5",
-    "@pixi/ticker": "^6.5.5",
-    "@pixi/unsafe-eval": "^6.5.5",
-    "@pixi/utils": "^6.5.5"
+    "@pixi/constants": "^6.5.6",
+    "@pixi/core": "^6.5.6",
+    "@pixi/extensions": "^6.5.6",
+    "@pixi/math": "^6.5.6",
+    "@pixi/runner": "^6.5.6",
+    "@pixi/settings": "^6.5.6",
+    "@pixi/ticker": "^6.5.6",
+    "@pixi/unsafe-eval": "^6.5.6",
+    "@pixi/utils": "^6.5.6",
+    "locomotive-scroll": "^4.1.4"
   }
 }
