@@ -35,12 +35,12 @@ export default defineConfig({
         "connect-src": ["self"],
         "font-src": [
           "self",
-          // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/",
+          "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
           "https://fonts.gstatic.com/s/",
         ],
         "style-src": [
           "self", "unsafe-inline",
-          // "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/",
+          "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
           "https://fonts.googleapis.com/"
         ]
       }
@@ -69,7 +69,7 @@ export default defineConfig({
   },
 
   preview: {
-    port: Number(env.parsed?.["PORT"] || 5173)
+    port: Number(env.parsed?.["DEVPORT"] || 5173)
   },
 
   server: {
