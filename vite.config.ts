@@ -69,7 +69,7 @@ export default defineConfig({
   },
 
   preview: {
-    port: Number(env.parsed?.["DEVPORT"] || 5173)
+    port: Number(env.parsed?.["PORT"] || 5173)
   },
 
   server: {
