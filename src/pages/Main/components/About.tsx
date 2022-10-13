@@ -7,7 +7,7 @@ import style from "../../../css/Main.module.css";
 import rayImg from "../../../assets/003.webp";
 
 const ShortBio = marked.parseInline(`
-  **Hello.** I'm ray, and I'm a *full-stack developer*, and my origin is from <u>Indonesia</u>.
+  **Hello.** I'm Ray, and I'm a *full-stack developer*, and my origin is from <u>Indonesia</u>.
   I've been interested in developing server things since <u>I was 11 years old</u>.
   And, I've also mastered in developing website since March and April 2020.
   `, { gfm: true, breaks: true });

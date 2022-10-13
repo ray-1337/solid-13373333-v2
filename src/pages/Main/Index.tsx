@@ -13,7 +13,7 @@ const Tools = lazy(() => import("./components/Tools"));
 const Social = lazy(() => import("./components/Social"));
 
 const Introduction = marked.parseInline(`
-  **Hello.** I'm ray, and I'm a *full-stack developer*.
+  **Hello.** I'm Ray, and I'm a *full-stack developer*.
   I love to <u>expand my creativity</u> and <u>skills</u> through this website.
   Feel free to explore. *Ciao.*
   `, { gfm: true, breaks: true });
