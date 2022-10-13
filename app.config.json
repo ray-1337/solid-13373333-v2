@@ -1,0 +1,8 @@
+{
+  "apps": [
+    {
+      "name": "solid-13373333-v2",
+      "script": "yarn serve"
+    }
+  ]
+}
