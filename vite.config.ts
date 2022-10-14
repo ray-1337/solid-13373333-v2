@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-
+import swc from 'unplugin-swc';
 import solidPlugin from 'vite-plugin-solid';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import viteCSP from "vite-plugin-csp";
@@ -14,6 +14,8 @@ const oneTimeRenderCode = generateString(12);
 // @ts-expect-error
 export default defineConfig({
   plugins: [
+    swc.vite({ minify: true }),
+
     solidPlugin(),
 
     createHtmlPlugin({
