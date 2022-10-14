@@ -3,15 +3,15 @@ import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import viteCSP from "vite-plugin-csp";
-
 import dotenv from "dotenv";
-
 import autoprefixer from "autoprefixer";
+import { generateString } from './src/Util';
 
 const env = dotenv.config({path: process.cwd() + "/.env"});
 
-// const oneTimeRenderCode = Util.generateString(12);
+const oneTimeRenderCode = generateString(12);
 
+// @ts-expect-error
 export default defineConfig({
   plugins: [
     solidPlugin(),
@@ -51,21 +51,21 @@ export default defineConfig({
     cssCodeSplit: false,
     minify: true,
     target: 'esnext',
-    // rollupOptions: {
-    //   output: {
-    //     assetFileNames: () => {
-    //       return `s/${oneTimeRenderCode}/[hash][extname]`;
-    //     },
+    rollupOptions: {
+      output: {
+        assetFileNames: () => {
+          return `itchi/${oneTimeRenderCode}/[hash][extname]`;
+        },
 
-    //     chunkFileNames: () => {
-    //       return `s/${oneTimeRenderCode}/[hash].js`;
-    //     },
+        chunkFileNames: () => {
+          return `itchi/${oneTimeRenderCode}/[hash].js`;
+        },
 
-    //     entryFileNames: () => {
-    //       return `s/${oneTimeRenderCode}/[hash].js`;
-    //     }
-    //   }
-    // }
+        entryFileNames: () => {
+          return `itchi/${oneTimeRenderCode}/[hash].js`;
+        }
+      }
+    }
   },
 
   preview: {

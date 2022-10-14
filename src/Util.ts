@@ -16,3 +16,8 @@ export function shuffleArray<R>(array: Array<R>) {
 
   return array;
 };
+
+export function generateString(length?: number) {
+  const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  return [...Array(length || 16)].map(_ => characters[~~(Math.random() * characters.length)]).join('');
+};
