@@ -25,7 +25,7 @@ let renderer = PIXI.autoDetectRenderer(renderOptions);
 const Wobbly: Component = () => {
   let basingstoke!: HTMLDivElement;
 
-  onMount(() => itchi());
+  onMount(() => itchi().recreate());
 
   onCleanup(() => itchi().clear());
 
@@ -33,19 +33,19 @@ const Wobbly: Component = () => {
     function recreate() {
       renderer = PIXI.autoDetectRenderer(renderOptions);
   
-      let delta_scale = 115, delta_offset = 4;
+      let delta_scale = 100, delta_offset = 2;
       let stage = new PIXI.Container();
       let texture = PIXI.Texture.from(img002);
       let logo = new PIXI.Sprite(texture);
   
       let displacementSprite = PIXI.Sprite.from(etc1);
-      displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+      displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.MIRRORED_REPEAT;
   
       let displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
       stage.addChild(displacementSprite);
       stage.addChild(logo);
-      displacementSprite.scale.y = 2;
-      displacementSprite.scale.x = 2
+      displacementSprite.scale.y = 2.5;
+      displacementSprite.scale.x = 2.5;
       basingstoke.appendChild(renderer.view);
   
       function matthew() {
@@ -55,7 +55,7 @@ const Wobbly: Component = () => {
         displacementSprite.x += delta_offset;
         displacementSprite.y += delta_offset;
         stage.filters = [displacementFilter];
-        renderer.render(stage);
+        renderer.render(stage); // i hate this
   
         return {
           clear: () => cancelAnimationFrame(animationFrame)
@@ -67,11 +67,11 @@ const Wobbly: Component = () => {
         basingstoke.classList.add(style.aktif);
       });
   
-      matthew();
+      return matthew();
     };
 
     return {
-      recreate: recreate(),
+      recreate,
       clear: function buro() {
         renderer.destroy(true);
         // matthew().clear();
