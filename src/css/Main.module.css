@@ -541,9 +541,10 @@ div[data-itchi="true"] .heading_confront .sub p {
 @media only screen and (max-width:1024px) {
   .wobbly {
     position: absolute;
+    height: 100vh;
     z-index: 1;
     filter: grayscale(1);
-    opacity: 0.35;
+    opacity: 0.85;
   }
 
   .panel .project .content .prismatics {
@@ -579,10 +580,10 @@ div[data-itchi="true"] .heading_confront .sub p {
 }
 
 @media only screen and (max-height: 768px) {
-  .wobbly {
+  /* .wobbly {
     width: 384px;
     height: 512px;
-  }
+  } */
 
   .parasympathetic .menu {
     padding: 1rem 0;
