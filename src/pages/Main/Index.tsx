@@ -12,8 +12,8 @@ const Project = lazy(() => import("./components/Project"));
 const Tools = lazy(() => import("./components/Tools"));
 const Social = lazy(() => import("./components/Social"));
 
-const Introduction = marked.parseInline(`
-  **Hello.** I'm Ray, and I'm a *full-stack developer*.
+const Introduction = marked.parseInline(
+  `**Hello.** I'm Ray, and I'm a *full-stack developer*.
   I love to <u>expand my creativity</u> and <u>skills</u> through this website.
   Feel free to explore. *Ciao.*
   `, { gfm: true, breaks: true });
@@ -70,34 +70,40 @@ const Main: Component = () => {
     <section>
       <div class={style.parasympathetic} data-appear={!fourthWall() && getPanel() == null}>
         <div class={style.menu}>
-          {/* introduction */}
-          <div class={style.perkenalan}>
-            <p innerHTML={Introduction}></p>
-          </div>
-
-          {/* things like panel */}
-          <div class={style.things}>
-            <ul>
-              <For each={Content}>{(ctx) => {
-                return (<li onclick={() => setPanel(ctx.unique)}>{ctx.name}</li>);
-              }}</For>
-            </ul>
-          </div>
-
-          {/* footer? */}
-          <div class={style.lower}>
-            <div class={style.idiot}>
-              <p>{bornTime()}</p>
+          {/* upper level */}
+          <div class={style.unholy}>
+            {/* introduction */}
+            <div class={style.perkenalan}>
+              <p innerHTML={Introduction}></p>
             </div>
 
-            <div class={style.quick}>
-              <For each={Hiccup}>{(ctx) => {
-                return (
-                  <a href={ctx.url} target="_blank">
-                    <span data-riku={ctx.icon}></span>
-                  </a>
-                );
-              }}</For>
+            {/* things like panel */}
+            <div class={style.things}>
+              <ul>
+                <For each={Content}>{(ctx) => {
+                  return (<li onclick={() => setPanel(ctx.unique)}>{ctx.name}</li>);
+                }}</For>
+              </ul>
+            </div>
+          </div>
+          
+          {/* lower level */}
+          <div class={style.disclosure}>
+            {/* footer? */}
+            <div class={style.lower}>
+              <div class={style.idiot}>
+                <p>{bornTime()}</p>
+              </div>
+
+              <div class={style.quick}>
+                <For each={Hiccup}>{(ctx) => {
+                  return (
+                    <a href={ctx.url} target="_blank">
+                      <span data-riku={ctx.icon}></span>
+                    </a>
+                  );
+                }}</For>
+              </div>
             </div>
           </div>
         </div>
