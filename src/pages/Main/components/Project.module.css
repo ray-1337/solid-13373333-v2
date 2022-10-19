@@ -154,7 +154,11 @@
 
 @media only screen and (max-width: 768px) {
   .bleed p {
-    font-size: 1.25em;
+    font-size: 1.125em;
+    max-width: 90%;
+  }
+
+  .cupcakke {
     max-width: 90%;
   }
 }
