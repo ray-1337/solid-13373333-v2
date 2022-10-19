@@ -73,7 +73,7 @@ function List() {
       title: "Anti-NSFW",
       image: _projImg_antinsfw,
       url: "https://ray1337.gitbook.io/anti-nsfw-official-documentation/",
-      description: "A Discord bot that can detect advanced NSFW content on a Discord server."
+      description: "A Discord bot that can detect NSFW content through machine learning."
     },
     {
       title: "GMDI Discord Bot",
