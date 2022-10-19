@@ -1,6 +1,8 @@
 import { Component, For, createEffect, createSignal, Show } from "solid-js";
 import { preventClick, sleep } from "../../../Util";
 
+import { siTypescript, siSolid, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
+
 import style from "../../../css/Main.module.css";
 
 import _projImg_ire from "../../../assets/proj/ire.webp";
@@ -31,7 +33,23 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
 
             <Show when={ctx?.description?.length >= 1}>
               <div class={style.bleed}>
-                <p>{ctx.description}</p>
+                <div class={style.cupcakke}>
+                  <p>{ctx.description}</p>
+                </div>
+
+                <Show when={ctx?.tools?.length}>
+                  <div class={style.kickback}>
+                    <For each={ctx.tools}>{(ico) => {
+                      return (
+                        <span class={style.brand}>
+                          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill={`#${ico.hex != "000000" ? ico.hex : "FFFFFF"}`} d={ico.path} />
+                          </svg>
+                        </span>
+                      );
+                    }}</For>
+                  </div>
+                </Show>
               </div>
             </Show>
           </div>
@@ -49,37 +67,43 @@ function List() {
       title: "IRE (03.12.2021)",
       image: _projImg_ire,
       url: "https://soundcloud.com/1337-3333/sets/ire",
-      description: "A way to distract me from self-harm, but it didn't help."
+      description: "A way to distract me from self-harm, but it didn't help.",
+      tools: [siSoundcloud]
     },
     {
       title: "13373333.one",
       image: _projImg_self,
       url: "https://github.com/ray-1337/solid-13373333-v2",
-      description: "An open-source repository of this website."
+      description: "An open-source repository of this website.",
+      tools: [siTypescript, siSolid, siRedis, siMongodb]
     },
     {
       title: "Community Development",
       image: _projImg_cdev,
       url: "https://cdev.shop",
-      description: "My first remotely startup project to advance limitations around Discord and FiveM communities."
+      description: "My first remotely startup project to advance limitations around Discord and FiveM communities.",
+      tools: [siTypescript, siRedis, siMongodb, siDiscord, siPostgresql]
     },
     {
       title: "Blob Project",
       image: _projImg_blobproj,
       url: "https://blob-project.com",
-      description: "Creating a YouTube programming content with no retakes, no voiceover, and no fillers."
+      description: "Creating a YouTube programming content with no retakes, no voiceover, and no fillers.",
+      tools: [siObsstudio, siDiscord, siYoutube]
     },
     {
       title: "Anti-NSFW",
       image: _projImg_antinsfw,
       url: "https://ray1337.gitbook.io/anti-nsfw-official-documentation/",
-      description: "A Discord bot that can detect NSFW content through machine learning."
+      description: "A Discord bot that can detect NSFW content through machine learning.",
+      tools: [siTypescript, siRedis, siMongodb, siDiscord, siTensorflow, siExpress]
     },
     {
       title: "GMDI Discord Bot",
       image: _projImg_gmdibot,
       url: "https://github.com/ray-1337/gmdi-private-bot/",
-      description: "A Discord bot that is made exclusively for Geometry Dash Indonesia."
+      description: "A Discord bot that is made exclusively for Geometry Dash Indonesia.",
+      tools: [siTypescript, siDiscord, siExpress]
     }
   ]
 };

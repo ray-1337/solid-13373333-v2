@@ -203,7 +203,7 @@ u:hover {
   background: white;
   position: absolute;
   z-index: 12;
-  padding: 4rem 2rem;
+  padding: 1.5rem 2rem;
   top: 0;
   transform: translateY(100%);
   transition: transform 750ms var(--expoOut);
@@ -219,12 +219,13 @@ u:hover {
   transform: translateY(0%);
 }
 
-.panel .project .content:hover .bleed p {
+.panel .project .content:hover .bleed .cupcakke,
+.panel .project .content:hover .bleed .kickback {
   transition-delay: 750ms;
   opacity: 1;
 }
 
-.panel .project .content .bleed p {
+.panel .project .content .bleed .cupcakke, .panel .project .content .bleed .kickback {
   font-family: var(--font);
   font-weight: 500;
   font-size: 1.5em;
@@ -232,6 +233,23 @@ u:hover {
   max-width: 60%;
   opacity: 0;
   transition: opacity 125ms linear;
+}
+
+.panel .project .content .bleed .cupcakke {
+  margin: 1rem 0;
+}
+
+.panel .project .content .bleed .kickback {
+  display: flex;
+}
+
+.panel .project .content .bleed .kickback .brand svg {
+  width: 24px;
+  height: 24px;
+}
+
+.panel .project .content .bleed .kickback .brand + .brand {
+  margin-left: 10px;
 }
 
 .panel .project .content .prismatics {
