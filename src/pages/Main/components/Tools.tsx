@@ -88,12 +88,12 @@ const Personal: Component<{ active?: boolean }> = (props: { active?: boolean }) 
                   <For each={content.purified}>{
                     (state) => {
                       return (
-                        <span class={style.brand}>
+                        <span class={style.brand} onclick={() => window.open(state.url, "_blank")}>
                           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill={`#${state.hex != "000000" ? state.hex : "FFFFFF"}`} d={state.path} />
                           </svg>
                         </span>
-                      )
+                      );
                     }
                   }</For>
                 </div>
@@ -108,7 +108,7 @@ const Personal: Component<{ active?: boolean }> = (props: { active?: boolean }) 
 
 export default Personal;
 
-type GeneralListType = { title: string, path: string, hex: string };
+type GeneralListType = { title: string, path: string, hex: string, url: string };
 
 function IconList() {
   let icon: Record<string, { description: string, list: (typeof siNodedotjs)[], purified: GeneralListType[], bgColor: string }> = {
@@ -136,7 +136,7 @@ function IconList() {
 
   for (const ctx of Object.entries(icon)) {
     for (const siIcon of ctx[1].list) {
-      (ctx[1].purified as GeneralListType[]).push({ title: siIcon.title, path: siIcon.path, hex: siIcon.hex });
+      (ctx[1].purified as GeneralListType[]).push({ title: siIcon.title, path: siIcon.path, hex: siIcon.hex, url: siIcon.source });
       // list.push({ title: siIcon.title, path: siIcon.path, hex: siIcon.hex, type: capitalize(ctx[0]) });
     };
   };

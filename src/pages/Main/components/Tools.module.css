@@ -24,9 +24,15 @@
 
 .brand {
   margin: 0.5rem;
+  cursor: pointer;
+  transition: opacity 125ms linear;
 }
 
 .brand svg {
   height: 48px;
   width: 48px;
+}
+
+.brand:hover {
+  opacity: 0.75;
 }
