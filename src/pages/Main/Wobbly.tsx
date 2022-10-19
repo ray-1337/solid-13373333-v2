@@ -8,14 +8,14 @@ import { install } from '@pixi/unsafe-eval';
 install({ ShaderSystem });
 
 // images
-import img002 from "../../assets/002.webp";
+import img002 from "../../assets/004.webp";
 
 // etc
 import etc1 from "../../assets/etc/a.webp";
 import { sleep } from "../../Util";
 
 const renderOptions: PIXI.IRendererOptionsAuto = {
-  height: 1737, width: 1158,
+  height: 1335, width: 1000,
   backgroundAlpha: 0,
   clearBeforeRender: true
 };
