@@ -3,7 +3,7 @@ import { preventClick, sleep } from "../../../Util";
 
 import { siTypescript, siSolid, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
 
-import style from "../../../css/Main.module.css";
+import style from "./Project.module.css";
 
 import _projImg_ire from "../../../assets/proj/ire.webp";
 import _projImg_self from "../../../assets/proj/1337.webp";

@@ -1,0 +1,32 @@
+.tools {
+  background: #121112;
+  color: #bfbfbf;
+  box-sizing: border-box;
+}
+
+.info {
+  padding: 1rem 2rem;
+}
+
+.info h3 {
+  font-size: 1.5em;
+  margin: 1rem 0;
+}
+
+.list {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 1rem 1.5rem 3rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.brand {
+  margin: 0.5rem;
+}
+
+.brand svg {
+  height: 48px;
+  width: 48px;
+}

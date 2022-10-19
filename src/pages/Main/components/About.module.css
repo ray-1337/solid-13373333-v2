@@ -1,0 +1,111 @@
+.about {
+  background: white;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.header {
+  background: #c6151d;
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  content: "";
+  transition: height 1s var(--expoOut) 750ms;
+}
+
+.about[data-itchi="true"] .header {
+  height: 25%;
+}
+
+.overview {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: column;
+  z-index: 12;
+  padding: 3rem 2rem 0;
+}
+
+.selfie {
+  height: 256px;
+  width: 256px;
+  z-index: 15;
+  position: relative;
+}
+
+.selfie img {
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 125ms linear;
+  opacity: 0;
+}
+
+.selfie img.kuma {
+  opacity: 1;
+}
+
+.fullname h1 {
+  font-size: 2em;
+  color: #350203;
+}
+
+.bullcrap {
+  padding: 3rem 2rem;
+}
+
+.bullcrap_title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bullcrap_title h1 {
+  width: max-content;
+  margin: 0;
+  transform: translateY(100%);
+  transition: transform 500ms var(--expoOut) 750ms;
+  font-size: 1.5em;
+}
+
+.about[data-itchi="true"] .bullcrap_title h1 {
+  transform: translateY(0%);
+}
+
+.bullcrap_title span {
+  height: 1px;
+  width: 0%;
+  max-width: 60%;
+  background: black;
+  margin-left: 2rem;
+  transition: width 500ms var(--expoOut) 750ms;
+}
+
+.about[data-itchi="true"] .bullcrap_title span {
+  width: 50%;
+}
+
+.bullcrap_more p {
+  line-height: 1.5;
+  font-size: 1.175em;
+}
+
+.bullcrap_more p u:hover {
+  box-shadow: inset 0 -30px 0 -1px #121112;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .overview {
+    padding: 3rem 1.25rem 0;
+  }
+
+  .bullcrap {
+    padding: 3rem 1.25rem;
+  }
+
+  .bullcrap_title h1 {
+    font-size: 1.125em;
+  }
+}

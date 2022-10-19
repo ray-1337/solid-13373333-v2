@@ -1,7 +1,8 @@
 import { Component, Show, createSignal, createEffect, For, JSX } from "solid-js";
 import { sleep } from "../../../Util";
 
-import style from "../../../css/Main.module.css";
+import style from "./Social.module.css";
+import headingStyle from "../../../css/Main.module.css";
 
 const Social: Component<{ active?: boolean }> = (props: { active?: boolean }) => {
   const derivedProps = () => props.active;
@@ -13,11 +14,11 @@ const Social: Component<{ active?: boolean }> = (props: { active?: boolean }) =>
 
   return (
     <Show when={toggle()}>
-      <div class={style.social} data-itchi={String(Boolean(deferToggle()))}>
+      <div data-itchi={String(Boolean(deferToggle()))}>
         {/* heading */}
-        <div class={style.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
-          <div class={style.title}> <h1>Social</h1> </div>
-          <div class={style.sub}> <p>Here's a list of my social media, or any fun account, in case if you want to contact with me.</p> </div>
+        <div class={headingStyle.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
+          <div class={headingStyle.title}> <h1>Social</h1> </div>
+          <div class={headingStyle.sub}> <p>Here's a list of my social media, or any fun account, in case if you want to contact with me.</p> </div>
         </div>
 
         <For each={List()}>{
@@ -34,7 +35,7 @@ const Social: Component<{ active?: boolean }> = (props: { active?: boolean }) =>
 
 
             return (
-              <div class={style.tab}>
+              <div class={style.agriculture}>
                 <a rel="noreferrer" target="_blank" href={state.url}>
                   <div class={style.insider} style={combined}>
                     <h1>{state.title}</h1>

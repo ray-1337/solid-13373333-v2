@@ -2,7 +2,7 @@ import { Component, createSignal, Show, createEffect } from "solid-js";
 import { sleep, preventClick } from "../../../Util";
 import { marked } from "marked";
 
-import style from "../../../css/Main.module.css";
+import style from "./About.module.css";
 
 import rayImg from "../../../assets/003.webp";
 
@@ -26,22 +26,22 @@ const About: Component<{ active?: boolean }> = (props: { active?: boolean }) => 
         <div class={style.header}></div>
 
         <div class={style.overview}>
-          <div class={style.image}>
+          <div class={style.selfie}>
             <img src={rayImg} loading={"lazy"} onload={(evt) => evt.currentTarget.classList.add(style.kuma)} draggable={false} oncontextmenu={(evt) => preventClick(evt)}></img>
           </div>
 
-          <div class={style.title}>
+          <div class={style.fullname}>
             <h1>Hizkia Ray</h1>
           </div>
         </div>
 
         <div class={style.bullcrap}>
-          <div class={style.title}>
+          <div class={style.bullcrap_title}>
             <h1>Short Bio</h1>
             <span></span>
           </div>
           
-          <div class={style.sub}>
+          <div class={style.bullcrap_more}>
             <p innerHTML={ShortBio}></p>
           </div>
         </div>

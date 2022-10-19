@@ -52,7 +52,8 @@ import {
 import { Component, For, createSignal, createEffect, Show } from "solid-js";
 import { sleep } from "../../../Util";
 
-import style from "../../../css/Main.module.css";
+import style from "./Tools.module.css";
+import headingStyle from "../../../css/Main.module.css";
 
 const Personal: Component<{ active?: boolean }> = (props: { active?: boolean }) => {
   const derivedProps = () => props.active;
@@ -64,11 +65,11 @@ const Personal: Component<{ active?: boolean }> = (props: { active?: boolean }) 
 
   return (
     <Show when={toggle()}>
-      <div class={style.tools} data-itchi={String(Boolean(deferToggle()))}>
+      <div data-itchi={String(Boolean(deferToggle()))}>
         {/* heading */}
-        <div class={style["heading_confront"]} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
-          <div class={style.title}> <h1>Tools</h1> </div>
-          <div class={style.sub}> <p>This is a list of my daily basis tools and other things that I choose to learn for.</p> </div>
+        <div class={headingStyle.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
+          <div class={headingStyle.title}> <h1>Tools</h1> </div>
+          <div class={headingStyle.sub}> <p>This is a list of my daily basis tools and other things that I choose to learn for.</p> </div>
         </div>
 
         <For each={Object.keys(IconList())}>{
@@ -77,7 +78,7 @@ const Personal: Component<{ active?: boolean }> = (props: { active?: boolean }) 
             const content = IconList()[type];
 
             return (
-              <div class={style["tools-confront"]} style={{background: "#" + content.bgColor}}>
+              <div class={style.tools} style={{background: "#" + content.bgColor}}>
                 <div class={style.info}>
                   <h3>{capitalize(type)}</h3>
                   <p>{content.description}</p>

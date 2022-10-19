@@ -1,0 +1,32 @@
+.agriculture {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.insider {
+  --t_timing: 2s;
+  --transition: background-size var(--t_timing) var(--expoOut),
+    background-position var(--t_timing) ease;
+
+  background-size: 100% auto;
+  height: 10pc;
+  position: relative;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.insider h1 {
+  bottom: 12.5px;
+  font-family: var(--font);
+  font-size: 1.5em;
+  font-weight: 600;
+  left: 32.5px;
+  letter-spacing: 1px;
+  position: absolute;
+  color: white;
+}
+
+.insider:hover {
+  background-size: 200% auto
+}

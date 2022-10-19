@@ -1,0 +1,160 @@
+.project {
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  position: relative
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.content:before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 0%;
+  background: rgb(255 255 255 / 0.2);
+  z-index: 14;
+  transition: width 0ms;
+}
+
+.content:hover:before {
+  --expoInOut: cubic-bezier(0.87, 0, 0.13, 1);
+  width: 100%;
+  opacity: 0;
+  transition: width 500ms var(--expoInOut), opacity 125ms linear 600ms;
+}
+
+.bleed {
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  z-index: 12;
+  padding: 1.5rem 2rem;
+  top: 0;
+  transform: translateY(100%);
+  transition: transform 750ms var(--expoOut);
+}
+
+.content:hover .imagine {
+  color: black;
+  transition: color 125ms linear 500ms;
+}
+
+.content:hover .bleed {
+  transition-delay: 500ms;
+  transform: translateY(0%);
+}
+
+.content:hover .cupcakke,
+.content:hover .kickback {
+  transition-delay: 750ms;
+  opacity: 1;
+}
+
+.cupcakke,
+.kickback {
+  font-family: var(--font);
+  font-weight: 500;
+  font-size: 1.5em;
+  font-style: italic;
+  max-width: 60%;
+  opacity: 0;
+  transition: opacity 125ms linear;
+}
+
+.cupcakke {
+  margin: 1rem 0;
+}
+
+.kickback {
+  display: flex;
+}
+
+.kickback .brand svg {
+  width: 24px;
+  height: 24px;
+}
+
+.kickback .brand + .brand {
+  margin-left: 10px;
+}
+
+.prismatics {
+  height: 256px;
+  width: 100%;
+  z-index: 11;
+}
+
+.prismatics img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover
+}
+
+.imagine {
+  color: white;
+  position: relative;
+  z-index: 13;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 0 1.25rem;
+  position: absolute;
+  bottom: 0;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 125ms linear;
+  font-family: var(--font);
+}
+
+.content:hover .imagine {
+  opacity: 1;
+}
+
+.content:hover .prismatics:before {
+  opacity: 0.5;
+}
+
+.prismatics:before {
+  content: "";
+  transition: opacity 125ms linear;
+  background: linear-gradient(0deg, black 0%, transparent 100%);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.sike {
+  font-weight: 700
+}
+
+.cite {
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 125ms linear;
+}
+
+.cite:hover {
+  opacity: 0.6;
+}
+
+@media only screen and (max-width:1024px) {
+  .prismatics {
+    height: 385px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bleed p {
+    font-size: 1.25em;
+    max-width: 90%;
+  }
+}
