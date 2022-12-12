@@ -1,7 +1,7 @@
 import { Component, For, createEffect, createSignal, Show } from "solid-js";
 import { preventClick, sleep } from "../../../Util";
 
-import { siTypescript, siSolid, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
+import { siAbletonlive, siTypescript, siSolid, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
 
 import style from "./Project.module.css";
 
@@ -11,6 +11,7 @@ import _projImg_cdev from "../../../assets/proj/cdev.webp";
 import _projImg_blobproj from "../../../assets/proj/blobproj.webp";
 import _projImg_gmdibot from "../../../assets/proj/gmdibot.webp";
 import _projImg_antinsfw from "../../../assets/proj/antinsfw.webp";
+import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
 
 const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
   const derivedProps = () => props.active;
@@ -76,6 +77,13 @@ function List() {
       url: "https://github.com/ray-1337/solid-13373333-v2",
       description: "An open-source repository of this website.",
       tools: [siTypescript, siSolid, siRedis, siMongodb]
+    },
+    {
+      title: "CupcakKe",
+      image: _projImg_cupcakke,
+      url: "https://www.youtube.com/playlist?list=PLGd05QsjGyxUrnRbKBGB9touvcyj51MJW",
+      description: "A parodies of CupcakKe, remixed by me.",
+      tools: [siYoutube, siAbletonlive]
     },
     {
       title: "Community Development",
