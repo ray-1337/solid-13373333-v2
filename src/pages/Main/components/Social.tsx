@@ -75,6 +75,11 @@ function List() {
       colorArray: ["#5866EF", "#7289DA"]
     },
     {
+      url: "https://www.tiktok.com/@goodfaithforever",
+      title: "TikTok",
+      colorArray: ["#010101", "#69C9D0", "#FFFFFF", "#EE1D52"]
+    },
+    {
       url: "https://paypal.me/ray0001",
       title: "PayPal",
       colorArray: ["#003087", "#009cde"]
