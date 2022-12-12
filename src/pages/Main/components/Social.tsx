@@ -65,7 +65,7 @@ function List() {
       colorArray: ["#0077b5"]
     },
     {
-      url: "https://youtube.com/ray1337",
+      url: "https://youtube.com/@ray1337",
       title: "YouTube",
       colorArray: ["#ff0000", "#282828"]
     },
