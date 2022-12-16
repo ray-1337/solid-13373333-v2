@@ -28,11 +28,11 @@ export default defineConfig({
 
     viteCSP({
       policy: {
-        "img-src": ['self'],
+        "img-src": ['self', "https://13373333.one/favicon.webp"],
         "default-src": "self",
         "script-src": "self",
         "frame-src": ["none"],
-        "connect-src": ["self"],
+        "connect-src": ["self", "https://13373333.one/3333/file/"],
         "font-src": [
           "self",
           "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
