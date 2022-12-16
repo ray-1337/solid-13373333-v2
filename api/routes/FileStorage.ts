@@ -1,7 +1,12 @@
-import { Router } from "express";
+import { Router, Request } from "express";
 import { fetch as request } from "undici";
-// import { PassThrough } from 'node:stream';
 import formidable from "formidable";
+import {RateLimiterMemory} from "rate-limiter-flexible";
+
+const postLimitation = new RateLimiterMemory({
+  duration: 60,
+  points: 3 // 3 files per minute of session
+});
 
 const router = Router();
 
@@ -9,10 +14,6 @@ router
 .get("/", (_, res) => res.sendStatus(200))
 .post("/", async (req, res) => {
   try {
-    if (!process.env.STORAGE_ZONE_PASS) {
-      return res.status(500).send("unable to retrieve private key from backend");
-    };
-
     let mimeType: Record<string, string> = {
       "image/jpg": "jpg",
       "image/jpeg": "jpeg",
@@ -40,10 +41,16 @@ router
       });
 
       part.on('end', async () => {
+        const currentIP = getIP(req);
+
+        if (!process.env.STORAGE_ZONE_PASS) {
+          return res.status(500).send("unable to retrieve private key from backend");
+        };
+
         if (!part?.mimetype || !mimeType[part.mimetype]) {
           return res.status(403).send("forbidden file type.");
         };
-        
+          
         finaleBufs = Buffer.concat(bufs);
 
         const randomFileName = generateString(randomNumber(8, 16)) + "." + mimeType[part.mimetype];
@@ -52,13 +59,19 @@ router
           await request(`https://se.storage.bunnycdn.com/${process.env.STORAGE_ZONE_NAME}/${randomFileName}`, {
             method: 'PUT',
             body: finaleBufs,
-    
-            // @ts-expect-error
             headers: {
               "AccessKey": process.env.STORAGE_ZONE_PASS,
               "content-type": "application/octet-stream"
             }
           });
+
+          if (currentIP) {
+            try {
+              await postLimitation.consume(currentIP);
+            } catch {
+              return res.status(429).send("limited request. please try again.")
+            };
+          };
         } catch (error) {
           console.error(error);
           return res.status(500).send("something went wrong from the backend.");
@@ -84,4 +97,12 @@ function generateString(length: number) {
 
 function randomNumber(min: number, max: number) {
   return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min)) + Math.ceil(min));
+};
+
+function getIP(req: Request) {
+  return String(req.headers['cf-connecting-ip'] || "") ||
+    String(req.headers['x-forwarded-for'] || "").replace(/:\d+$/, '') ||
+    req.ip ||
+    req.connection.remoteAddress ||
+    req.socket.remoteAddress;
 };
