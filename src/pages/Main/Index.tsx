@@ -18,11 +18,12 @@ const Introduction = marked.parseInline(
   Feel free to explore. *Ciao.*
   `, { gfm: true, breaks: true });
 
-const Content: { name: string, unique: string }[] = [
+const Content: { name: string, unique: string, redirect?: boolean }[] = [
   { name: "Biography", unique: "about" },
   { name: "Projects", unique: "project" },
   { name: "Production Tools", unique: "tools" },
-  { name: "Social Media", unique: "social" }
+  { name: "Social Media", unique: "social" },
+  { name: "File Storage", unique: "https://13373333.one/catbox", redirect: true }
 ];
 
 const Hiccup: { icon: string, url: string }[] = [
@@ -81,7 +82,13 @@ const Main: Component = () => {
             <div class={style.things}>
               <ul>
                 <For each={Content}>{(ctx) => {
-                  return (<li onclick={() => setPanel(ctx.unique)}>{ctx.name}</li>);
+                  return (<li onclick={() => {
+                    if (ctx.redirect) {
+                      window.open(ctx.unique, "_blank");
+                    } else {
+                      setPanel(ctx.unique);
+                    };
+                  }}>{ctx.name}</li>);
                 }}</For>
               </ul>
             </div>
