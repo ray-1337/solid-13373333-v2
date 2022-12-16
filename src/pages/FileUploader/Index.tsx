@@ -1,6 +1,6 @@
 import { Component, createSignal, onMount } from "solid-js";
 
-import "./Base.css";
+// import "./Base.css";
 import style from "./Index.module.css";
 
 const FileUploader: Component = () => {
