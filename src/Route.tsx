@@ -2,6 +2,7 @@ import { Component, lazy, onCleanup, onMount } from 'solid-js';
 import { Route, Routes } from '@solidjs/router';
 
 import MainPage from "./pages/Main/Index";
+import Catbox from "./pages/FileUploader/Index";
 
 const Index: Component = () => {
   function ignoreTab(event: KeyboardEvent) {
@@ -22,6 +23,7 @@ const Index: Component = () => {
   return (
     <Routes>
       <Route path="/" element={<MainPage/>} />
+      <Route path="/catbox" element={<Catbox/>} />
     </Routes>
   );
 };
