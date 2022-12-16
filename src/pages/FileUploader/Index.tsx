@@ -82,20 +82,22 @@ const FileUploader: Component = () => {
     };
 
     xhr.onreadystatechange = function() {
-      if (xhr.status === 200 && xhr.readyState === 4) {
-        console.log("Finished:", xhr.response);
-
-        uploadResult.classList.add(style.phased);
-        setUploadURL(xhr.response);
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log("Finished:", xhr.response);
+  
+          uploadResult.classList.add(style.phased);
+          setUploadURL(xhr.response);
+          
+          clearAfterwards();
+        };
         
-        clearAfterwards();
-      };
-      
-      if (xhr.status >= 400) {
-        console.log("Error:", xhr.response);
-        alert(`An error occurred: ${xhr.response}`);
-
-        clearAfterwards();
+        if (xhr.status >= 400) {
+          console.log("Error:", xhr.response);
+          alert(`An error occurred: ${xhr.response}`);
+  
+          clearAfterwards();
+        };
       };
     };
 
