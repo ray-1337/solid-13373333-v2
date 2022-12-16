@@ -3,6 +3,10 @@
     {
       "name": "solid-13373333-v2",
       "script": "yarn serve"
+    },
+    {
+      "name": "solid-13373333-api",
+      "script": "yarn apistart"
     }
   ]
 }
