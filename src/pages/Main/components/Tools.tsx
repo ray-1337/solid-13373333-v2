@@ -1,9 +1,11 @@
 import {
+  // languages
   siJavascript,
   siTypescript,
   siHtml5,
   siCss3,
 
+  // tools
   siReact,
   siWebpack,
   siNodedotjs,
@@ -38,8 +40,10 @@ import {
   siPostman,
   siPostcss,
   siAutoprefixer,
-  siRoblox, // roblox studio*
+  siRoblox,
+  siAbletonlive,
 
+  // interested
   siRust,
   siNextdotjs,
   siVuedotjs,
@@ -121,7 +125,7 @@ function IconList() {
 
     technology: {
       description: "This is my daily basis tools that I know how to use it, or familiar with.",
-      list: [siReact, siWebpack, siAmazonaws, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
+      list: [siReact, siWebpack, siAbletonlive, siAmazonaws, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
       purified: [],
       bgColor: "242424"
     },
