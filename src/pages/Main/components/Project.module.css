@@ -89,6 +89,7 @@
   height: 256px;
   width: 100%;
   z-index: 11;
+  background-color: #121112;
 }
 
 .prismatics img {
