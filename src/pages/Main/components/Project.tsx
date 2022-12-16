@@ -12,6 +12,7 @@ import _projImg_blobproj from "../../../assets/proj/blobproj.webp";
 import _projImg_gmdibot from "../../../assets/proj/gmdibot.webp";
 import _projImg_antinsfw from "../../../assets/proj/antinsfw.webp";
 import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
+import _projImg_catbox from "../../../assets/proj/catbox.webp";
 
 const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
   const derivedProps = () => props.active;
@@ -65,18 +66,11 @@ export default Project;
 function List() {
   return [
     {
-      title: "IRE (03.12.2021)",
-      image: _projImg_ire,
-      url: "https://soundcloud.com/1337-3333/sets/ire",
-      description: "A way to distract me from self-harm, but it didn't help.",
-      tools: [siSoundcloud]
-    },
-    {
       title: "13373333.one",
       image: _projImg_self,
       url: "https://github.com/ray-1337/solid-13373333-v2",
       description: "An open-source repository of this website.",
-      tools: [siTypescript, siSolid, siRedis, siMongodb]
+      tools: [siTypescript, siExpress]
     },
     {
       title: "CupcakKe",
@@ -86,11 +80,25 @@ function List() {
       tools: [siYoutube, siAbletonlive]
     },
     {
+      title: "Catbox",
+      image: _projImg_catbox,
+      url: "https://13373333.one/catbox",
+      description: "A personal/private file storage. Powered by BunnyCDN.",
+      tools: [siTypescript, siSolid]
+    },
+    {
       title: "Community Development",
       image: _projImg_cdev,
       url: "https://cdev.shop",
       description: "My first remotely startup project to advance limitations around Discord and FiveM communities.",
       tools: [siTypescript, siRedis, siMongodb, siDiscord, siPostgresql]
+    },
+    {
+      title: "IRE (03.12.2021)",
+      image: _projImg_ire,
+      url: "https://soundcloud.com/1337-3333/sets/ire",
+      description: "A way to distract me from self-harm, but it didn't help.",
+      tools: [siSoundcloud]
     },
     {
       title: "Blob Project",
