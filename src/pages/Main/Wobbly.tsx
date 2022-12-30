@@ -8,14 +8,14 @@ import { install } from '@pixi/unsafe-eval';
 install({ ShaderSystem });
 
 // images
-import img002 from "../../assets/004.webp";
+import selfie from "../../assets/005.webp";
 
 // etc
 import etc1 from "../../assets/etc/a.webp";
 import { sleep } from "../../Util";
 
 const renderOptions: PIXI.IRendererOptionsAuto = {
-  height: 1335, width: 1000,
+  height: 2592, width: 1940,
   backgroundAlpha: 0,
   clearBeforeRender: true
 };
@@ -35,7 +35,7 @@ const Wobbly: Component = () => {
   
       let delta_scale = 100, delta_offset = 2;
       let stage = new PIXI.Container();
-      let texture = PIXI.Texture.from(img002);
+      let texture = PIXI.Texture.from(selfie);
       let logo = new PIXI.Sprite(texture);
   
       let displacementSprite = PIXI.Sprite.from(etc1);
