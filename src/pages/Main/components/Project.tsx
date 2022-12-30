@@ -104,7 +104,7 @@ function List() {
       title: "Blob Project",
       image: _projImg_blobproj,
       url: "https://blob-project.com",
-      description: "Creating a YouTube programming content with no retakes, no voiceover, and no fillers.",
+      description: "Creating a YouTube programming content with no retakes, and no fillers.",
       tools: [siObsstudio, siDiscord, siYoutube]
     },
     {
