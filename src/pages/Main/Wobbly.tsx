@@ -33,7 +33,7 @@ const Wobbly: Component = () => {
     function recreate() {
       renderer = PIXI.autoDetectRenderer(renderOptions);
   
-      let delta_scale = 100, delta_offset = 2;
+      let delta_scale = 250, delta_offset = 2;
       let stage = new PIXI.Container();
       let texture = PIXI.Texture.from(selfie);
       let logo = new PIXI.Sprite(texture);
