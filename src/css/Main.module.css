@@ -149,7 +149,7 @@ u:hover {
   height: 100%;
   object-fit: cover;
   transform: scale(1.5);
-  transition: transform 2.5s var(--expoOut) 250ms
+  transition: transform 2.5s var(--expoOut);
 }
 
 .panel {
