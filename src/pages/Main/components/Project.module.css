@@ -2,7 +2,32 @@
   overflow: hidden;
   width: 100%;
   display: block;
-  position: relative
+  position: relative;
+  --easeOutQuint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project[data-itchi="false"] .content {
+  transform: translateX(100%);
+}
+
+.project[data-itchi="true"] .content {
+  transform: translateX(0%);
+}
+
+.project[data-itchi="true"] .content:nth-child(1) {
+  transition: transform 1s var(--easeOutQuint);
+}
+
+.project[data-itchi="true"] .content:nth-child(2) {
+  transition: transform 1s var(--easeOutQuint) 125ms;
+}
+
+.project[data-itchi="true"] .content:nth-child(3) {
+  transition: transform 1s var(--easeOutQuint) 250ms;
+}
+
+.project[data-itchi="true"] .content:nth-child(4) {
+  transition: transform 1s var(--easeOutQuint) 375ms;
 }
 
 .content {

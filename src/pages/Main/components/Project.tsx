@@ -17,10 +17,17 @@ import _projImg_catbox from "../../../assets/proj/catbox.webp";
 const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
   const derivedProps = () => props.active;
   const [toggle, setToggle] = createSignal<boolean>(false);
-  createEffect(() => derivedProps() ? setToggle(true) : sleep(750).then(() => setToggle(false)));
+  // createEffect(() => derivedProps() ? setToggle(true) : sleep(750).then(() => setToggle(false)));
+  createEffect(() => {
+    if (derivedProps()) {
+      sleep(750).then(() => setToggle(true));
+    } else {
+      sleep(750).then(() => setToggle(false));
+    };
+  });
 
   return (
-    <div class={style.project} data-itchi={String(Boolean(toggle()))} style={{display: toggle() ? "block" : "none"}}>
+    <div class={style.project} data-itchi={String(Boolean(toggle()))} style={{width: toggle() ? "100%" : "0", height: toggle() ? "auto": 0}}>
       <For each={List()}>{(ctx) => {
         return (
           <div class={style.content}>
