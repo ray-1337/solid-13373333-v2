@@ -84,7 +84,7 @@ function List() {
       image: _projImg_cupcakke,
       url: "https://www.youtube.com/playlist?list=PLGd05QsjGyxUrnRbKBGB9touvcyj51MJW",
       description: "A parodies of CupcakKe, remixed by me.",
-      tools: [siYoutube, siAbletonlive]
+      tools: [siYoutube, siAbletonlive, siSoundcloud]
     },
     {
       title: "Catbox",
