@@ -20,7 +20,7 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
   // createEffect(() => derivedProps() ? setToggle(true) : sleep(750).then(() => setToggle(false)));
   createEffect(() => {
     if (derivedProps()) {
-      sleep(750).then(() => setToggle(true));
+      sleep(125).then(() => setToggle(true));
     } else {
       sleep(750).then(() => setToggle(false));
     };
