@@ -2,12 +2,11 @@
 import { render } from 'solid-js/web';
 import { Router } from "@solidjs/router";
 import App from "./Route";
-import { MetaProvider, Link } from "solid-meta";
+import { MetaProvider } from "solid-meta";
 
 // base css
 import "./css/Base.css";
 import "./css/Reset.css";
-import ico from "./assets/ico.webp";
 
 render(() => (
   <MetaProvider>
