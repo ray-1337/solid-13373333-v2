@@ -1,7 +1,7 @@
 import { Component, For, createEffect, createSignal, Show } from "solid-js";
 import { preventClick, sleep } from "../../../Util";
 
-import { siAbletonlive, siTypescript, siSolid, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
+import { siAbletonlive, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
 
 import style from "./Project.module.css";
 
@@ -13,6 +13,7 @@ import _projImg_gmdibot from "../../../assets/proj/gmdibot.webp";
 import _projImg_antinsfw from "../../../assets/proj/antinsfw.webp";
 import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
 import _projImg_catbox from "../../../assets/proj/catbox.webp";
+import _projImg_eom from "../../../assets/proj/eom.webp";
 
 const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
   const derivedProps = () => props.active;
@@ -99,6 +100,13 @@ function List() {
       url: "https://cdev.shop",
       description: "My first remotely startup project to advance limitations around Discord and FiveM communities.",
       tools: [siTypescript, siRedis, siMongodb, siDiscord, siPostgresql]
+    },
+    {
+      title: "Erase Our Memories",
+      image: _projImg_eom,
+      url: "https://github.com/ray-1337/erase-our-memories/",
+      description: "A side-project/script to bulk-delete your messages from your exes contact.",
+      tools: [siDiscord, siJavascript]
     },
     {
       title: "IRE (03.12.2021)",
