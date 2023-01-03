@@ -12,7 +12,7 @@ const Index: Component = () => {
   };
 
   onMount(() => {
-    document.title = "i hid my pain here.";
+    document.title = "prolonged heartbreak feeling.";
     document.documentElement.addEventListener("keydown", (event) => ignoreTab(event));
   });
 
