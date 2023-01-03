@@ -15,14 +15,26 @@ router
 .post("/", async (req, res) => {
   try {
     let mimeType: Record<string, string> = {
+      // static
       "image/jpg": "jpg",
       "image/jpeg": "jpeg",
       "image/png": "png",
       "image/webp": "webp",
+      "image/tiff": "tiff",
+
+      // animated
       "video/mp4": "mp4",
       "video/mpeg": "mpeg",
       "video/webm": "webm",
-      "image/gif": "gif"
+      "image/gif": "gif",
+
+      // misc
+      "audio/mpeg": "mp3",
+      "application/pdf": "pdf",
+      "audio/wav": "wav",
+      "application/zip": "zip",
+      "audio/aac": "aac",
+      "audio/flac": "flac"
     };
 
     const maxFileMB = 100 * 1024 * 1024; // 100 MB
