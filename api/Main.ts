@@ -25,5 +25,5 @@ app.use("/file", FileStorage);
 
 const PORT = +process.env.API_PORT!;
 app.listen(PORT, () => {
-  console.log("Media: Connected with port", PORT);
+  console.log("API Connected with port ", PORT);
 });
