@@ -10,33 +10,34 @@ const postLimitation = new RateLimiterMemory({
 
 const router = Router();
 
+let mimeType: Record<string, string> = {
+  // static
+  "image/jpg": "jpg",
+  "image/jpeg": "jpeg",
+  "image/png": "png",
+  "image/webp": "webp",
+  "image/tiff": "tiff",
+
+  // animated
+  "video/mp4": "mp4",
+  "video/mpeg": "mpeg",
+  "video/webm": "webm",
+  "image/gif": "gif",
+
+  // misc
+  "audio/mpeg": "mp3",
+  "application/pdf": "pdf",
+  "audio/wav": "wav",
+  "application/zip": "zip",
+  "audio/aac": "aac",
+  "audio/flac": "flac"
+};
+
 router
+.get("/mime", (_, res) => res.status(200).json(Object.keys(mimeType)))
 .get("/", (_, res) => res.sendStatus(200))
 .post("/", async (req, res) => {
   try {
-    let mimeType: Record<string, string> = {
-      // static
-      "image/jpg": "jpg",
-      "image/jpeg": "jpeg",
-      "image/png": "png",
-      "image/webp": "webp",
-      "image/tiff": "tiff",
-
-      // animated
-      "video/mp4": "mp4",
-      "video/mpeg": "mpeg",
-      "video/webm": "webm",
-      "image/gif": "gif",
-
-      // misc
-      "audio/mpeg": "mp3",
-      "application/pdf": "pdf",
-      "audio/wav": "wav",
-      "application/zip": "zip",
-      "audio/aac": "aac",
-      "audio/flac": "flac"
-    };
-
     const maxFileMB = 100 * 1024 * 1024; // 100 MB
     const form = formidable({
       multiples: false,

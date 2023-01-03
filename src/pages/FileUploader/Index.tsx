@@ -8,12 +8,28 @@ const FileUploader: Component = () => {
   let uploadResult!: HTMLElement;
   let uploadReady!: HTMLElement;
 
-  const allowedMimeType = ["image/jpg", "image/jpeg", "image/png", "image/webp", "video/mp4", "video/mpeg", "video/webm", "image/gif"];
+  const [respondedMime, setRespondedMime] = createSignal<string[]>([]);
   
-  onMount(() => {
+  onMount(async () => {
     uploadReady.classList.add(style.phased);
 
     document.title = "personal file storage.";
+
+    // mime
+    try {
+      const mimeFetch = await fetch("https://13373333.one/3333/file/mime");
+      if (!mimeFetch || mimeFetch.status >= 400) {
+        alert("Unable to fetch required mimes content.");
+        return console.error(await mimeFetch.text());
+      };
+
+      const mimeList = await mimeFetch.json() as string[];
+      setRespondedMime(mimeList);
+    } catch (error) {
+      console.error(error);
+    };
+
+    return;
   });
 
   // percentage control
@@ -140,7 +156,7 @@ const FileUploader: Component = () => {
 
             {/* <button class="uploadButton" type="button" wonder="urls" disabled aria-disabled="true">Through URLs</button> */}
 
-            <input id="fileUploadDedicated" type="file" name="files[]" accept={allowedMimeType.join(",")} onChange={(evt) => dedicatedFileChange(evt)}/>
+            <input id="fileUploadDedicated" type="file" name="files[]" accept={respondedMime().join(",")} onChange={(evt) => dedicatedFileChange(evt)}/>
             <input type="submit" value="Submit"/>
           </form>
         </section>
