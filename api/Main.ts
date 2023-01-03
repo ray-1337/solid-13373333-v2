@@ -16,7 +16,7 @@ app.use(CORS({
 
 // OK
 app.get("/", (_, res) => {
-  return res.status(200).send("my pussi pink just like salami");
+  return res.sendStatus(200);
 });
 
 // file storage
