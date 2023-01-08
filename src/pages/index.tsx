@@ -1,17 +1,16 @@
-// import { Component, For, createSignal, lazy, Show, onMount, createEffect } from "solid-js";
 import { marked } from "marked";
 import { useState, useEffect, lazy, HTMLAttributes, FC } from "react";
 
-import style from "../../css/Main.module.css";
+import style from "../css/Main.module.css";
 
 // content
-const Wobbly = lazy(() => import("./Wobbly"));
+const Wobbly = lazy(() => import("../components/Wobbly"));
 
 // panel
-const About = lazy(() => import("./components/About"));
-const Project = lazy(() => import("./components/Project"));
-const Tools = lazy(() => import("./components/Tools"));
-const Social = lazy(() => import("./components/Social"));
+const About = lazy(() => import("../components/About"));
+const Project = lazy(() => import("../components/Project"));
+const Tools = lazy(() => import("../components/Tools"));
+const Social = lazy(() => import("../components/Social"));
 
 const Introduction = marked.parseInline(
   `**Hello.** I'm Ray, and I'm a *full-stack developer*.
