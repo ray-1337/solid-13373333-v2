@@ -1,5 +1,5 @@
 import { useEffect, createRef } from 'react';
-import style from "../../css/Main.module.css";
+import style from "../css/Main.module.css";
 
 import * as PIXI from 'pixi.js';
 
