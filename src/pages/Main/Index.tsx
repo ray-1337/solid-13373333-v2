@@ -1,5 +1,6 @@
-import { Component, For, createSignal, lazy, Show, onMount, createEffect } from "solid-js";
+// import { Component, For, createSignal, lazy, Show, onMount, createEffect } from "solid-js";
 import { marked } from "marked";
+import { useState, useEffect, lazy, HTMLAttributes, FC } from "react";
 
 import style from "../../css/Main.module.css";
 
@@ -31,12 +32,12 @@ const Hiccup: { icon: string, url: string }[] = [
   { icon: "ev", /*'f0e0',*/ url: "mailto:personal@13373333.one" },
 ];
 
-const Main: Component = () => {
-  const [getPanel, setPanel] = createSignal<string | null>(null);
-  const [fourthWall, setFourthWall] = createSignal<boolean>(true);
-  const [bornTime, setBornTime] = createSignal<string>("");
+export default function Main() {
+  const [getPanel, setPanel] = useState<string | null>(null);
+  const [fourthWall, setFourthWall] = useState<boolean>(true);
+  const [bornTime, setBornTime] = useState<string>("");
 
-  onMount(async () => {
+  useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = "manual";
     };
@@ -47,9 +48,7 @@ const Main: Component = () => {
         clearInterval(dummyCheck);
       };
     }, 500);
-  });
 
-  createEffect(() => {
     let interval = setInterval(() => {
       let date = new Date("Jul 24 2023 00:00:00 GMT+0800").getTime() - Date.now();
       let hour = Math.floor(date / (36e5));
@@ -69,47 +68,45 @@ const Main: Component = () => {
 
   return (
     <section>
-      <div class={style.parasympathetic} data-appear={!fourthWall() && getPanel() == null}>
-        <div class={style.menu}>
+      <div className={style.parasympathetic} data-appear={!fourthWall && getPanel === null}>
+        <div className={style.menu}>
           {/* upper level */}
-          <div class={style.unholy}>
+          <div className={style.unholy}>
             {/* introduction */}
-            <div class={style.perkenalan}>
-              <p innerHTML={Introduction}></p>
+            <div className={style.perkenalan}>
+              <p dangerouslySetInnerHTML={{ __html: Introduction }}></p>
             </div>
 
             {/* things like panel */}
-            <div class={style.things}>
+            <div className={style.things}>
               <ul>
-                <For each={Content}>{(ctx) => {
-                  return (<li onclick={() => {
-                    if (ctx.redirect) {
-                      window.open(ctx.unique, "_blank");
-                    } else {
-                      setPanel(ctx.unique);
-                    };
-                  }}>{ctx.name}</li>);
-                }}</For>
+                {
+                  Content.map(ctx => {
+                    return (<li onClick={() => ctx.redirect ? window.open(ctx.unique, "_blank") : setPanel(ctx.unique)}>{ctx.name}</li>);
+                  })
+                }
               </ul>
             </div>
           </div>
-          
+
           {/* lower level */}
-          <div class={style.disclosure}>
+          <div className={style.disclosure}>
             {/* footer? */}
-            <div class={style.lower}>
-              <div class={style.idiot}>
-                <p>{bornTime()}</p>
+            <div className={style.lower}>
+              <div className={style.idiot}>
+                <p>{bornTime}</p>
               </div>
 
-              <div class={style.quick}>
-                <For each={Hiccup}>{(ctx) => {
-                  return (
-                    <a href={ctx.url} target="_blank">
-                      <span data-riku={ctx.icon}></span>
-                    </a>
-                  );
-                }}</For>
+              <div className={style.quick}>
+                {
+                  Hiccup.map(ctx => {
+                    return (
+                      <a href={ctx.url} target="_blank">
+                        <span data-riku={ctx.icon}></span>
+                      </a>
+                    );
+                  })
+                }
               </div>
             </div>
           </div>
@@ -118,24 +115,25 @@ const Main: Component = () => {
         <Wobbly></Wobbly>
       </div>
 
-      <div class={style.panel} data-appear={getPanel() !== null}>
-        {/* close button */}
-        <Show when={getPanel() !== null}>
-          <div class={style.close} onclick={() => setPanel(null)}>
-            <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" /></svg>
-          </div>
-        </Show>
+      <div className={style.panel} data-appear={getPanel !== null}>
+        <>
+          {() => {
+            {/* close button */ }
+            if (getPanel !== null) {
+              return (
+                <div className={style.close} onClick={() => setPanel(null)}>
+                  <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" /></svg>
+                </div>
+              )
+            }
+          }}
 
-        <About active={getPanel() == "about"}></About>
-
-        <Project active={getPanel() == "project"}></Project>
-
-        <Tools active={getPanel() == "tools"}></Tools>
-
-        <Social active={getPanel() == "social"}></Social>
+          <About active={getPanel === "about"}></About>
+          <Project active={getPanel === "project"}></Project>
+          <Tools active={getPanel === "tools"}></Tools>
+          <Social active={getPanel === "social"}></Social> 
+        </>
       </div>
     </section>
   );
 };
-
-export default Main;
