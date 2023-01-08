@@ -1,9 +1,3 @@
-export function preventClick(evt: MouseEvent) {
-  evt.preventDefault();
-  evt.stopPropagation();
-  return;
-};
-
 export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 export function shuffleArray<R>(array: Array<R>) {
