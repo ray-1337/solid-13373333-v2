@@ -1,5 +1,5 @@
 import { marked } from "marked";
-import { useState, useEffect, lazy, HTMLAttributes, FC } from "react";
+import { useState, useEffect, lazy } from "react";
 
 import style from "../css/Main.module.css";
 
