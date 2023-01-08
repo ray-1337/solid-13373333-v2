@@ -1,7 +1,17 @@
 import { useEffect, createRef } from 'react';
 import style from "../css/Main.module.css";
 
-import * as PIXI from 'pixi.js';
+import {
+  IRendererOptionsAuto,
+  autoDetectRenderer,
+  Container,
+  Texture,
+  TextureSource,
+  Sprite,
+  SpriteSource,
+  WRAP_MODES,
+  filters as PIXIFilters
+} from 'pixi.js';
 
 import { ShaderSystem } from '@pixi/core';
 import { install } from '@pixi/unsafe-eval';
@@ -14,13 +24,13 @@ import selfie from "../assets/006.webp";
 import etc1 from "../assets/etc/a.webp";
 import { sleep } from "../Util";
 
-const renderOptions: PIXI.IRendererOptionsAuto = {
+const renderOptions: IRendererOptionsAuto = {
   height: 1166, width: 873,
   backgroundAlpha: 0,
   clearBeforeRender: true
 };
 
-let renderer = PIXI.autoDetectRenderer(renderOptions);
+let renderer = autoDetectRenderer(renderOptions);
 
 export default function Wobbly() {
   let basingstoke = createRef<HTMLDivElement>(), {current: basingstokeRef} = basingstoke;
@@ -34,17 +44,17 @@ export default function Wobbly() {
 
   function itchi() {
     function recreate() {
-      renderer = PIXI.autoDetectRenderer(renderOptions);
+      renderer = autoDetectRenderer(renderOptions);
   
       let delta_scale = 250, delta_offset = 2;
-      let stage = new PIXI.Container();
-      let texture = PIXI.Texture.from(selfie as PIXI.TextureSource);
-      let logo = new PIXI.Sprite(texture);
+      let stage = new Container();
+      let texture = Texture.from(selfie as TextureSource);
+      let logo = new Sprite(texture);
   
-      let displacementSprite = PIXI.Sprite.from(etc1 as PIXI.SpriteSource);
-      displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.MIRRORED_REPEAT;
+      let displacementSprite = Sprite.from(etc1 as SpriteSource);
+      displacementSprite.texture.baseTexture.wrapMode = WRAP_MODES.MIRRORED_REPEAT;
   
-      let displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+      let displacementFilter = new  PIXIFilters.DisplacementFilter(displacementSprite);
       stage.addChild(displacementSprite);
       stage.addChild(logo);
       displacementSprite.scale.y = 2.5;
