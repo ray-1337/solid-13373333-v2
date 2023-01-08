@@ -53,64 +53,62 @@ import {
   siWebassembly,
 } from "simple-icons/icons";
 
-import { Component, For, createSignal, createEffect, Show } from "solid-js";
-import { sleep } from "../../../Util";
+import { sleep } from "../Util";
+import { useState, useEffect } from "react";
 
 import style from "./Tools.module.css";
 import headingStyle from "../../../css/Main.module.css";
 
-const Personal: Component<{ active?: boolean }> = (props: { active?: boolean }) => {
+export default function Personal(props: { active?: boolean }) {
   const derivedProps = () => props.active;
-  const [toggle, setToggle] = createSignal<boolean>(false), [deferToggle, setDeferToggle] = createSignal<boolean>(false);
-  createEffect(() => {
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [deferToggle, setDeferToggle] = useState<boolean>(false);
+
+  useEffect(() => {
     derivedProps() ? setToggle(true) : sleep(750).then(() => setToggle(false));
-    toggle() ? setTimeout(() => setDeferToggle(true), 5) : setDeferToggle(false);
+    toggle ? setTimeout(() => setDeferToggle(true), 5) : setDeferToggle(false);
   });
 
   return (
-    <Show when={toggle()}>
-      <div data-itchi={String(Boolean(deferToggle()))}>
-        {/* heading */}
-        <div class={headingStyle.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
-          <div class={headingStyle.title}> <h1>Tools</h1> </div>
-          <div class={headingStyle.sub}> <p>This is a list of my daily basis tools and other things that I choose to learn for.</p> </div>
-        </div>
+    <>
+      {toggle && (
+        <div data-itchi={String(Boolean(deferToggle))}>
+          {/* heading */}
+          <div className={headingStyle.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
+            <div className={headingStyle.title}> <h1>Tools</h1> </div>
+            <div className={headingStyle.sub}> <p>This is a list of my daily basis tools and other things that I choose to learn for.</p> </div>
+          </div>
 
-        <For each={Object.keys(IconList())}>{
-          (type) => {
+          {Object.keys(IconList()).map((type) => {
             const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
             const content = IconList()[type];
 
             return (
-              <div class={style.tools} style={{background: "#" + content.bgColor}}>
-                <div class={style.info}>
+              <div className={style.tools} style={{ background: "#" + content.bgColor }}>
+                <div className={style.info}>
                   <h3>{capitalize(type)}</h3>
                   <p>{content.description}</p>
                 </div>
 
-                <div class={style.list}>
-                  <For each={content.purified}>{
-                    (state) => {
-                      return (
-                        <span class={style.brand} onclick={() => window.open(state.url, "_blank")}>
-                          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path fill={`#${state.hex != "000000" ? state.hex : "FFFFFF"}`} d={state.path} />
-                          </svg>
-                        </span>
-                      );
-                    }
-                  }</For>
+                <div className={style.list}>
+                  {content.purified.map((state) => {
+                    return (
+                      <span className={style.brand} onClick={() => window.open(state.url, "_blank")}>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path fill={`#${state.hex != "000000" ? state.hex : "FFFFFF"}`} d={state.path} />
+                        </svg>
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             );
-          }}
-        </For>
-      </div>
-    </Show>
+          })}
+        </div>
+      )}
+    </>
   )
 };
-
-export default Personal;
 
 type GeneralListType = { title: string, path: string, hex: string, url: string };
 
@@ -141,7 +139,6 @@ function IconList() {
   for (const ctx of Object.entries(icon)) {
     for (const siIcon of ctx[1].list) {
       (ctx[1].purified as GeneralListType[]).push({ title: siIcon.title, path: siIcon.path, hex: siIcon.hex, url: siIcon.source });
-      // list.push({ title: siIcon.title, path: siIcon.path, hex: siIcon.hex, type: capitalize(ctx[0]) });
     };
   };
 

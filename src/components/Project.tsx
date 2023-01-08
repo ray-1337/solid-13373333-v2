@@ -1,5 +1,6 @@
-import { Component, For, createEffect, createSignal, Show } from "solid-js";
-import { preventClick, sleep } from "../../../Util";
+import { sleep } from "../Util";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 import { siAbletonlive, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
 
@@ -15,11 +16,11 @@ import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
 import _projImg_catbox from "../../../assets/proj/catbox.webp";
 import _projImg_eom from "../../../assets/proj/eom.webp";
 
-const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
+export default function Project(props: { active?: boolean }) {
   const derivedProps = () => props.active;
-  const [toggle, setToggle] = createSignal<boolean>(false);
+  const [toggle, setToggle] = useState<boolean>(false);
   // createEffect(() => derivedProps() ? setToggle(true) : sleep(750).then(() => setToggle(false)));
-  createEffect(() => {
+  useEffect(() => {
     if (derivedProps()) {
       sleep(125).then(() => setToggle(true));
     } else {
@@ -27,49 +28,52 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
     };
   });
 
+  // i hate this.
   return (
-    <div class={style.project} data-itchi={String(Boolean(toggle()))} style={{width: toggle() ? "100%" : "0", height: toggle() ? "auto": 0}}>
-      <For each={List()}>{(ctx) => {
+    <div className={style.project} data-itchi={String(Boolean(toggle))} style={{ width: toggle ? "100%" : "0", height: toggle ? "auto" : 0 }}>
+      {List().map((ctx) => {
         return (
-          <div class={style.content}>
-            <div class={style.prismatics}>
-              <img src={ctx.image} draggable={false} loading={"lazy"} oncontextmenu={(evt) => preventClick(evt)}></img>
+          <div className={style.content}>
+            <div className={style.prismatics}>
+              <Image src={ctx.image} alt={ctx.description} draggable={false} loading={"lazy"} onContextMenu={(evt) => {
+                evt.preventDefault();
+                evt.stopPropagation();
+                return;
+              }}></Image>
             </div>
 
-            <div class={style.imagine}>
-              <p class={style.sike}>{ctx.title}</p>
-              <p class={style.cite} onclick={() => window.open(ctx.url, "_blank")}>Visit</p>
+            <div className={style.imagine}>
+              <p className={style.sike}>{ctx.title}</p>
+              <p className={style.cite} onClick={() => window.open(ctx.url, "_blank")}>Visit</p>
             </div>
 
-            <Show when={ctx?.description?.length >= 1}>
-              <div class={style.bleed}>
-                <div class={style.cupcakke}>
+            {ctx?.description?.length >= 1 && (
+              <div className={style.bleed}>
+                <div className={style.cupcakke}>
                   <p>{ctx.description}</p>
                 </div>
 
-                <Show when={ctx?.tools?.length}>
-                  <div class={style.kickback}>
-                    <For each={ctx.tools}>{(ico) => {
+                {ctx?.tools?.length && (
+                  <div className={style.kickback}>
+                    {ctx.tools.map((ico) => {
                       return (
-                        <span class={style.brand}>
+                        <span className={style.brand}>
                           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill={`#${ico.hex != "000000" || ico.title == "Ableton Live" ? ico.hex : "FFFFFF"}`} d={ico.path} />
                           </svg>
                         </span>
                       );
-                    }}</For>
+                    })}
                   </div>
-                </Show>
+                )}
               </div>
-            </Show>
+            )}
           </div>
         );
-      }}</For>
+      })}
     </div>
   );
 };
-
-export default Project;
 
 function List() {
   return [

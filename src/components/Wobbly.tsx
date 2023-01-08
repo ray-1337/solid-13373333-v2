@@ -1,4 +1,4 @@
-import { Component, onMount, onCleanup } from "solid-js";
+import { useEffect, createRef } from 'react';
 import style from "../../css/Main.module.css";
 
 import * as PIXI from 'pixi.js';
@@ -8,11 +8,11 @@ import { install } from '@pixi/unsafe-eval';
 install({ ShaderSystem });
 
 // images
-import selfie from "../../assets/006.webp";
+import selfie from "../assets/006.webp";
 
 // etc
-import etc1 from "../../assets/etc/a.webp";
-import { sleep } from "../../Util";
+import etc1 from "../assets/etc/a.webp";
+import { sleep } from "../Util";
 
 const renderOptions: PIXI.IRendererOptionsAuto = {
   height: 1166, width: 873,
@@ -22,12 +22,15 @@ const renderOptions: PIXI.IRendererOptionsAuto = {
 
 let renderer = PIXI.autoDetectRenderer(renderOptions);
 
-const Wobbly: Component = () => {
-  let basingstoke!: HTMLDivElement;
+export default function Wobbly() {
+  let basingstoke = createRef<HTMLDivElement>(), {current: basingstokeRef} = basingstoke;
 
-  onMount(() => itchi().recreate());
+  useEffect(() => {
+    const itchiInstitute = itchi();
+    itchiInstitute.recreate();
 
-  onCleanup(() => itchi().clear());
+    return itchiInstitute.clear();
+  });
 
   function itchi() {
     function recreate() {
@@ -35,10 +38,10 @@ const Wobbly: Component = () => {
   
       let delta_scale = 250, delta_offset = 2;
       let stage = new PIXI.Container();
-      let texture = PIXI.Texture.from(selfie);
+      let texture = PIXI.Texture.from(selfie as PIXI.TextureSource);
       let logo = new PIXI.Sprite(texture);
   
-      let displacementSprite = PIXI.Sprite.from(etc1);
+      let displacementSprite = PIXI.Sprite.from(etc1 as PIXI.SpriteSource);
       displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.MIRRORED_REPEAT;
   
       let displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
@@ -46,7 +49,7 @@ const Wobbly: Component = () => {
       stage.addChild(logo);
       displacementSprite.scale.y = 2.5;
       displacementSprite.scale.x = 2.5;
-      basingstoke.appendChild(renderer.view);
+      basingstokeRef!.appendChild(renderer.view);
   
       function matthew() {
         const animationFrame = requestAnimationFrame(matthew);
@@ -64,7 +67,7 @@ const Wobbly: Component = () => {
   
       renderer.addListener("postrender", async () => {
         await sleep(1000);
-        basingstoke.classList.add(style.aktif);
+        basingstokeRef!.classList.add(style.aktif);
       });
   
       return matthew();
@@ -73,24 +76,12 @@ const Wobbly: Component = () => {
     return {
       recreate,
       clear: function buro() {
-        renderer.destroy(true);
-        // matthew().clear();
-        // stage.destroy(true);
-        // texture.destroy(true);
-        // logo.destroy(true);
-        // displacementSprite.destroy(true);
-        // displacementFilter.destroy();
-        // basingstoke.removeChild(renderer.view);
-        // matthew().clear();
-        // renderer.removeAllListeners();
-        return;
+        return renderer.destroy(true);
       }
     };
   };
 
   return (
-    <div class={style.wobbly} ref={(evt) => basingstoke = evt}> </div>
+    <div className={style.wobbly} ref={basingstoke}> </div>
   );
 };
-
-export default Wobbly;
