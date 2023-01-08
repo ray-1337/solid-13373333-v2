@@ -6,15 +6,15 @@ import { siAbletonlive, siTypescript, siSolid, siJavascript, siDiscord, siMongod
 
 import style from "./Project.module.css";
 
-import _projImg_ire from "../../../assets/proj/ire.webp";
-import _projImg_self from "../../../assets/proj/1337.webp";
-import _projImg_cdev from "../../../assets/proj/cdev.webp";
-import _projImg_blobproj from "../../../assets/proj/blobproj.webp";
-import _projImg_gmdibot from "../../../assets/proj/gmdibot.webp";
-import _projImg_antinsfw from "../../../assets/proj/antinsfw.webp";
-import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
-import _projImg_catbox from "../../../assets/proj/catbox.webp";
-import _projImg_eom from "../../../assets/proj/eom.webp";
+import _projImg_ire from "../assets/proj/ire.webp";
+import _projImg_self from "../assets/proj/1337.webp";
+import _projImg_cdev from "../assets/proj/cdev.webp";
+import _projImg_blobproj from "../assets/proj/blobproj.webp";
+import _projImg_gmdibot from "../assets/proj/gmdibot.webp";
+import _projImg_antinsfw from "../assets/proj/antinsfw.webp";
+import _projImg_cupcakke from "../assets/proj/cupcakke.webp";
+import _projImg_catbox from "../assets/proj/catbox.webp";
+import _projImg_eom from "../assets/proj/eom.webp";
 
 export default function Project(props: { active?: boolean }) {
   const derivedProps = () => props.active;

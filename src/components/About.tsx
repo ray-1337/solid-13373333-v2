@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import style from "./About.module.css";
 
-import rayImg from "../../../assets/003.webp";
+import rayImg from "../assets/003.webp";
 
 const ShortBio = marked.parseInline(`
   **Hello.** I'm Ray, and I'm a *full-stack developer*, and my origin is from <u>Indonesia</u>.

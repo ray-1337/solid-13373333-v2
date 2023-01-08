@@ -2,7 +2,7 @@ import { useState, useEffect, CSSProperties } from "react";
 import { sleep } from "../Util";
 
 import style from "./Social.module.css";
-import headingStyle from "../../../css/Main.module.css";
+import headingStyle from "../css/Main.module.css";
 
 export default function Social(props: { active?: boolean }) {
   const derivedProps = () => props.active;

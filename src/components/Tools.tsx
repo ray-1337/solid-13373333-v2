@@ -57,7 +57,7 @@ import { sleep } from "../Util";
 import { useState, useEffect } from "react";
 
 import style from "./Tools.module.css";
-import headingStyle from "../../../css/Main.module.css";
+import headingStyle from "../css/Main.module.css";
 
 export default function Personal(props: { active?: boolean }) {
   const derivedProps = () => props.active;
