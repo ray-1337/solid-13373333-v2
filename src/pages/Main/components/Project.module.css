@@ -120,7 +120,13 @@
 .prismatics img {
   height: 100%;
   width: 100%;
-  object-fit: cover
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 125ms linear;
+}
+
+.prismatics img.jpuf {
+  opacity: 1;
 }
 
 .imagine {

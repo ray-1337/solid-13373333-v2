@@ -33,7 +33,7 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
         return (
           <div class={style.content}>
             <div class={style.prismatics}>
-              <img src={ctx.image} draggable={false} loading={"lazy"} oncontextmenu={(evt) => preventClick(evt)}></img>
+              <img src={ctx.image} onload={(evt) => evt.currentTarget.classList.add(style.jpuf)} draggable={false} loading={"lazy"} oncontextmenu={(evt) => preventClick(evt)}></img>
             </div>
 
             <div class={style.imagine}>
