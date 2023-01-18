@@ -33,12 +33,17 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
         return (
           <div class={style.content}>
             <div class={style.prismatics}>
-              <img src={ctx.image} onload={(evt) => evt.currentTarget.classList.add(style.jpuf)} draggable={false} loading={"lazy"} oncontextmenu={(evt) => preventClick(evt)}></img>
+              <img src={ctx.image} onload={(evt) => {
+                evt.currentTarget.classList.add(style.jpuf);
+                if (ctx.resigned) evt.currentTarget.classList.add(style.archive);
+              }} draggable={false} loading={"lazy"} oncontextmenu={(evt) => preventClick(evt)}></img>
             </div>
 
             <div class={style.imagine}>
-              <p class={style.sike}>{ctx.title}</p>
-              <p class={style.cite} onclick={() => window.open(ctx.url, "_blank")}>Visit</p>
+              <p class={style.sike}>{ctx.resigned ? `${ctx.title} (Discontinued)` : ctx.title}</p>
+              {() => {
+                return (ctx.resigned ? <></> : <p class={style.cite} onclick={() => window.open(ctx.url, "_blank")}>Visit</p>);
+              }}
             </div>
 
             <Show when={ctx?.description?.length >= 1}>
@@ -134,7 +139,8 @@ function List() {
       image: _projImg_gmdibot,
       url: "https://github.com/ray-1337/gmdi-private-bot/",
       description: "A Discord bot that is made exclusively for Geometry Dash Indonesia.",
-      tools: [siTypescript, siDiscord, siExpress]
+      tools: [siTypescript, siDiscord, siExpress],
+      resigned: true
     }
   ]
 };

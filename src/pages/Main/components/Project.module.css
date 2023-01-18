@@ -125,6 +125,10 @@
   transition: opacity 125ms linear;
 }
 
+.prismatics img.archive {
+  filter: grayscale(1) brightness(0.5);
+}
+
 .prismatics img.jpuf {
   opacity: 1;
 }
