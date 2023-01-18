@@ -85,6 +85,11 @@ function List() {
       colorArray: ["#003087", "#009cde"]
     },
     {
+      url: "https://www.chess.com/member/stanfordfaith",
+      title: "Chess.com",
+      colorArray: ["#769656"]
+    },
+    {
       url: "https://monkeytype.com/profile/u3IXbBVc81Rit6bbrdHHykm7XLE3",
       title: "Monkeytype",
       colorArray: ["#333436", "#e2b615"]
