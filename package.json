@@ -5,8 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "apistart": "yarn ts-node ./api/Main.ts",
-    "apidev": "yarn ts-node-dev ./api/Main.ts"
+    "apistart": "ts-node ./api/Main.ts",
+    "apidev": "ts-node-dev ./api/Main.ts"
   },
   "browserslist": [
     "last 25 years",
