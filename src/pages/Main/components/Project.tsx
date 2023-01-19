@@ -49,7 +49,7 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
             </div>
 
             <div class={style.imagine}>
-              <p class={style.sike}>{ctx.resigned ? `${ctx.title} (Discontinued)` : ctx.title}</p>
+              <p class={style.sike}>{ctx.resigned ? `${ctx.title} (${resignedType(ctx.resigned)})` : ctx.title}</p>
               {() => {
                 return (ctx.resigned ? <></> : <p class={style.cite} onclick={() => window.open(ctx.url, "_blank")}>Visit</p>);
               }}
@@ -113,7 +113,8 @@ function List() {
       image: _projImg_cdev,
       url: "https://cdev.shop",
       description: "My first remotely startup project to advance limitations around Discord and FiveM communities.",
-      tools: [siTypescript, siRedis, siMongodb, siDiscord, siPostgresql]
+      tools: [siTypescript, siRedis, siMongodb, siDiscord, siPostgresql],
+      resigned: 3
     },
     {
       title: "Erase Our Memories",
@@ -149,7 +150,7 @@ function List() {
       url: "https://github.com/ray-1337/gmdi-private-bot/",
       description: "A Discord bot that is made exclusively for Geometry Dash Indonesia.",
       tools: [siTypescript, siDiscord, siExpress],
-      resigned: true
+      resigned: 2
     }
   ]
 };
