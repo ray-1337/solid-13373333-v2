@@ -15,6 +15,15 @@ import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
 import _projImg_catbox from "../../../assets/proj/catbox.webp";
 import _projImg_eom from "../../../assets/proj/eom.webp";
 
+function resignedType(number: 1 | 2 | 3) {
+  switch (number) {
+    case 1: return "Discontinued";
+    case 2: return "Paused";
+    case 3: return "Hiatus";
+    default: return "";
+  };
+};
+
 const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
   const derivedProps = () => props.active;
   const [toggle, setToggle] = createSignal<boolean>(false);
