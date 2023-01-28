@@ -17,6 +17,7 @@ import _projImg_eom from "../../../assets/proj/eom.webp";
 
 function resignedType(number: number) {
   switch (number) {
+    case 0: return null;
     case 1: return "Discontinued";
     case 2: return "Paused";
     case 3: return "Hiatus";
@@ -44,14 +45,14 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
             <div class={style.prismatics}>
               <img src={ctx.image} onload={(evt) => {
                 evt.currentTarget.classList.add(style.jpuf);
-                if (ctx.resigned) evt.currentTarget.classList.add(style.archive);
+                if (ctx?.resigned) evt.currentTarget.classList.add(style.archive);
               }} draggable={false} loading={"lazy"} oncontextmenu={(evt) => preventClick(evt)}></img>
             </div>
 
             <div class={style.imagine}>
-              <p class={style.sike}>{ctx.resigned ? `${ctx.title} (${resignedType(ctx.resigned)})` : ctx.title}</p>
+              <p class={style.sike}>{ctx?.resigned ? `${ctx.title} (${resignedType(ctx?.resigned)})` : ctx.title}</p>
               {() => {
-                return (ctx.resigned ? <></> : <p class={style.cite} onclick={() => window.open(ctx.url, "_blank")}>Visit</p>);
+                return (ctx?.resigned ? <></> : <p class={style.cite} onclick={() => window.open(ctx.url, "_blank")}>Visit</p>);
               }}
             </div>
 
@@ -114,7 +115,7 @@ function List() {
       url: "https://cdev.shop",
       description: "My first remotely startup project to advance limitations around Discord and FiveM communities.",
       tools: [siTypescript, siRedis, siMongodb, siDiscord, siPostgresql],
-      resigned: 3
+      resigned: 0
     },
     {
       title: "Erase Our Memories",
@@ -150,7 +151,7 @@ function List() {
       url: "https://github.com/ray-1337/gmdi-private-bot/",
       description: "A Discord bot that is made exclusively for Geometry Dash Indonesia.",
       tools: [siTypescript, siDiscord, siExpress],
-      resigned: 2
+      resigned: 0
     }
   ]
 };
