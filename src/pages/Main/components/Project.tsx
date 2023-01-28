@@ -15,7 +15,7 @@ import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
 import _projImg_catbox from "../../../assets/proj/catbox.webp";
 import _projImg_eom from "../../../assets/proj/eom.webp";
 
-function resignedType(number: 1 | 2 | 3) {
+function resignedType(number: number) {
   switch (number) {
     case 1: return "Discontinued";
     case 2: return "Paused";
