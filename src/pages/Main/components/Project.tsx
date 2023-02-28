@@ -1,7 +1,7 @@
 import { Component, For, createEffect, createSignal, Show } from "solid-js";
 import { preventClick, sleep } from "../../../Util";
 
-import { siAbletonlive, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
+import { siAbletonlive, siNextdotjs, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
 
 import style from "./Project.module.css";
 
@@ -114,7 +114,7 @@ function List() {
       image: _projImg_cdev,
       url: "https://cdev.shop",
       description: "My first remotely startup project to advance limitations around Discord and FiveM communities.",
-      tools: [siTypescript, siRedis, siMongodb, siDiscord, siPostgresql],
+      tools: [siTypescript, siRedis, siNextdotjs, siMongodb, siDiscord, siPostgresql],
       resigned: 0
     },
     {
