@@ -1,4 +1,4 @@
-import { Component, lazy, onCleanup, onMount } from 'solid-js';
+import { Component, onCleanup, onMount } from 'solid-js';
 import { Route, Routes } from '@solidjs/router';
 
 import MainPage from "./pages/Main/Index";
