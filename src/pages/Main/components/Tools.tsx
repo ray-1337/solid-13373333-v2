@@ -125,14 +125,14 @@ function IconList() {
 
     technology: {
       description: "This is my daily basis tools that I know how to use it, or familiar with.",
-      list: [siReact, siWebpack, siAbletonlive, siAmazonaws, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
+      list: [siReact, siNextdotjs, siWebpack, siAbletonlive, siAmazonaws, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
       purified: [],
       bgColor: "242424"
     },
 
     interested: {
       description: "This is a list of tools or programming language that I want to try in the future.",
-      list: [siRust, siNextdotjs, siVuedotjs, siNuxtdotjs, siRedux, siPostgresql, siFastify, siWebassembly, siElectron],
+      list: [siRust, siVuedotjs, siNuxtdotjs, siRedux, siPostgresql, siFastify, siWebassembly, siElectron],
       purified: [],
       bgColor: "191119"
     },
