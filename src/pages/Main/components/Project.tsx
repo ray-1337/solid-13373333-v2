@@ -141,7 +141,7 @@ function List() {
     {
       title: "Anti-NSFW",
       image: _projImg_antinsfw,
-      url: "https://ray1337.gitbook.io/anti-nsfw-official-documentation/",
+      url: "https://docs.cdev.shop/anti-nsfw/grand-mirage",
       description: "A Discord bot that can detect NSFW content through machine learning.",
       tools: [siTypescript, siRedis, siMongodb, siDiscord, siTensorflow, siExpress]
     },
