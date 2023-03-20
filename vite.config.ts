@@ -11,18 +11,18 @@ const oneTimeRenderCode = generateString(12);
 
 // content security policy
 const precollectedCSP = {
-  "img-src": ['self', "https://13373333.one/favicon.webp"],
-  "default-src": ["self"],
-  "script-src": ["self"],
-  "frame-src": ["none"],
-  "connect-src": ["self", "https://13373333.one/3333/file/"],
+  "img-src": ["'self'", "https://13373333.one/favicon.webp"],
+  "default-src": ["'self'"],
+  "script-src": ["'self'"],
+  "frame-src": ["'none'"],
+  "connect-src": ["'self'", "https://13373333.one/3333/file/"],
   "font-src": [
-    "self",
+    "'self'",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
     "https://fonts.gstatic.com/s/",
   ],
   "style-src": [
-    "self", "unsafe-inline",
+    "'self'", "'unsafe-inline'",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
     "https://fonts.googleapis.com/"
   ]
