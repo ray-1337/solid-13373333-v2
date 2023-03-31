@@ -1,7 +1,7 @@
 import { Component, For, createEffect, createSignal, Show } from "solid-js";
 import { preventClick, sleep } from "../../../Util";
 
-import { siAbletonlive, siNextdotjs, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
+import { siAbletonlive, siNextdotjs, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
 
 import style from "./Project.module.css";
 
@@ -14,6 +14,7 @@ import _projImg_antinsfw from "../../../assets/proj/antinsfw.webp";
 import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
 import _projImg_catbox from "../../../assets/proj/catbox.webp";
 import _projImg_eom from "../../../assets/proj/eom.webp";
+import _projImg_dbm from "../../../assets/proj/dbm.webp";
 
 function resignedType(number: number) {
   switch (number) {
@@ -151,6 +152,14 @@ function List() {
       url: "https://github.com/ray-1337/gmdi-private-bot/",
       description: "A Discord bot that is made exclusively for Geometry Dash Indonesia.",
       tools: [siTypescript, siDiscord, siExpress],
+      resigned: 0
+    },
+    {
+      title: "Discord & YouTube bot music",
+      image: _projImg_dbm,
+      url: "https://github.com/ray-1337/discord-music-bot/",
+      description: "Newest project to solve concerns around Discord music bot era by giving it open source.",
+      tools: [siTypescript, siDiscord, siYoutube, siFfmpeg],
       resigned: 0
     }
   ]
