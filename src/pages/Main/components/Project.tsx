@@ -38,9 +38,11 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
     };
   });
 
+  const staycationList = List();
+
   return (
     <div class={style.project} data-itchi={String(Boolean(toggle()))} style={{width: toggle() ? "100%" : "0", height: toggle() ? "auto": 0}}>
-      <For each={List()}>{(ctx) => {
+      <For each={staycationList}>{(ctx) => {
         return (
           <div class={style.content}>
             <div class={style.prismatics}>
@@ -88,7 +90,7 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
 export default Project;
 
 function List() {
-  return [
+  const __ = [
     {
       title: "13373333.one",
       image: _projImg_self,
@@ -162,5 +164,22 @@ function List() {
       tools: [siTypescript, siDiscord, siYoutube, siFfmpeg],
       resigned: 0
     }
-  ]
+  ];
+
+  return shuffleArray(__);
+};
+
+function shuffleArray<ET>(array: ET[]): ET[] {
+  let currentIndex = array.length,  randomIndex;
+
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]
+    ];
+  };
+
+  return array;
 };
