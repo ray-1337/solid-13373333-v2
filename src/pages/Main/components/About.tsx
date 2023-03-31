@@ -1,6 +1,7 @@
 import { Component, createSignal, Show, createEffect } from "solid-js";
 import { sleep, preventClick } from "../../../Util";
 import { marked } from "marked";
+import Vibrant from "node-vibrant";
 
 import style from "./About.module.css";
 
@@ -20,18 +21,37 @@ const About: Component<{ active?: boolean }> = (props: { active?: boolean }) => 
     toggle() ? setTimeout(() => setDeferToggle(true), 5) : setDeferToggle(false);
   });
 
+  const [pfpColorProm, setPfpColorProm] = createSignal<string | null>(null);
+
   return (
     <Show when={toggle()}>
       <div class={style.about} data-itchi={String(Boolean(deferToggle()))}>
-        <div class={style.header}></div>
+        <div class={style.header} style={{"background-color": pfpColorProm() || undefined}}></div>
 
         <div class={style.overview}>
           <div class={style.selfie}>
-            <img src={rayImg} loading={"lazy"} onload={(evt) => evt.currentTarget.classList.add(style.kuma)} draggable={false} oncontextmenu={(evt) => preventClick(evt)}></img>
+            <img src={rayImg}
+              loading={"lazy"}
+              draggable={false}
+              oncontextmenu={(evt) => preventClick(evt)}
+              onLoad={async (evt) => {
+                evt.currentTarget.classList.add(style.kuma);
+
+                if (!pfpColorProm()) {
+                  const getPalette = await Vibrant.from(evt.currentTarget).getPalette();
+                  console.log(getPalette)
+                  if (getPalette.DarkVibrant?.hex) {
+                    setPfpColorProm(getPalette.DarkVibrant?.hex);
+                  } else {
+                    setPfpColorProm("#121112");
+                  };
+                };
+              }}
+            ></img>
           </div>
 
           <div class={style.fullname}>
-            <h1>Hizkia Ray</h1>
+            <h1 style={{color: pfpColorProm() || undefined}}>Hizkia Ray</h1>
           </div>
         </div>
 

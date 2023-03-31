@@ -5,12 +5,11 @@
 }
 
 .header {
-  background: #18686c;
   position: absolute;
   width: 100%;
   height: 0%;
   content: "";
-  transition: height 1s var(--expoOut) 750ms;
+  transition: height 1s var(--expoOut) 750ms, background-color 300ms linear;
 }
 
 .about[data-itchi="true"] .header {
@@ -46,7 +45,8 @@
 
 .fullname h1 {
   font-size: 2em;
-  color: #174042;
+  color: black;
+  transition: color 250ms linear;
 }
 
 .bullcrap {
