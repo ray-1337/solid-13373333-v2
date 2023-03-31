@@ -132,7 +132,8 @@ function List() {
       image: _projImg_ire,
       url: "https://soundcloud.com/1337-3333/sets/ire",
       description: "A way to distract me from self-harm, but it didn't help.",
-      tools: [siSoundcloud]
+      tools: [siSoundcloud],
+      resigned: 1
     },
     {
       title: "Blob Project",
