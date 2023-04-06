@@ -39,7 +39,6 @@ const About: Component<{ active?: boolean }> = (props: { active?: boolean }) => 
 
                 if (!pfpColorProm()) {
                   const getPalette = await Vibrant.from(evt.currentTarget).getPalette();
-                  console.log(getPalette)
                   if (getPalette.DarkVibrant?.hex) {
                     setPfpColorProm(getPalette.DarkVibrant?.hex);
                   } else {
