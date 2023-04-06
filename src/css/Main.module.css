@@ -117,41 +117,6 @@ u:hover {
   font-weight: 500
 }
 
-.wobbly {
-  width: 512px;
-  height: 768px;
-  overflow: hidden;
-  clip-path: inset(100% 0 0 0);
-  transition: clip-path 2.5s var(--expoOut), opacity 500ms linear;
-  position: relative;
-  opacity: 0;
-}
-
-.wobbly.aktif {
-  clip-path: inset(0 0 0 0);
-  opacity: 1;
-}
-
-.wobbly:after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-}
-
-.wobbly.aktif canvas {
-  transform: scale(1)
-}
-
-.wobbly canvas {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.5);
-  transition: transform 2.5s var(--expoOut);
-}
-
 .panel {
   width: 40%;
   z-index: 11;
@@ -248,15 +213,6 @@ div[data-itchi="true"] .heading_confront .sub p {
 }
 
 @media only screen and (max-width:1024px) {
-  .wobbly {
-    position: absolute;
-    height: 100vh;
-    z-index: 1;
-    opacity: 0.45;
-    filter: blur(2.5px);
-    width: 100%;
-  }
-
   .menu {
     z-index: 2;
   }
@@ -267,11 +223,6 @@ div[data-itchi="true"] .heading_confront .sub p {
 }
 
 @media only screen and (max-height: 768px) {
-  /* .wobbly {
-    width: 384px;
-    height: 512px;
-  } */
-
   .parasympathetic .menu {
     padding: 1rem 0;
   }
