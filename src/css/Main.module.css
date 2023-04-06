@@ -220,6 +220,10 @@ div[data-itchi="true"] .heading_confront .sub p {
   .panel {
     width: 100%;
   }
+  
+  .parasympathetic .menu .things ul li {
+    color: #dfdfdf;
+  }
 }
 
 @media only screen and (max-height: 768px) {
