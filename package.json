@@ -40,15 +40,6 @@
     "vite-plugin-solid": "2.5.0"
   },
   "optionalDependencies": {
-    "@pixi/constants": "^6.5.9",
-    "@pixi/core": "^6.5.9",
-    "@pixi/extensions": "^6.5.9",
-    "@pixi/math": "^6.5.9",
-    "@pixi/runner": "^6.5.9",
-    "@pixi/settings": "^6.5.9",
-    "@pixi/ticker": "^6.5.9",
-    "@pixi/unsafe-eval": "^6.5.9",
-    "@pixi/utils": "^6.5.9",
     "animated-scroll-to": "^2.3.0",
     "cors": "^2.8.5",
     "helmet": "^6.0.1",
