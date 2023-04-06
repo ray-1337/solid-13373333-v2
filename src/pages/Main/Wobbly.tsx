@@ -1,95 +1,25 @@
-import { Component, onMount, onCleanup } from "solid-js";
-import style from "../../css/Main.module.css";
+import { Component, For, createEffect } from "solid-js";
+import styles from "../../css/Wobbly.module.css";
 
-import * as PIXI from 'pixi.js';
-
-import { ShaderSystem } from '@pixi/core';
-import { install } from '@pixi/unsafe-eval';
-install({ ShaderSystem });
-
-// images
-import selfie from "../../assets/006.webp";
-
-// etc
-import etc1 from "../../assets/etc/a.webp";
-import { sleep } from "../../Util";
-
-const renderOptions: PIXI.IRendererOptionsAuto = {
-  height: 1166, width: 873,
-  backgroundAlpha: 0,
-  clearBeforeRender: true
+const color: Record<number, string[]> = {
+  0: ["#b92b27", "#c31432", "#FF416C", "#ff3131", "#FF4B2B", "#dd3e54", "#ED213A"],
+  1: ["#8360c3", "#2ebf91", "#6be585", "#FDC830", "#d43799"],
+  2: ["#009FFF", "#0083B0", "#00B4DB", "#363dbd"]
 };
 
-let renderer = PIXI.autoDetectRenderer(renderOptions);
-
 const Wobbly: Component = () => {
-  let basingstoke!: HTMLDivElement;
+  let wobbly!: HTMLDivElement;
 
-  onMount(() => itchi().recreate());
-
-  onCleanup(() => itchi().clear());
-
-  function itchi() {
-    function recreate() {
-      renderer = PIXI.autoDetectRenderer(renderOptions);
-  
-      let delta_scale = 250, delta_offset = 2;
-      let stage = new PIXI.Container();
-      let texture = PIXI.Texture.from(selfie);
-      let logo = new PIXI.Sprite(texture);
-  
-      let displacementSprite = PIXI.Sprite.from(etc1);
-      displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.MIRRORED_REPEAT;
-  
-      let displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-      stage.addChild(displacementSprite);
-      stage.addChild(logo);
-      displacementSprite.scale.y = 2.5;
-      displacementSprite.scale.x = 2.5;
-      basingstoke.appendChild(renderer.view);
-  
-      function matthew() {
-        const animationFrame = requestAnimationFrame(matthew);
-        displacementFilter.scale.x = delta_scale;
-        displacementFilter.scale.y = delta_scale;
-        displacementSprite.x += delta_offset;
-        displacementSprite.y += delta_offset;
-        stage.filters = [displacementFilter];
-        renderer.render(stage); // i hate this
-  
-        return {
-          clear: () => cancelAnimationFrame(animationFrame)
-        };
-      };
-  
-      renderer.addListener("postrender", async () => {
-        await sleep(1000);
-        basingstoke.classList.add(style.aktif);
-      });
-  
-      return matthew();
-    };
-
-    return {
-      recreate,
-      clear: function buro() {
-        renderer.destroy(true);
-        // matthew().clear();
-        // stage.destroy(true);
-        // texture.destroy(true);
-        // logo.destroy(true);
-        // displacementSprite.destroy(true);
-        // displacementFilter.destroy();
-        // basingstoke.removeChild(renderer.view);
-        // matthew().clear();
-        // renderer.removeAllListeners();
-        return;
-      }
-    };
-  };
+  createEffect(() => {
+    setTimeout(() => wobbly.classList.add(styles.aktif), 1250);
+  });
 
   return (
-    <div class={style.wobbly} ref={(evt) => basingstoke = evt}> </div>
+    <div class={styles.inside} ref={(evt) => wobbly = evt}>
+      <For each={Array.from(Array(3).keys())}>{(numb) => {
+        return (<span style={{background: color[numb][Math.floor(Math.random() * color[numb].length)]}} data-feelsgood={numb} class={styles.burner}></span>);
+      }}</For>
+    </div>
   );
 };
 
