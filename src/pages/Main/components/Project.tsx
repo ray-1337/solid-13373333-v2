@@ -54,9 +54,7 @@ const Project: Component<{active?: boolean}> = (props: {active?: boolean}) => {
 
             <div class={style.imagine}>
               <p class={style.sike}>{ctx?.resigned ? `${ctx.title} (${resignedType(ctx?.resigned)})` : ctx.title}</p>
-              {() => {
-                return (ctx?.resigned ? <></> : <p class={style.cite} onclick={() => window.open(ctx.url, "_blank")}>Visit</p>);
-              }}
+              {(ctx?.resigned ? <></> : <p class={style.cite} onclick={() => window.open(ctx.url, "_blank")}>Visit</p>)}
             </div>
 
             <Show when={ctx?.description?.length >= 1}>
