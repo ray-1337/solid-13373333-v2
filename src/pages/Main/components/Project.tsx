@@ -1,5 +1,5 @@
 import { Component, For, createEffect, createSignal, Show } from "solid-js";
-import { preventClick, sleep } from "../../../Util";
+import { preventClick, sleep, shuffleArray } from "../../../Util";
 
 import { siAbletonlive, siNextdotjs, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
 
@@ -168,19 +168,4 @@ function List() {
   ];
 
   return shuffleArray(__);
-};
-
-function shuffleArray<ET>(array: ET[]): ET[] {
-  let currentIndex = array.length,  randomIndex;
-
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]
-    ];
-  };
-
-  return array;
 };
