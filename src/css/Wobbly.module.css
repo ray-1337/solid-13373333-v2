@@ -34,7 +34,7 @@
   border-radius: var(--burnerSize);
   filter: blur(calc(var(--burnerSize) / 6));
   animation: dot-animation ease-in-out 20s infinite;
-  will-change: transform;
+  will-change: auto;
 }
 
 .burner[data-feelsgood="0"] {
