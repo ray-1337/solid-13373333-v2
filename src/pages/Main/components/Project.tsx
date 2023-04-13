@@ -1,7 +1,7 @@
 import { Component, For, createEffect, createSignal, Show } from "solid-js";
 import { preventClick, sleep, shuffleArray } from "../../../Util";
 
-import { siAbletonlive, siNextdotjs, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud } from "simple-icons/icons";
+import { siAbletonlive, siNextdotjs, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
 
 import style from "./Project.module.css";
 
@@ -15,6 +15,7 @@ import _projImg_cupcakke from "../../../assets/proj/cupcakke.webp";
 import _projImg_catbox from "../../../assets/proj/catbox.webp";
 import _projImg_eom from "../../../assets/proj/eom.webp";
 import _projImg_dbm from "../../../assets/proj/dbm.webp";
+import _projImg_phash from "../../../assets/proj/phash.webp";
 
 function resignedType(number: number) {
   switch (number) {
@@ -95,6 +96,13 @@ function List() {
       url: "https://github.com/ray-1337/solid-13373333-v2",
       description: "An open-source repository of this website.",
       tools: [siTypescript, siExpress]
+    },
+    {
+      title: "Perceptual Hash",
+      image: _projImg_phash,
+      url: "https://npmjs.com/package/perceptual-hash",
+      description: "A simple way to generate content-based image hashes on Node.js, also used on Anti-NSFW.",
+      tools: [siTypescript, siNodedotjs]
     },
     {
       title: "CupcakKe",
