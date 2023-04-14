@@ -109,21 +109,21 @@ function List() {
     //   title: "ROBLOX",
     //   colorArray: ["#e3241c"]
     // },
-    {
-      url: "https://open.spotify.com/artist/70AzjYUmP524pQbJXWWJoa",
-      title: "Spotify",
-      colorArray: ["#1db954", "#191414"]
-    },
+    // {
+    //   url: "https://open.spotify.com/artist/70AzjYUmP524pQbJXWWJoa",
+    //   title: "Spotify",
+    //   colorArray: ["#1db954", "#191414"]
+    // },
     {
       url: "https://soundcloud.com/1337-3333",
       title: "SoundCloud",
       colorArray: ["#ff9533", "#ff7f34", "#fe6d35", "#ff5836", "#ff4137"]
     },
-    {
-      url: "https://twitter.com/ray__1337",
-      title: "Twitter",
-      colorArray: ["#0ff", "#00efff", "#00deff", "#00cbff", "#00b8ff", "#00a3ff"]
-    },
+    // {
+    //   url: "https://twitter.com/ray__1337",
+    //   title: "Twitter",
+    //   colorArray: ["#0ff", "#00efff", "#00deff", "#00cbff", "#00b8ff", "#00a3ff"]
+    // },
     // {
     //   url: "https://bacotnihurl.bandcamp.com/",
     //   title: "Bandcamp",
@@ -134,11 +134,11 @@ function List() {
     //   title: "Reddit",
     //   colorArray: ["#ff6314", "#ff5700", "#369", "#5296dd"]
     // },
-    {
-      url: "https://unsplash.com/@lostfaith/",
-      title: "Unsplash",
-      colorArray: ["#121112", "#FFFFFF"]
-    },
+    // {
+    //   url: "https://unsplash.com/@lostfaith/",
+    //   title: "Unsplash",
+    //   colorArray: ["#121112", "#FFFFFF"]
+    // },
     // {
     //   url: "https://www.musixmatch.com/profile/3vUCAOhODWVY7oPWb_6Sw_GlOvhtCzZ2bMQAAqRVj71ldCLrqYUSOGkcRmF2cM6eqO3EmxQZzKpTxWGt45a3Mltz2s-I-iEgL3bjTctPRLf1SjWsIAGFiFaBt1GVB7qMZof3x3d1vS81K06c6DEKwJQ8uH0",
     //   title: "Musixmatch",
