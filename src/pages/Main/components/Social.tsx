@@ -70,7 +70,7 @@ function List() {
       colorArray: ["#ff0000", "#282828"]
     },
     {
-      url: "https://dsc.bio/13373333",
+      url: "https://discord.id/?prefill=331265944363991042",
       title: "Discord",
       colorArray: ["#5866EF", "#7289DA"]
     },
