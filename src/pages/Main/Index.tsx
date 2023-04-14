@@ -62,6 +62,7 @@ const Main: Component = () => {
         clearInterval(interval);
         return setBornTime("00:00:00");
       } else {
+        document.title = totale;
         return setBornTime(totale);
       };
     }, 1000);

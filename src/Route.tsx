@@ -12,7 +12,7 @@ const Index: Component = () => {
   };
 
   onMount(() => {
-    document.title = "prolonged heartbreak feeling.";
+    document.title = "\"tryna be a better man but i'm heartless.\"";
     document.documentElement.addEventListener("keydown", (event) => ignoreTab(event));
   });
 
