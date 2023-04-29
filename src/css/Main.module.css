@@ -146,7 +146,7 @@ u:hover {
   background-color: #121112
 }
 
-.panel .close {
+.close {
   position: absolute;
   width: 48px;
   height: 48px;
@@ -156,11 +156,11 @@ u:hover {
   cursor: pointer
 }
 
-.panel .close:hover {
+.close:hover {
   opacity: .6
 }
 
-.panel .close svg {
+.close svg {
   fill: #fff;
 }
 
