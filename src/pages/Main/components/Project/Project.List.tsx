@@ -1,5 +1,6 @@
 // icon
 import { siAbletonlive, siNextdotjs, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
+import { shuffleArray } from "../../../../Util";
 
 // images
 import _projImg_ire from "../../../../assets/proj/ire.webp";
@@ -14,7 +15,7 @@ import _projImg_eom from "../../../../assets/proj/eom.webp";
 import _projImg_dbm from "../../../../assets/proj/dbm.webp";
 import _projImg_phash from "../../../../assets/proj/phash.webp";
 
-export default [
+const projectList = [
   {
     title: "13373333.one",
     image: _projImg_self,
@@ -97,3 +98,7 @@ export default [
     resigned: 0
   }
 ];
+
+const finalShuffled = shuffleArray(projectList);
+
+export default finalShuffled;
