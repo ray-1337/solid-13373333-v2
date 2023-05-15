@@ -9,11 +9,14 @@ import _projImg_cdev from "../../../../assets/proj/cdev.webp";
 import _projImg_blobproj from "../../../../assets/proj/blobproj.webp";
 import _projImg_gmdibot from "../../../../assets/proj/gmdibot.webp";
 import _projImg_antinsfw from "../../../../assets/proj/antinsfw.webp";
-import _projImg_cupcakke from "../../../../assets/proj/cupcakke.webp";
 import _projImg_catbox from "../../../../assets/proj/catbox.webp";
 import _projImg_eom from "../../../../assets/proj/eom.webp";
 import _projImg_dbm from "../../../../assets/proj/dbm.webp";
 import _projImg_phash from "../../../../assets/proj/phash.webp";
+
+// cupcakke
+import _projImg_cupcakke from "../../../../assets/proj/cupcakke.webp";
+const cupcakkeVideoExample = ["obiZGmIrcto", "mh9QhWIGsEQ", "wZ2M9IIYIpk"];
 
 const projectList = [
   {
@@ -35,7 +38,14 @@ const projectList = [
     image: _projImg_cupcakke,
     url: "https://www.youtube.com/playlist?list=PLGd05QsjGyxUrnRbKBGB9touvcyj51MJW",
     description: "A parodies of CupcakKe, remixed by me.",
-    tools: [siYoutube, siAbletonlive, siSoundcloud]
+    tools: [siYoutube, siAbletonlive, siSoundcloud],
+    html: `
+    This is my side project, is just creating a song with CupcakKe vocal chops.
+    This project is absolutely inappropriate to many viewers, yet focused just for fun.
+
+    There is nothing I can explain, but I made things similar like this, for example:
+    <iframe src="https://youtube.com/embed/${cupcakkeVideoExample[Math.floor(Math.random() * cupcakkeVideoExample.length)]}"></iframe>
+    `
   },
   {
     title: "Catbox",
