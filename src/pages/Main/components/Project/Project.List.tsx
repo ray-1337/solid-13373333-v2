@@ -48,7 +48,7 @@ const projectList = [
     This project is absolutely inappropriate to many viewers, yet focused just for fun.
 
     There is nothing I can explain, but I made things similar like this, for example:
-    <iframe src="https://youtube.com/embed/${cupcakkeVideoExample[Math.floor(Math.random() * cupcakkeVideoExample.length)]}"></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/${cupcakkeVideoExample[Math.floor(Math.random() * cupcakkeVideoExample.length)]}"></iframe>
     `
   },
   {

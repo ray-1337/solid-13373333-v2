@@ -14,7 +14,7 @@ const precollectedCSP = {
   "img-src": ["'self'", "https://13373333.one/favicon.webp"],
   "default-src": ["'self'"],
   "script-src": ["'self'"],
-  "frame-src": ["'self'", "https://www.youtube.com/embed/", "https://youtube.com/embed/"],
+  "frame-src": ["'self'", "https://www.youtube-nocookie.com/embed/", "https://youtube-nocookie.com/embed/"],
   "connect-src": ["'self'", "https://13373333.one/3333/file/"],
   "font-src": [
     "'self'",
