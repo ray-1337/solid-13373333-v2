@@ -24,14 +24,16 @@ const projectList = [
     image: _projImg_self,
     url: "https://github.com/ray-1337/solid-13373333-v2",
     description: "An open-source repository of this website.",
-    tools: [siTypescript, siExpress]
+    tools: [siTypescript, siExpress],
+    projectId: "this"
   },
   {
     title: "Perceptual Hash",
     image: _projImg_phash,
     url: "https://npmjs.com/package/perceptual-hash",
     description: "A simple way to generate content-based image hashes on Node.js, also used on Anti-NSFW.",
-    tools: [siTypescript, siNodedotjs]
+    tools: [siTypescript, siNodedotjs],
+    projectId: "perceptual_hash"
   },
   {
     title: "CupcakKe",
@@ -39,6 +41,7 @@ const projectList = [
     url: "https://www.youtube.com/playlist?list=PLGd05QsjGyxUrnRbKBGB9touvcyj51MJW",
     description: "A parodies of CupcakKe, remixed by me.",
     tools: [siYoutube, siAbletonlive, siSoundcloud],
+    projectId: "cupcakke",
     html: `
     This is my side project, is just creating a song with CupcakKe vocal chops.
     This project is absolutely inappropriate to many viewers, yet focused just for fun.
@@ -52,7 +55,8 @@ const projectList = [
     image: _projImg_catbox,
     url: "https://13373333.one/catbox",
     description: "A personal/private file storage. Powered by BunnyCDN.",
-    tools: [siTypescript, siSolid]
+    tools: [siTypescript, siSolid],
+    projectId: "catbox"
   },
   {
     title: "Community Development",
@@ -60,14 +64,16 @@ const projectList = [
     url: "https://cdev.shop",
     description: "My first remotely startup project to advance limitations around Discord and FiveM communities.",
     tools: [siTypescript, siRedis, siNextdotjs, siMongodb, siDiscord, siPostgresql],
-    resigned: 0
+    resigned: 0,
+    projectId: "cdev"
   },
   {
     title: "Erase Our Memories",
     image: _projImg_eom,
     url: "https://github.com/ray-1337/erase-our-memories/",
     description: "A side-project/script to bulk-delete your messages from your exes contact.",
-    tools: [siDiscord, siJavascript]
+    tools: [siDiscord, siJavascript],
+    projectId: "eom"
   },
   {
     title: "IRE (03.12.2021)",
@@ -75,21 +81,24 @@ const projectList = [
     url: "https://soundcloud.com/1337-3333/sets/ire",
     description: "A way to distract me from self-harm, but it didn't help.",
     tools: [siSoundcloud],
-    resigned: 1
+    resigned: 1,
+    projectId: "ire"
   },
   {
     title: "Blob Project",
     image: _projImg_blobproj,
     url: "https://blob-project.com",
     description: "Creating a YouTube programming content with no retakes, and no fillers.",
-    tools: [siObsstudio, siDiscord, siYoutube]
+    tools: [siObsstudio, siDiscord, siYoutube],
+    projectId: "blobproj"
   },
   {
     title: "Anti-NSFW",
     image: _projImg_antinsfw,
     url: "https://docs.cdev.shop/anti-nsfw/grand-mirage",
     description: "A Discord bot that can detect NSFW content through machine learning.",
-    tools: [siTypescript, siRedis, siMongodb, siDiscord, siTensorflow, siExpress]
+    tools: [siTypescript, siRedis, siMongodb, siDiscord, siTensorflow, siExpress],
+    projectId: "anti-nsfw"
   },
   {
     title: "GMDI Discord Bot",
@@ -97,7 +106,8 @@ const projectList = [
     url: "https://github.com/ray-1337/gmdi-private-bot/",
     description: "A Discord bot that is made exclusively for Geometry Dash Indonesia.",
     tools: [siTypescript, siDiscord, siExpress],
-    resigned: 0
+    resigned: 0,
+    projectId: "gmdibot"
   },
   {
     title: "Discord & YouTube bot music",
@@ -105,7 +115,8 @@ const projectList = [
     url: "https://github.com/ray-1337/discord-music-bot/",
     description: "Newest project to solve concerns around Discord music bot era by giving it open source.",
     tools: [siTypescript, siDiscord, siYoutube, siFfmpeg],
-    resigned: 0
+    resigned: 0,
+    projectId: "dbm"
   }
 ];
 
