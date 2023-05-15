@@ -1,5 +1,7 @@
-import { Component, For, createSignal, lazy, Show, onMount, createEffect } from "solid-js";
+import { Component, For, createSignal, lazy, Show, onMount, createEffect, useContext } from "solid-js";
 import { marked } from "marked";
+import { projectIndexContext } from "./components/Project/Project";
+import { useSearchParams } from "@solidjs/router";
 
 import style from "../../css/Main.module.css";
 
@@ -8,9 +10,12 @@ const Wobbly = lazy(() => import("./Wobbly"));
 
 // panel
 const About = lazy(() => import("./components/About"));
-const Project = lazy(() => import("./components/Project"));
 const Tools = lazy(() => import("./components/Tools"));
 const Social = lazy(() => import("./components/Social"));
+
+// project (special)
+const Project = lazy(() => import("./components/Project/Project"));
+const ProjectDetails = lazy(() => import("./components/Project/Project.Detail"));
 
 const Introduction = marked.parseInline(
   `**Hello.** I'm Ray, and I'm a *full-stack developer*.
@@ -35,6 +40,8 @@ const Main: Component = () => {
   const [getPanel, setPanel] = createSignal<string | null>(null);
   const [fourthWall, setFourthWall] = createSignal<boolean>(true);
   const [bornTime, setBornTime] = createSignal<string>("");
+  const {currentProjectIndex} = useContext(projectIndexContext);
+  const [params] = useSearchParams();
 
   onMount(async () => {
     if ('scrollRestoration' in history) {
@@ -70,7 +77,7 @@ const Main: Component = () => {
 
   return (
     <section>
-      <div class={style.parasympathetic} data-appear={!fourthWall() && getPanel() == null}>
+      <div class={style.parasympathetic} data-appear={(!fourthWall() && getPanel() == null && (!params?.projectId || currentProjectIndex() === null))}>
         <div class={style.menu}>
           {/* upper level */}
           <div class={style.unholy}>
@@ -121,7 +128,7 @@ const Main: Component = () => {
 
       <div class={style.panel} data-appear={getPanel() !== null}>
         {/* close button */}
-        <Show when={getPanel() !== null}>
+        <Show when={getPanel() !== null && currentProjectIndex() === null}>
           <div class={style.close} onclick={() => setPanel(null)}>
             <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" /></svg>
           </div>
@@ -135,6 +142,8 @@ const Main: Component = () => {
 
         <Social active={getPanel() == "social"}></Social>
       </div>
+
+      <ProjectDetails></ProjectDetails>
     </section>
   );
 };
