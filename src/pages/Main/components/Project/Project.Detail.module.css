@@ -72,14 +72,14 @@
   margin: 1em 2.5em;
 }
 
-.project_details_image_title h1 {
-  margin: 0
-}
-
 .project_details_image_title p {
   margin: 1em 0;
   font-size: 0.9em;
   letter-spacing: 0.25px;
+}
+
+.project_details_image_title h1 {
+  margin: 0
 }
 
 .project_details_html {
