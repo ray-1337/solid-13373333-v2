@@ -1,5 +1,5 @@
 // icon
-import { siAbletonlive, siNextdotjs, siTypescript, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
+import { siAbletonlive, siNextdotjs, siTypescript, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
 import { shuffleArray } from "../../../../Util";
 
 // images
@@ -13,6 +13,7 @@ import _projImg_catbox from "../../../../assets/proj/catbox.webp";
 import _projImg_eom from "../../../../assets/proj/eom.webp";
 import _projImg_dbm from "../../../../assets/proj/dbm.webp";
 import _projImg_phash from "../../../../assets/proj/phash.webp";
+import _projImg_mhsvsf from "../../../../assets/proj/m_h_svsf.webp";
 
 // cupcakke
 import _projImg_cupcakke from "../../../../assets/proj/cupcakke.webp";
@@ -117,6 +118,15 @@ const projectList = [
     tools: [siTypescript, siDiscord, siYoutube, siFfmpeg],
     resigned: 0,
     projectId: "dbm"
+  },
+  {
+    title: "Mountain & Hung / so-vits-svc-4.0",
+    image: _projImg_mhsvsf,
+    url: "https://huggingface.co/goodfaith/so-vits-svc-4.0-mountain-hung/",
+    description: "A voice AI of Mountain & Hung voice actors, trained with 200 epochs.",
+    tools: [siPytorch, siTensorflow],
+    resigned: 0,
+    projectId: "mhsvs"
   }
 ];
 
