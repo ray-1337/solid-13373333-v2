@@ -43,6 +43,7 @@ export default function ProjectDetail() {
 
             <div class={style.project_details_image_title}>
               <h1>{currentProject.title}</h1>
+              <p>{currentProject.description}</p>
             </div>
           </div>
 
