@@ -79,11 +79,11 @@ function List() {
     //   title: "TikTok",
     //   colorArray: ["#010101", "#69C9D0", "#FFFFFF", "#EE1D52"]
     // },
-    {
-      url: "https://paypal.me/ray0001",
-      title: "PayPal",
-      colorArray: ["#003087", "#009cde"]
-    },
+    // {
+    //   url: "https://paypal.me/ray0001",
+    //   title: "PayPal",
+    //   colorArray: ["#003087", "#009cde"]
+    // },
     {
       url: "https://www.chess.com/member/stanfordfaith",
       title: "Chess.com",
