@@ -154,10 +154,10 @@ function List() {
     //   title: "Genius",
     //   colorArray: ["#121112", "#ffff64"]
     // },
-    {
-      url: "https://e926.net/users/1125753",
-      title: "E926/E621",
-      colorArray: ["#144058"]
-    }
+    // {
+    //   url: "https://e926.net/users/1125753",
+    //   title: "E926/E621",
+    //   colorArray: ["#144058"]
+    // }
   ];
 };
