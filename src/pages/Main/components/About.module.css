@@ -30,6 +30,22 @@
   width: 256px;
   z-index: 15;
   position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.selfie:before {
+  content: "";
+  background: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 14;
+  transform: translateY(-100%);
+}
+
+.selfie:hover:before {
+  animation: selfieHover 750ms var(--expoOut);
 }
 
 .selfie img {
@@ -37,6 +53,11 @@
   object-fit: cover;
   transition: opacity 125ms linear;
   opacity: 0;
+  transition: transform 500ms var(--expoOut);
+}
+
+.selfie:hover img.kuma {
+  transform: scale(1.35);
 }
 
 .selfie img.kuma {
@@ -107,5 +128,19 @@
 
   .bullcrap_title h1 {
     font-size: 1.125em;
+  }
+}
+
+@keyframes selfieHover {
+  0% {
+      transform: translateY(-100%);
+  }
+
+  50% {
+      transform: translateY(0%);
+  }
+
+  100% {
+      transform: translateY(100%);
   }
 }
