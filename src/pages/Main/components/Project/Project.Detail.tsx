@@ -49,7 +49,7 @@ export default function ProjectDetail() {
 
           <div class={style.project_details_html} innerHTML={marked.parseInline(currentProject?.html || currentProject.description || "Nothing to show here.", { gfm: true, breaks: true })}></div>
 
-          <div class={style.project_details_checkout} onclick={() => window.open(currentProject.url, "_blank")}>
+          <div class={style.project_details_checkout} style={{display: currentProject?.resigned ? "none" : undefined}} onclick={() => window.open(currentProject.url, "_blank")}>
             <h1>Visit</h1>
           </div>
         </div>
