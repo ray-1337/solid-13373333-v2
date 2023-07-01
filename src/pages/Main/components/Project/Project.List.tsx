@@ -14,6 +14,7 @@ import _projImg_eom from "../../../../assets/proj/eom.webp";
 import _projImg_dbm from "../../../../assets/proj/dbm.webp";
 import _projImg_phash from "../../../../assets/proj/phash.webp";
 import _projImg_mhsvsf from "../../../../assets/proj/m_h_svsf.webp";
+import _projImg_dvm from "../../../../assets/proj/dvm.webp";
 
 // cupcakke
 import _projImg_cupcakke from "../../../../assets/proj/cupcakke.webp";
@@ -27,6 +28,14 @@ const projectList = [
     description: "An open-source repository of this website.",
     tools: [siTypescript, siExpress],
     projectId: "this"
+  },
+  {
+    title: "Discord Voice Message",
+    image: _projImg_dvm,
+    url: "https://github.com/ray-1337/discord-voice-message",
+    description: "Transform .mp3 file to Discord voice message.",
+    tools: [siJavascript, siNodedotjs],
+    projectId: "dvm"
   },
   {
     title: "Perceptual Hash",
