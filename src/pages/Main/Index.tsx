@@ -57,21 +57,22 @@ const Main: Component = () => {
   });
 
   createEffect(() => {
-    let interval = setInterval(() => {
-      let date = new Date("Jul 24 2023 00:00:00 GMT+0800").getTime() - Date.now();
-      let hour = Math.floor(date / (36e5));
-      let min = Math.floor((date % (36e5)) / (60e3));
-      let sec = Math.floor((date % (60e3)) / 1e3);
+    setInterval(() => {
+      let date = new Date(`Jul 24 ${new Date().getFullYear()} 00:00:00 GMT+0800`);
+      if ((date.getTime() - Date.now()) <= 0) {
+        date.setFullYear(date.getFullYear() + 1);
+      };
+
+      let annotatedDate = date.getTime() - Date.now();
+
+      let hour = Math.floor(annotatedDate / (36e5));
+      let min = Math.floor((annotatedDate % (36e5)) / (60e3));
+      let sec = Math.floor((annotatedDate % (60e3)) / 1e3);
       let zeroFront = (n: number, c?: number) => ('0' + String(n)).slice(c ? -c : -2);
       let totale = `${zeroFront(hour, hour.toString().length < 2 ? 2 : hour.toString().length)}:${zeroFront(min)}:${zeroFront(sec)}`;
 
-      if (date < 0) {
-        clearInterval(interval);
-        return setBornTime("00:00:00");
-      } else {
-        document.title = totale;
-        return setBornTime(totale);
-      };
+      document.title = totale;
+      return setBornTime(totale);
     }, 1000);
   })
 
