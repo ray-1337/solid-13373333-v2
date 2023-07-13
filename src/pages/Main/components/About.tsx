@@ -6,7 +6,7 @@ import Vibrant from "node-vibrant";
 import style from "./About.module.css";
 
 import rayImg from "../../../assets/pfp/legosi.webp";
-const contextImg = "https://twitter.com/Garmr_914/status/1674430803261149184";
+const contextImg = "https://twitter.com/Gab_914/status/1674430803261149184";
 
 const ShortBio = marked.parseInline(`
   **Hello.** I'm Ray, and I'm a *full-stack developer*, and my origin is from <u>Indonesia</u>.
