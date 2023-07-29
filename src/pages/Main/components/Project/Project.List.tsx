@@ -15,12 +15,21 @@ import _projImg_dbm from "../../../../assets/proj/dbm.webp";
 import _projImg_phash from "../../../../assets/proj/phash.webp";
 import _projImg_mhsvsf from "../../../../assets/proj/m_h_svsf.webp";
 import _projImg_dvm from "../../../../assets/proj/dvm.webp";
+import _projImg_cdevDash from "../../../../assets/proj/cdev-dash.webp";
 
 // cupcakke
 import _projImg_cupcakke from "../../../../assets/proj/cupcakke.webp";
 const cupcakkeVideoExample = ["obiZGmIrcto", "mh9QhWIGsEQ", "wZ2M9IIYIpk"];
 
 const projectList = [
+  {
+    title: "cDev: Dash",
+    image: _projImg_self,
+    url: "https://github.com/ray-1337/solid-13373333-v2",
+    description: "A Discord bot dashboard, created with Next.js from scratch.",
+    tools: [siNextdotjs],
+    projectId: "cdev-dash"
+  },
   {
     title: "13373333.one",
     image: _projImg_self,
