@@ -46,6 +46,7 @@ export default defineConfig({
   ],
   
   build: {
+    assetsInlineLimit: 1024,
     cssCodeSplit: false,
     minify: true,
     target: 'esnext',
