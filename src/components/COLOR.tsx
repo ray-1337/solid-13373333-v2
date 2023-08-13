@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import styles from "../css/Wobbly.module.css";
+import styles from "../css/components/COLOR.module.css";
 
 export default function COLOR() {
   const color: Record<number, string[]> = {
