@@ -42,6 +42,9 @@ devDependencies:
   '@types/react':
     specifier: ^18.2.20
     version: 18.2.20
+  '@types/react-dom':
+    specifier: ^18.2.7
+    version: 18.2.7
   dotenv:
     specifier: ^16.3.1
     version: 16.3.1
@@ -372,6 +375,12 @@ packages:
 
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
+
+  /@types/react-dom@18.2.7:
+    resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
+    dependencies:
+      '@types/react': 18.2.20
     dev: true
 
   /@types/react@18.2.20:
