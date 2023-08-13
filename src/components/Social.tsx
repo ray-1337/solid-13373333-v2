@@ -1,56 +1,54 @@
-import { Component, Show, createSignal, createEffect, For, JSX } from "solid-js";
-import { sleep } from "../../../Util";
+import { useState, useEffect } from "react";
+import { sleep } from "../Util";
 
-import style from "./Social.module.css";
-import headingStyle from "../../../css/Main.module.css";
+import style from "../css/components/Social.module.css";
+import headingStyle from "../css/Main.module.css";
 
-const Social: Component<{ active?: boolean }> = (props: { active?: boolean }) => {
+export default function(props: { active?: boolean }) {
   const derivedProps = () => props.active;
-  const [toggle, setToggle] = createSignal<boolean>(false), [deferToggle, setDeferToggle] = createSignal<boolean>(false);
-  createEffect(() => {
+
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [deferToggle, setDeferToggle] = useState<boolean>(false);
+
+  useEffect(() => {
     derivedProps() ? setToggle(true) : sleep(750).then(() => setToggle(false));
-    toggle() ? setTimeout(() => setDeferToggle(true), 5) : setDeferToggle(false);
-  });
+    toggle ? setTimeout(() => setDeferToggle(true), 5) : setDeferToggle(false);
+  }, [toggle, deferToggle]);
 
   return (
-    <Show when={toggle()}>
-      <div data-itchi={String(Boolean(deferToggle()))}>
-        {/* heading */}
-        <div class={headingStyle.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
-          <div class={headingStyle.title}> <h1>Social</h1> </div>
-          <div class={headingStyle.sub}> <p>Here's a list of my social media, or any fun account, in case if you want to contact with me.</p> </div>
-        </div>
-
-        <For each={List()}>{
-          (state) => {
-            let color = state.colorArray.length > 1 ? state.colorArray.map((val, i) => {
-              let math = Math.min(Math.max(Math.round((100 / state.colorArray.length) * i), 0), 100);
-
-              return `${val} ${(i == 1 && state.colorArray.length == 2) ? 90 : math}%`;
-            }) : state.colorArray[0];
-
-            let combined: JSX.CSSProperties = state.colorArray.length > 1 ?
-              { "background-image": `linear-gradient(90deg, ${color}), -webkit-linear-gradient(90deg, ${color})` } :
-              { "background-color": state.colorArray[0] }
-
-
-            return (
-              <div class={style.agriculture}>
-                <a rel="noreferrer" target="_blank" href={state.url}>
-                  <div class={style.insider} style={combined}>
-                    <h1>{state.title}</h1>
-                  </div>
-                </a>
-              </div>
-            );
-          }
-        }</For>
+    <div data-itchi={String(deferToggle)}>
+      {/* heading */}
+      <div className={headingStyle.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
+        <div className={headingStyle.title}> <h1>Social</h1> </div>
+        <div className={headingStyle.sub}> <p>Here's a list of my social media, or any fun account, in case if you want to contact with me.</p> </div>
       </div>
-    </Show>
+
+      {
+        List().map((state, index) => {
+          let color = state.colorArray.length > 1 ? state.colorArray.map((val, i) => {
+            let math = Math.min(Math.max(Math.round((100 / state.colorArray.length) * i), 0), 100);
+
+            return `${val} ${(i == 1 && state.colorArray.length == 2) ? 90 : math}%`;
+          }) : state.colorArray[0];
+
+          return (
+            <div key={index} className={style.agriculture}>
+              <a rel="noreferrer" target="_blank" href={state.url}>
+                <div className={style.insider} style={
+                  state.colorArray.length > 1 ?
+                    { "backgroundImage": `linear-gradient(90deg, ${color}), -webkit-linear-gradient(90deg, ${color})` } :
+                    { "backgroundColor": state.colorArray[0] }
+                }>
+                  <h1>{state.title}</h1>
+                </div>
+              </a>
+            </div>
+          );
+        })
+      }
+    </div>
   )
 };
-
-export default Social;
 
 function List() {
   return [
