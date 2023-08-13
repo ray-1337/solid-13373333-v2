@@ -16,6 +16,9 @@ dependencies:
     version: 18.2.0(react@18.2.0)
 
 optionalDependencies:
+  next-safe:
+    specifier: ^3.4.1
+    version: 3.4.1(next@13.4.13)
   node-vibrant:
     specifier: 3.1.6
     version: 3.1.6
@@ -806,6 +809,16 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: false
+
+  /next-safe@3.4.1(next@13.4.13):
+    resolution: {integrity: sha512-GOam3DYMHUIKwxHeqVg9pkuYFhvtUeivHexdbL3lg0mjibsnIB3NOD81dKDgaeX+cReWbugdCtWYllzXmmpE+Q==}
+    requiresBuild: true
+    peerDependencies:
+      next: ^9.5.0 || ^10.2.1 || ^11.1.0 || ^12.1.0 || ^13.0.0
+    dependencies:
+      next: 13.4.13(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+    optional: true
 
   /next@13.4.13(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-A3YVbVDNeXLhWsZ8Nf6IkxmNlmTNz0yVg186NJ97tGZqPDdPzTrHotJ+A1cuJm2XfuWPrKOUZILl5iBQkIf8Jw==}
