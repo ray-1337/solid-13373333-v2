@@ -1,3 +1,5 @@
+import type { MouseEvent } from "react";
+
 export function preventClick(evt: MouseEvent) {
   evt.preventDefault();
   evt.stopPropagation();
