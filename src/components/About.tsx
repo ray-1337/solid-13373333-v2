@@ -27,7 +27,7 @@ export default function AboutPage(props: { active?: boolean }) {
 
   const [pfpColorProm, setPfpColorProm] = useState<string | null>(null);
 
-  return toggle && (
+  return (
     <div className={style.about} data-itchi={String(deferToggle)}>
       <div className={style.header} style={{ "backgroundColor": pfpColorProm || undefined }}></div>
 
