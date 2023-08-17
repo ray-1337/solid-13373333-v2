@@ -6,8 +6,6 @@ import Vibrant from "node-vibrant";
 
 import style from "../css/components/About.module.css";
 
-import rayImg from "../../../assets/pfp/legosi.webp";
-
 export default function AboutPage(props: { active?: boolean }) {
   const contextImg = "https://twitter.com/Gab_914/status/1674430803261149184";
 
@@ -34,7 +32,8 @@ export default function AboutPage(props: { active?: boolean }) {
       <div className={style.overview}>
         <div className={style.selfie} onClick={() => contextImg ? window.open(contextImg, "_blank") : null}>
           <Image
-            src={rayImg}
+            fill={true}
+            src={"/assets/pfp/legosi.webp"}
             alt={contextImg}
             loading={"lazy"}
             draggable={false}

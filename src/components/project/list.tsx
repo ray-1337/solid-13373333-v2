@@ -3,22 +3,21 @@ import { siAbletonlive, siNextdotjs, siTypescript, siPytorch, siSolid, siJavascr
 import { shuffleArray } from "../../Util";
 
 // images
-import _projImg_ire from "../../assets/proj/ire.webp";
-import _projImg_self from "../../assets/proj/1337.webp";
-import _projImg_cdev from "../../assets/proj/cdev.webp";
-import _projImg_blobproj from "../../assets/proj/blobproj.webp";
-import _projImg_gmdibot from "../../assets/proj/gmdibot.webp";
-import _projImg_antinsfw from "../../assets/proj/antinsfw.webp";
-import _projImg_catbox from "../../assets/proj/catbox.webp";
-import _projImg_eom from "../../assets/proj/eom.webp";
-import _projImg_dbm from "../../assets/proj/dbm.webp";
-import _projImg_phash from "../../assets/proj/phash.webp";
-import _projImg_mhsvsf from "../../assets/proj/m_h_svsf.webp";
-import _projImg_dvm from "../../assets/proj/dvm.webp";
-import _projImg_cdevDash from "../../assets/proj/cdevdash.webp";
+const _projImg_ire = "/assets/proj/ire.webp";
+const _projImg_self = "/assets/proj/1337.webp";
+const _projImg_cdev = "/assets/proj/cdev.webp";
+const _projImg_blobproj = "/assets/proj/blobproj.webp";
+const _projImg_gmdibot = "/assets/proj/gmdibot.webp";
+const _projImg_antinsfw = "/assets/proj/antinsfw.webp";
+const _projImg_catbox = "/assets/proj/catbox.webp";
+const _projImg_eom = "/assets/proj/eom.webp";
+const _projImg_dbm = "/assets/proj/dbm.webp";
+const _projImg_phash = "/assets/proj/phash.webp";
+const _projImg_mhsvsf = "/assets/proj/m_h_svsf.webp";
+const _projImg_dvm = "/assets/proj/dvm.webp";
+const _projImg_cdevDash = "/assets/proj/cdevdash.webp";
+const _projImg_cupcakke = "/assets/proj/cupcakke.webp";
 
-// cupcakke
-import _projImg_cupcakke from "../../../../assets/proj/cupcakke.webp";
 const cupcakkeVideoExample = ["obiZGmIrcto", "mh9QhWIGsEQ", "wZ2M9IIYIpk"];
 
 const projectList = [
