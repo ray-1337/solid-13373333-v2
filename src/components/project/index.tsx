@@ -37,12 +37,7 @@ export default function(props: { active?: boolean }) {
       {
         Projects.map((ctx, index) => {
           return (
-            <div key={index} className={style.content} onClick={() => {
-              // if (currentProjectIndex() !== null) return;
-
-              // setCurrentProjectIndex(index);
-              // setTimeout(() => setCurrentProjectActive(true), 125);
-            }}>
+            <div key={index} className={style.content} onClick={() => window.open(ctx.url, "_blank")}>
 
               <div className={style.prismatics}>
                 <Image alt={ctx.description} fill={true} src={ctx.image} onLoad={(evt) => {
