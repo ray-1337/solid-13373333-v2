@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import styles from "../css/components/COLOR.module.css";
 
@@ -11,7 +11,10 @@ export default function COLOR() {
 
   const [isOfficiallyActive, setActive] = useState<boolean>(false);
 
+  const permanentColors = useRef<string[]>([]);
+
   const shine = Array.from(Array(3).keys());
+  shine.map((_, index) => permanentColors.current.push(color[index][Math.floor(Math.random() * color[index].length)]));
 
   useEffect(() => {
     const welcomingTimeout = setTimeout(() => setActive(true), 1250);
@@ -26,7 +29,7 @@ export default function COLOR() {
       {
         shine.map((numb, index) => {
           return (
-            <span key={index} style={{background: color[numb][Math.floor(Math.random() * color[numb].length)]}} data-feelsgood={numb} className={styles.burner}></span>
+            <span key={index} style={{background: permanentColors[numb]}} data-feelsgood={numb} className={styles.burner}></span>
           );
         })
       }
