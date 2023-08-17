@@ -56,6 +56,7 @@ import {
 
 import { useState, useEffect } from "react";
 import { useDebouncedValue } from "@mantine/hooks";
+import { Tooltip } from "@mantine/core";
 
 import style from "../css/components/Tools.module.css";
 import headingStyle from "../css/Main.module.css";
@@ -90,11 +91,13 @@ export default function(props: { active?: boolean }) {
                 {
                   content.purified.map((state, purifiedIndex) => {
                     return (
-                      <span className={style.brand} key={purifiedIndex} onClick={() => window.open(state.url, "_blank")}>
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path fill={`#${state.hex != "000000" ? state.hex : "FFFFFF"}`} d={state.path} />
-                        </svg>
-                      </span>
+                      <Tooltip label={state.title} color="indigo" withArrow>
+                        <span className={style.brand} key={purifiedIndex} onClick={() => window.open(state.url, "_blank")}>
+                          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill={`#${state.hex != "000000" ? state.hex : "FFFFFF"}`} d={state.path} />
+                          </svg>
+                        </span>
+                      </Tooltip>
                     );
                   })
                 }
