@@ -53,6 +53,7 @@ export default function(props: { active?: boolean }) {
 
               <div className={style.imagine}>
                 <p className={style.sike}>{ctx?.resigned ? `${ctx.title} (${resignedType(ctx?.resigned)})` : ctx.title}</p>
+                <p className={style.cite}>Visit</p>
               </div>
 
               {
