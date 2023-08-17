@@ -2,10 +2,9 @@
   "name": "solid-13373333-v2",
   "scripts": {
     "dev": "node ./devMode.js",
-    "build": "vite build",
-    "serve": "vite preview",
-    "apistart": "ts-node ./api/Main.ts",
-    "apidev": "ts-node-dev ./api/Main.ts"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "^13.4.13",
