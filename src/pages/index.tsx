@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { marked } from "marked";
 import { useDebouncedValue } from "@mantine/hooks";
 import { Burger } from "@mantine/core";
+import { IconBrandGithub, IconAt } from "@tabler/icons-react";
 
 import style from "../css/Main.module.css";
 
@@ -38,9 +39,9 @@ export default function MainPage() {
     // { name: "File Storage", unique: "https://13373333.one/catbox", redirect: true }
   ];
   
-  const Hiccup: { icon: string, url: string }[] = [
-    { icon: "gh", /*'f09b',*/ url: "https://github.com/ray-1337" },
-    { icon: "ev", /*'f0e0',*/ url: "mailto:personal@13373333.one" },
+  const Hiccup: { icon: JSX.Element, url: string }[] = [
+    { icon: (<IconBrandGithub/>), url: "https://github.com/ray-1337" },
+    { icon: (<IconAt/>), url: "mailto:personal@13373333.one" },
   ];
 
   useEffect(() => {
@@ -122,9 +123,7 @@ export default function MainPage() {
                 {
                   Hiccup.map((ctx, index) => {
                     return (
-                      <a href={ctx.url} key={index} target="_blank">
-                        <span data-riku={ctx.icon}></span>
-                      </a>
+                      <a href={ctx.url} key={index} target="_blank">{ctx.icon}</a>
                     );
                   })
                 }
