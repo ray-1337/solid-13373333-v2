@@ -64,6 +64,10 @@
   opacity: 1;
 }
 
+.fullname {
+  margin: 0.75rem 0;
+}
+
 .fullname h1 {
   font-size: 2em;
   color: black;
