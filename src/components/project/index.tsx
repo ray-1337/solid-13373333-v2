@@ -37,7 +37,11 @@ export default function(props: { active?: boolean }) {
       {
         Projects.map((ctx, index) => {
           return (
-            <div key={index} className={style.content} onClick={() => window.open(ctx.url, "_blank")}>
+            <div key={index} className={style.content} onClick={() => {
+              if (ctx?.resigned) return;
+              
+              window.open(ctx.url, "_blank");
+            }}>
 
               <div className={style.prismatics}>
                 <Image alt={ctx.description} fill={true} src={ctx.image} onLoad={(evt) => {
@@ -48,7 +52,8 @@ export default function(props: { active?: boolean }) {
 
               <div className={style.imagine}>
                 <p className={style.sike}>{ctx?.resigned ? `${ctx.title} (${resignedType(ctx?.resigned)})` : ctx.title}</p>
-                <p className={style.cite}>Visit</p>
+                
+                {(!ctx?.resigned || ctx?.resigned <= 0) && (<p className={style.cite}>Visit</p>)}
               </div>
 
               {
