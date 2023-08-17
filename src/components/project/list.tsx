@@ -76,7 +76,8 @@ const projectList = [
     url: "https://13373333.one/catbox",
     description: "A personal/private file storage. Powered by BunnyCDN.",
     tools: [siTypescript, siSolid],
-    projectId: "catbox"
+    projectId: "catbox",
+    resigned: 1
   },
   {
     title: "Community Development",
