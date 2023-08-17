@@ -26,7 +26,7 @@ const nextConfig = {
           contentSecurityPolicy: {
             "img-src": ["'self'"],
             "default-src": ["'self'"],
-            "script-src": ["'self'"],
+            "script-src": ["'self'", "https://static.cloudflareinsights.com/beacon.min.js/"],
             "frame-src": ["'self'", "https://www.youtube-nocookie.com/embed/"],
             "connect-src": ["'self'"],
             "font-src": [
