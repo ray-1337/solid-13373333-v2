@@ -3,8 +3,17 @@ const nextSafe = require("next-safe");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+
   images: {
     unoptimized: true
+  },
+
+  transpilePackages: ['@tabler/icons-react'],
+  
+  modularizeImports: {
+    "@tabler/icons-react": {
+      transform: "@tabler/icons-react/dist/esm/icons/{{member}}",
+    },
   },
 
   async headers() {
