@@ -35,7 +35,7 @@ export default function MainPage() {
     { name: "Projects", unique: "project" },
     { name: "Production Tools", unique: "tools" },
     { name: "Social Media", unique: "social" },
-    { name: "File Storage", unique: "https://13373333.one/catbox", redirect: true }
+    // { name: "File Storage", unique: "https://13373333.one/catbox", redirect: true }
   ];
   
   const Hiccup: { icon: string, url: string }[] = [
