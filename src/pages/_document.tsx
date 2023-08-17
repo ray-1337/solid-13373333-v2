@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function Document() {
   const color = "#1c3474";
   const title = "13373333";
-  const imageURL = "/favicon.webp";
+  const imageURL = "/og.v2.webp";
   const description = "you are what you eat";
   const siteName = "what should i put here";
   const twitterSite = "@ray__1337";
