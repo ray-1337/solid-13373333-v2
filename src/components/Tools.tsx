@@ -55,24 +55,19 @@ import {
 } from "simple-icons/icons";
 
 import { useState, useEffect } from "react";
-import { sleep } from "../Util";
+import { useDebouncedValue } from "@mantine/hooks";
 
 import style from "../css/components/Tools.module.css";
 import headingStyle from "../css/Main.module.css";
 
 export default function(props: { active?: boolean }) {
-  const derivedProps = () => props.active;
+  const [toggle, setToggle] = useState<boolean>(props?.active || false);
 
-  const [toggle, setToggle] = useState<boolean>(false);
-  const [deferToggle, setDeferToggle] = useState<boolean>(false);
-
-  useEffect(() => {
-    derivedProps() ? setToggle(true) : sleep(750).then(() => setToggle(false));
-    toggle ? setTimeout(() => setDeferToggle(true), 5) : setDeferToggle(false);
-  });
+  const [deferredToggle] = useDebouncedValue(toggle, 10);
+  useEffect(() => setToggle(true), []);
 
   return (
-    <div data-itchi={String(deferToggle)}>
+    <div data-itchi={String(deferredToggle)}>
       {/* heading */}
       <div className={headingStyle.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
         <div className={headingStyle.title}> <h1>Tools</h1> </div>

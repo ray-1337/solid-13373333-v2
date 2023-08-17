@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { sleep, preventClick } from "../Util";
+import { useDebouncedValue } from "@mantine/hooks";
+import { preventClick } from "../Util";
 import Image from "next/image";
 import { marked } from "marked";
 import Vibrant from "node-vibrant";
@@ -14,19 +15,16 @@ export default function AboutPage(props: { active?: boolean }) {
     I've been interested in developing server things since <u>I was 11 years old</u>.
     And, I've also mastered in developing website since March and April 2020.
     `, { gfm: true, breaks: true });
-    
-  const [toggle, setToggle] = useState<boolean>(false)
-  const [deferToggle, setDeferToggle] = useState<boolean>(false);
-
-  useEffect(() => {
-    props?.active ? setToggle(true) : sleep(750).then(() => setToggle(false));
-    toggle ? setTimeout(() => setDeferToggle(true), 5) : setDeferToggle(false);
-  });
-
+  
   const [pfpColorProm, setPfpColorProm] = useState<string | null>(null);
 
+  const [toggle, setToggle] = useState<boolean>(props?.active || false)
+
+  const [deferredToggle] = useDebouncedValue(toggle, 10);
+  useEffect(() => setToggle(true), []);
+
   return (
-    <div className={style.about} data-itchi={String(deferToggle)}>
+    <div className={style.about} data-itchi={String(deferredToggle)}>
       <div className={style.header} style={{ "backgroundColor": pfpColorProm || undefined }}></div>
 
       <div className={style.overview}>
