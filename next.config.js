@@ -14,6 +14,12 @@ const nextConfig = {
     "@tabler/icons-react": {
       transform: "@tabler/icons-react/dist/esm/icons/{{member}}",
     },
+
+    "simple-icons": {
+      transform: "simple-icons/icons",
+      preventFullImport: true,
+      skipDefaultConversion: true
+    }
   },
 
   async headers() {
