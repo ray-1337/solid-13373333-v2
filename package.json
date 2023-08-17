@@ -7,10 +7,6 @@
     "apistart": "ts-node ./api/Main.ts",
     "apidev": "ts-node-dev ./api/Main.ts"
   },
-  "browserslist": [
-    "last 25 years",
-    "dead"
-  ],
   "dependencies": {
     "next": "^13.4.13",
     "react": "^18.2.0",
