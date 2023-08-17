@@ -40,7 +40,7 @@ export default function ProjectDetail() {
       </div>
 
       <div className={style.project_details_image} data-show={currentProjectImageShow()}>
-        <Image alt={""} layout={"fill"} src={currentProject.image} onLoad={() => setCurrentProjectImageShow(true)} />
+        <Image fill={true} alt={""} src={currentProject.image} onLoad={() => setCurrentProjectImageShow(true)} />
 
         <div className={style.project_details_image_title}>
           <h1>{currentProject.title}</h1>

@@ -45,7 +45,7 @@ export default function(props: { active?: boolean }) {
             }}>
 
               <div className={style.prismatics}>
-                <Image alt={ctx.description} layout={"fill"} src={ctx.image} onLoad={(evt) => {
+                <Image alt={ctx.description} fill={true} src={ctx.image} onLoad={(evt) => {
                   evt.currentTarget.classList.add(style.jpuf);
                   if (ctx?.resigned) evt.currentTarget.classList.add(style.archive);
                 }} draggable={false} loading={"lazy"} onContextMenu={(evt) => preventClick(evt)}/>
