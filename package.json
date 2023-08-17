@@ -1,7 +1,7 @@
 {
   "name": "solid-13373333-v2",
   "scripts": {
-    "dev": "vite",
+    "dev": "node ./devMode.js",
     "build": "vite build",
     "serve": "vite preview",
     "apistart": "ts-node ./api/Main.ts",
