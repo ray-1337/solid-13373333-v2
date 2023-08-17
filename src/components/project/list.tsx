@@ -2,6 +2,8 @@
 import { siAbletonlive, siNextdotjs, siTypescript, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
 import { shuffleArray } from "../Utility";
 
+siNextdotjs.hex = "121112";
+
 // images
 const _projImg_ire = "/assets/proj/ire.webp";
 const _projImg_self = "/assets/proj/1337.webp";
