@@ -17,6 +17,7 @@
 }
 
 .insider h1 {
+  margin: 0.75rem 0;
   bottom: 12.5px;
   font-family: var(--font);
   font-size: 1.5em;
