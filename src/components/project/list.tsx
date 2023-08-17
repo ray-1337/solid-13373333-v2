@@ -1,6 +1,6 @@
 // icon
 import { siAbletonlive, siNextdotjs, siTypescript, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
-import { shuffleArray } from "../../Util";
+import { shuffleArray } from "../Utility";
 
 // images
 const _projImg_ire = "/assets/proj/ire.webp";

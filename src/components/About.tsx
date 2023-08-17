@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDebouncedValue } from "@mantine/hooks";
-import { preventClick } from "../Util";
+import { preventClick } from "./Utility";
 import Image from "next/image";
 import { marked } from "marked";
 import Vibrant from "node-vibrant";
