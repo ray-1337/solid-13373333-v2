@@ -58,7 +58,7 @@ import { useState, useEffect } from "react";
 import { sleep } from "../Util";
 
 import style from "../css/components/Tools.module.css";
-import headingStyle from "../css/components/Main.module.css";
+import headingStyle from "../css/Main.module.css";
 
 export default function(props: { active?: boolean }) {
   const derivedProps = () => props.active;

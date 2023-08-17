@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { preventClick, sleep } from "../../Util";
 import Image from "next/image";
 
-import style from "./Project.module.css";
+import style from "../../css/components/project/Project.module.css";
 import Projects from "./list";
 
 export default function(props: { active?: boolean }) {
