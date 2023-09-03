@@ -149,7 +149,7 @@ function IconList() {
       description: "A programming language (except HTML) that I've mastered for at least more than 5 years.",
       list: [siJavascript, siTypescript, siHtml5, siCss3],
       purified: [],
-      bgColor: "121112"
+      bgColor: "1c1c1c"
     },
 
     technology: {
