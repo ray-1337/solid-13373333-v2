@@ -67,6 +67,8 @@ export default function(props: { active?: boolean }) {
   const [deferredToggle] = useDebouncedValue(toggle, 10);
   useEffect(() => setToggle(true), []);
 
+  const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
   return (
     <div data-itchi={String(deferredToggle)}>
       {/* heading */}
@@ -77,7 +79,6 @@ export default function(props: { active?: boolean }) {
 
       {
         Object.keys(IconList()).map((type, iconIndex) => {
-          const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
           const content = IconList()[type];
 
           return (
