@@ -56,7 +56,7 @@ import {
 
 import { useState, useEffect } from "react";
 import { useDebouncedValue } from "@mantine/hooks";
-import { Tooltip, Accordion } from "@mantine/core";
+import { Tooltip, Accordion, Text } from "@mantine/core";
 
 import style from "../css/components/Tools.module.css";
 import headingStyle from "../css/Main.module.css";
@@ -128,7 +128,10 @@ export default function(props: { active?: boolean }) {
               QuestionsList().map((val, index) => {
                 return (
                   <Accordion.Item key={index} value={val.question}>
-                    <Accordion.Control>{val.question}</Accordion.Control>
+                    <Accordion.Control>
+                      <Text fw={500}>{val.question}</Text>
+                    </Accordion.Control>
+
                     <Accordion.Panel sx={{paddingTop: "1rem"}}>{val.answer}</Accordion.Panel>
                   </Accordion.Item>
                 );
