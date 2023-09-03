@@ -56,7 +56,7 @@ import {
 
 import { useState, useEffect } from "react";
 import { useDebouncedValue } from "@mantine/hooks";
-import { Tooltip } from "@mantine/core";
+import { Tooltip, Accordion } from "@mantine/core";
 
 import style from "../css/components/Tools.module.css";
 import headingStyle from "../css/Main.module.css";
@@ -107,6 +107,36 @@ export default function(props: { active?: boolean }) {
           );
         })
       }
+
+      {/* questions */}
+      <div className={style.tools} style={{ background: "#0E21A0" }}>
+        <div className={style.info}>
+          <h3>{"Questions that No One Asked"}</h3>
+        </div>
+
+        <div className={style.list}>
+          <Accordion variant="contained" sx={{width: "100%"}} styles={{
+            item: {
+              backgroundColor: "#f1f1f1"
+            },
+            panel: {
+              backgroundColor: "#121112",
+              color: "white",
+            }
+          }}>
+            {
+              QuestionsList().map((val, index) => {
+                return (
+                  <Accordion.Item key={index} value={val.question}>
+                    <Accordion.Control>{val.question}</Accordion.Control>
+                    <Accordion.Panel sx={{paddingTop: "1rem"}}>{val.answer}</Accordion.Panel>
+                  </Accordion.Item>
+                );
+              })
+            }
+          </Accordion>
+        </div>
+      </div>
     </div>
   )
 };
@@ -145,4 +175,17 @@ function IconList() {
   };
 
   return icon;
+};
+
+function QuestionsList(): Array<Record<"question" | "answer", string>> {
+  return [
+    {
+      question: "Why do you prefer Node.js over PHP?",
+      answer: "Consistency, reliable, and good for long-term project."
+    },
+    {
+      question: "What about Python?",
+      answer: "I think Python is good and handy when it comes to analyzing data, or making a machine learning. For now, I have no time to learn a new programming language."
+    }
+  ];
 };
