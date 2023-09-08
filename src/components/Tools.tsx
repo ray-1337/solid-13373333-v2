@@ -92,7 +92,7 @@ export default function(props: { active?: boolean }) {
                 {
                   content.purified.map((state, purifiedIndex) => {
                     return (
-                      <Tooltip label={state.title} color="indigo" withArrow>
+                      <Tooltip label={state.title} key={purifiedIndex} color="indigo" withArrow>
                         <span className={style.brand} key={purifiedIndex} onClick={() => window.open(state.url, "_blank")}>
                           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill={`#${state.hex != "000000" ? state.hex : "FFFFFF"}`} d={state.path} />
