@@ -2,6 +2,8 @@ const nextSafe = require("next-safe");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  crossOrigin: "anonymous",
+  
   poweredByHeader: false,
 
   images: {
