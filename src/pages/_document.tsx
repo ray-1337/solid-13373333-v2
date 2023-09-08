@@ -7,11 +7,14 @@ export default function Document() {
   const description = "you are what you eat";
   const siteName = "what should i put here";
   const twitterSite = "@ray__1337";
+  const websiteTitle = "second hand embarrassment";
 
   return (
     <>
       <Html>
         <Head>
+          <title>{websiteTitle}</title>
+
           <meta name="robots" content="index, follow"/>
           <meta name="google" content="notranslate"/>
           <meta name="theme-color" content={color} />
