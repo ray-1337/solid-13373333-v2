@@ -1,9 +1,12 @@
 const nextSafe = require("next-safe");
+const { cdnDomain, cdnURL } = require("./config");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   crossOrigin: "anonymous",
   
+  assetPrefix: process.env.NODE_ENV === "production" ? cdnURL : undefined,
+
   poweredByHeader: false,
 
   images: {
@@ -32,11 +35,11 @@ const nextConfig = {
           isDev: process.env.NODE_ENV !== 'production',
 
           contentSecurityPolicy: {
-            "img-src": ["'self'"],
-            "default-src": ["'self'"],
-            "script-src": ["'self'", "https://static.cloudflareinsights.com/beacon.min.js/"],
-            "frame-src": ["'self'", "https://www.youtube-nocookie.com/embed/"],
-            "connect-src": ["'self'"],
+            "img-src": ["'self'", cdnURL],
+            "default-src": ["'self'", cdnURL],
+            "script-src": ["'self'", "https://static.cloudflareinsights.com/beacon.min.js/", cdnURL],
+            "frame-src": ["'self'", "https://www.youtube-nocookie.com/embed/", cdnURL],
+            "connect-src": ["'self'", `wss://${cdnDomain}`, cdnURL],
             "font-src": [
               "'self'",
               "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
@@ -45,7 +48,8 @@ const nextConfig = {
             "style-src": [
               "'self'", "'unsafe-inline'",
               "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
-              "https://fonts.googleapis.com/"
+              "https://fonts.googleapis.com/",
+              cdnURL
             ]
           },
 
