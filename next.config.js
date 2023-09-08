@@ -10,7 +10,8 @@ const nextConfig = {
   poweredByHeader: false,
 
   images: {
-    unoptimized: true
+    loader: "custom",
+    domains: ["itchi.cdn.13373333.one"]
   },
 
   transpilePackages: ['@tabler/icons-react'],
