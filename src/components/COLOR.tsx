@@ -14,7 +14,10 @@ export default function COLOR() {
   const permanentColors = useRef<string[]>([]);
 
   const shine = Array.from(Array(3).keys());
-  shine.map((_, index) => permanentColors.current.push(color[index][Math.floor(Math.random() * color[index].length)]));
+
+  shine.forEach((_, index) => {
+    permanentColors.current.push(color[index][Math.floor(Math.random() * color[index].length)])
+  });
 
   useEffect(() => {
     const welcomingTimeout = setTimeout(() => setActive(true), 1250);
@@ -29,7 +32,7 @@ export default function COLOR() {
       {
         shine.map((numb, index) => {
           return (
-            <span key={index} style={{background: permanentColors[numb]}} data-feelsgood={numb} className={styles.burner}></span>
+            <span key={index} style={{background: permanentColors.current[numb]}} data-feelsgood={numb} className={styles.burner}></span>
           );
         })
       }
