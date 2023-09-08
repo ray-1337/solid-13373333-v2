@@ -30,6 +30,7 @@ export default function AboutPage(props: { active?: boolean }) {
       <div className={style.overview}>
         <div className={style.selfie} onClick={() => contextImg ? window.open(contextImg, "_blank") : null}>
           <Image
+            crossOrigin={"anonymous"}
             fill={true}
             src={"/assets/pfp/legosi.webp"}
             alt={contextImg}
