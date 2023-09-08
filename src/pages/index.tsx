@@ -58,8 +58,6 @@ export default function MainPage() {
       let sec = Math.floor((annotatedDate % (60e3)) / 1e3);
       let zeroFront = (n: number, c?: number) => ('0' + String(n)).slice(c ? -c : -2);
       let totale = `${zeroFront(hour, hour.toString().length < 2 ? 2 : hour.toString().length)}:${zeroFront(min)}:${zeroFront(sec)}`;
-
-      document.title = totale;
       
       if (bornTime?.current) {
         bornTime.current.innerText = totale;
