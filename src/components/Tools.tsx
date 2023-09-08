@@ -149,15 +149,15 @@ type GeneralListType = { title: string, path: string, hex: string, url: string }
 function IconList() {
   let icon: Record<string, { description: string, list: (typeof siNodedotjs)[], purified: GeneralListType[], bgColor: string }> = {
     language: {
-      description: "A programming language (except HTML) that I've mastered for at least more than 5 years.",
-      list: [siJavascript, siTypescript, siHtml5, siCss3],
+      description: "A programming language that I've mastered for at least more than 5 years.",
+      list: [siJavascript, siTypescript],
       purified: [],
       bgColor: "1c1c1c"
     },
 
     technology: {
       description: "This is my daily basis tools that I know how to use it, or familiar with.",
-      list: [siReact, siNextdotjs, siPnpm, siWebpack, siAbletonlive, siPostgresql, siAmazonaws, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
+      list: [siReact, siNextdotjs, siPnpm, siHtml5, siCss3, siWebpack, siAbletonlive, siPostgresql, siAmazonaws, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
       purified: [],
       bgColor: "242424"
     },
