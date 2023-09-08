@@ -149,7 +149,7 @@ type GeneralListType = { title: string, path: string, hex: string, url: string }
 function IconList() {
   let icon: Record<string, { description: string, list: (typeof siNodedotjs)[], purified: GeneralListType[], bgColor: string }> = {
     language: {
-      description: "A programming language that I've mastered for at least more than 5 years.",
+      description: `A programming language that I've mastered for at least ${new Date().getFullYear() - new Date("Jul 2017").getFullYear()} years.`,
       list: [siJavascript, siTypescript],
       purified: [],
       bgColor: "1c1c1c"
