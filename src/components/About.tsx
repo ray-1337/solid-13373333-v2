@@ -4,6 +4,7 @@ import { preventClick } from "./Utility";
 import Image from "next/image";
 import { marked } from "marked";
 import Vibrant from "node-vibrant";
+import ImageLoader from "./Loader";
 
 import style from "../css/components/About.module.css";
 
@@ -31,6 +32,7 @@ export default function AboutPage(props: { active?: boolean }) {
         <div className={style.selfie} onClick={() => contextImg ? window.open(contextImg, "_blank") : null}>
           <Image
             crossOrigin={"anonymous"}
+            loader={ImageLoader}
             fill={true}
             src={"/assets/pfp/legosi.webp"}
             alt={contextImg}

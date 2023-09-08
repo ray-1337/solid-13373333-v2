@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { preventClick, sleep } from "../Utility";
+import ImageLoader from "../Loader";
 import Image from "next/image";
 
 import style from "../../css/components/project/Project.module.css";
