@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 import { marked } from "marked";
 import { useDebouncedValue } from "@mantine/hooks";
 import { Burger } from "@mantine/core";
@@ -7,7 +8,7 @@ import { IconBrandGithub, IconAt } from "@tabler/icons-react";
 import style from "../css/Main.module.css";
 
 // content
-import COLOR from "../components/COLOR";
+const COLOR = dynamic(() => import("../components/COLOR"), { ssr: false });
 
 // panel
 import About from "../components/About";
