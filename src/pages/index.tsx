@@ -147,7 +147,7 @@ export default function MainPage() {
 
         {deferredPanel("about") && <About active={debouncedPanel === "about"}></About>}
 
-        {deferredPanel("project") && <Project active={debouncedPanel === "project"}></Project>}
+        {deferredPanel("project") && <Project active={getPanel === "project"}></Project>}
 
         {deferredPanel("tools") && <Tools active={debouncedPanel === "tools"}></Tools>}
 
