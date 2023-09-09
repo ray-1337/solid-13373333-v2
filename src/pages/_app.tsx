@@ -1,7 +1,7 @@
 import '../css/Reset.css';
 import '../css/Base.css';
 
-import { Head } from 'next/document';
+import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
 
