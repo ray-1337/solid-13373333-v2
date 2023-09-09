@@ -9,28 +9,26 @@ export default function Document() {
   const twitterSite = "@ray__1337";
 
   return (
-    <>
-      <Html>
-        <Head>
-          <meta name="robots" content="index, follow"/>
-          <meta name="google" content="notranslate"/>
-          <meta name="theme-color" content={color} />
-          <meta name="og:title" content={title} />
-          <meta name="og:url" content={"/"} />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content={"/"} />
-          <meta name="og:image:url" content={imageURL} />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content={imageURL} />
-          <meta name="twitter:site" content={twitterSite} />
-          <meta property="og:site_name" content={siteName} />
-          <meta name="og:description" content={description} />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    </>
+    <Html>
+      <Head>
+        <meta name="robots" content="index, follow" />
+        <meta name="google" content="notranslate" />
+        <meta name="theme-color" content={color} />
+        <meta name="og:title" content={title} />
+        <meta name="og:url" content={"/"} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={"/"} />
+        <meta name="og:image:url" content={imageURL} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={imageURL} />
+        <meta name="twitter:site" content={twitterSite} />
+        <meta property="og:site_name" content={siteName} />
+        <meta name="og:description" content={description} />
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
   );
 };
