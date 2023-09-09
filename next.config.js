@@ -36,6 +36,7 @@ const nextConfig = {
           isDev: process.env.NODE_ENV !== 'production',
 
           contentSecurityPolicy: {
+            "prefetch-src": false,
             "img-src": ["'self'", cdnURL],
             "default-src": ["'self'", cdnURL],
             "script-src": ["'self'", "https://static.cloudflareinsights.com/beacon.min.js/", cdnURL],
