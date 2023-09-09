@@ -40,7 +40,7 @@ const nextConfig = {
             "img-src": ["'self'", cdnURL],
             "default-src": ["'self'", cdnURL],
             "script-src": ["'self'", "https://static.cloudflareinsights.com/beacon.min.js/", cdnURL],
-            "frame-src": ["'self'", "https://www.youtube-nocookie.com/embed/", cdnURL],
+            "frame-src": ["'self'", cdnURL],
             "connect-src": ["'self'", `wss://${cdnDomain}`, cdnURL],
             "font-src": [
               "'self'",
