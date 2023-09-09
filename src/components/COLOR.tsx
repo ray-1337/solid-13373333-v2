@@ -15,12 +15,12 @@ export default function COLOR() {
 
   const shine = Array.from(Array(3).keys());
 
-  shine.forEach((_, index) => {
-    permanentColors.current.push(color[index][Math.floor(Math.random() * color[index].length)])
-  });
-
   useEffect(() => {
     const welcomingTimeout = setTimeout(() => setActive(true), 1250);
+
+    shine.forEach((_, index) => {
+      permanentColors.current.push(color[index][Math.floor(Math.random() * color[index].length)])
+    });
 
     return () => {
       clearTimeout(welcomingTimeout);
