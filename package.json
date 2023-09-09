@@ -7,14 +7,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^13.4.16",
+    "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/marked": "^4.3.1",
-    "@types/node": "^18.17.5",
-    "@types/react": "^18.2.20",
+    "@types/node": "^18.17.15",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "dotenv": "^16.3.1",
     "marked": "^4.3.0",
@@ -22,9 +22,9 @@
   },
   "optionalDependencies": {
     "@emotion/react": "^11.11.1",
-    "@mantine/core": "^6.0.19",
-    "@mantine/hooks": "^6.0.19",
-    "@tabler/icons-react": "^2.30.0",
+    "@mantine/core": "^6.0.20",
+    "@mantine/hooks": "^6.0.20",
+    "@tabler/icons-react": "^2.34.0",
     "next-safe": "^3.4.1",
     "node-vibrant": "3.1.6",
     "simple-icons": "^7.21.0"
