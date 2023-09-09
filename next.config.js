@@ -44,12 +44,10 @@ const nextConfig = {
             "connect-src": ["'self'", `wss://${cdnDomain}`, cdnURL],
             "font-src": [
               "'self'",
-              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
               "https://fonts.gstatic.com/s/",
             ],
             "style-src": [
               "'self'", "'unsafe-inline'",
-              "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/",
               "https://fonts.googleapis.com/",
               cdnURL
             ]
