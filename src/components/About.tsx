@@ -13,8 +13,8 @@ export default function AboutPage(props: { active?: boolean }) {
 
   const ShortBio = marked.parseInline(`
     **Hello.** I'm Ray, and I'm a *full-stack developer*, and my origin is from <u>Indonesia</u>.
-    I've been interested in developing server things since <u>I was 11 years old</u>.
-    And, I've also mastered in developing website since March and April 2020.
+    I've been interested in programming something since <u>I was 11 years old</u>.
+    After 3 years of trying (2017-2020), I've tried to push my limits by <u>learning HTML, CSS, and friends</u>, until I finally made this and I'm here.
     `, { gfm: true, breaks: true });
   
   const [pfpColorProm, setPfpColorProm] = useState<string | null>(null);
