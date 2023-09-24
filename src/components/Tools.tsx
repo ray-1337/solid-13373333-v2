@@ -60,6 +60,7 @@ import { Tooltip, Accordion, Text } from "@mantine/core";
 
 import style from "../css/components/Tools.module.css";
 import headingStyle from "../css/Main.module.css";
+import { textColorBasedOnBackground } from "./Utility";
 
 export default function(props: { active?: boolean }) {
   const [toggle, setToggle] = useState<boolean>(props?.active || false);
@@ -90,10 +91,9 @@ export default function(props: { active?: boolean }) {
                 {
                   content.purified.map((state, purifiedIndex) => {
                     const purifiedColorHex = `#${state.hex != "000000" ? state.hex : "FFFFFF"}`;
-                    const purifiedTooltipColorHex = `${purifiedColorHex === "#FFFFFF" ? "black" : purifiedColorHex}`;
 
                     return (
-                      <Tooltip label={state.title} key={purifiedIndex} color={purifiedTooltipColorHex} withArrow>
+                      <Tooltip label={state.title} key={purifiedIndex} color={purifiedColorHex} sx={{color: textColorBasedOnBackground(purifiedColorHex)}} withArrow>
                         <span className={style.brand} key={purifiedIndex} onClick={() => window.open(state.url, "_blank")}>
                           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill={purifiedColorHex} d={state.path} />
