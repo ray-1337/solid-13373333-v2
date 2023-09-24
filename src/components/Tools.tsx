@@ -158,9 +158,16 @@ function IconList() {
     {
       name: "Technology",
       description: "This is my daily basis tools that I know how to use it, or familiar with.",
-      list: [siReact, siNextdotjs, siPnpm, siHtml5, siCss3, siWebpack, siAbletonlive, siPostgresql, siAmazonaws, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
+      list: [siReact, siNextdotjs, siPnpm, siHtml5, siCss3, siWebpack, siAbletonlive, siPostgresql, siAmazonaws, siNodedotjs, siTsnode, siNpm, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
       purified: [],
       bgColor: 0x242424
+    },
+    {
+      name: "I know, but rather not.",
+      description: "This is a list of tools that I know how to use it, but rather not use it. It might not relevant to any of my projects anymore.",
+      list: [siYarn, siJquery],
+      purified: [],
+      bgColor: 0x380b13
     },
     {
       name: "Will Look Into It",
