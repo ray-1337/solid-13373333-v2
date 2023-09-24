@@ -78,13 +78,11 @@ export default function(props: { active?: boolean }) {
       </div>
 
       {
-        Object.keys(IconList()).map((type, iconIndex) => {
-          const content = IconList()[type];
-
+        IconList().map((content, iconIndex) => {
           return (
-            <div key={iconIndex} className={style.tools} style={{ background: "#" + content.bgColor }}>
+            <div key={iconIndex} className={style.tools} style={{ background: `#${content.bgColor.toString(16)}` }}>
               <div className={style.info}>
-                <h3>{capitalize(type)}</h3>
+                <h3>{capitalize(content.name)}</h3>
                 <p>{content.description}</p>
               </div>
 
@@ -147,37 +145,44 @@ export default function(props: { active?: boolean }) {
 type GeneralListType = { title: string, path: string, hex: string, url: string };
 
 function IconList() {
-  let icon: Record<string, { description: string, list: (typeof siNodedotjs)[], purified: GeneralListType[], bgColor: string }> = {
-    language: {
+  type IconListType = Record<"name" | "description", string> & Record<"bgColor", number> & { list: (typeof siNodedotjs)[], purified: GeneralListType[] };
+
+  const list: Array<IconListType> = [
+    {
+      name: "Language",
       description: `A programming language that I've mastered for at least ${new Date().getFullYear() - new Date("Jul 2017").getFullYear()} years.`,
       list: [siJavascript, siTypescript],
       purified: [],
-      bgColor: "1c1c1c"
+      bgColor: 0x1c1c1c
     },
-
-    technology: {
+    {
+      name: "Technology",
       description: "This is my daily basis tools that I know how to use it, or familiar with.",
       list: [siReact, siNextdotjs, siPnpm, siHtml5, siCss3, siWebpack, siAbletonlive, siPostgresql, siAmazonaws, siNodedotjs, siTsnode, siNpm, siYarn, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siJquery, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
       purified: [],
-      bgColor: "242424"
+      bgColor: 0x242424
     },
-
-    interested: {
+    {
+      name: "Will Look Into It",
       description: "This is a list of tools or programming language that I want to try in the future.",
       list: [siRust, siVuedotjs, siNuxtdotjs, siRedux, siFastify, siWebassembly, siElectron],
       purified: [],
-      bgColor: "191119"
+      bgColor: 0x191119
     },
-  };
+  ];
 
-  for (const ctx of Object.entries(icon)) {
-    for (const siIcon of ctx[1].list) {
-      (ctx[1].purified as GeneralListType[]).push({ title: siIcon.title, path: siIcon.path, hex: siIcon.hex, url: siIcon.source });
-      // list.push({ title: siIcon.title, path: siIcon.path, hex: siIcon.hex, type: capitalize(ctx[0]) });
+  for (const ctx of list) {
+    for (const icon of ctx.list) {
+      ctx.purified.push({
+        title: icon.title,
+        path: icon.path,
+        hex: icon.hex,
+        url: icon.source
+      });
     };
   };
 
-  return icon;
+  return list;
 };
 
 function QuestionsList(): Array<Record<"question" | "answer", string>> {
