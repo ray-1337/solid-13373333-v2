@@ -89,11 +89,14 @@ export default function(props: { active?: boolean }) {
               <div className={style.list}>
                 {
                   content.purified.map((state, purifiedIndex) => {
+                    const purifiedColorHex = `#${state.hex != "000000" ? state.hex : "FFFFFF"}`;
+                    const purifiedTooltipColorHex = `${purifiedColorHex === "#FFFFFF" ? "black" : purifiedColorHex}`;
+
                     return (
-                      <Tooltip label={state.title} key={purifiedIndex} color="indigo" withArrow>
+                      <Tooltip label={state.title} key={purifiedIndex} color={purifiedTooltipColorHex} withArrow>
                         <span className={style.brand} key={purifiedIndex} onClick={() => window.open(state.url, "_blank")}>
                           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path fill={`#${state.hex != "000000" ? state.hex : "FFFFFF"}`} d={state.path} />
+                            <path fill={purifiedColorHex} d={state.path} />
                           </svg>
                         </span>
                       </Tooltip>
