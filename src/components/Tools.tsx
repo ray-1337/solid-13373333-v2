@@ -158,7 +158,7 @@ function IconList() {
     {
       name: "Technology",
       description: "This is my daily basis tools that I know how to use it, or familiar with.",
-      list: [siReact, siNextdotjs, siPnpm, siHtml5, siCss3, siWebpack, siAbletonlive, siPostgresql, siAmazonaws, siNodedotjs, siTsnode, siNpm, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
+      list: [siReact, siNextdotjs, siPnpm, siHtml5, siCss3, siWebpack, siAbletonlive, siAmazonaws, siNodedotjs, siTsnode, siNpm, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siMarkdown, siTrello, siGitbook, siSupabase, siReactrouter, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
       purified: [],
       bgColor: 0x242424
     },
