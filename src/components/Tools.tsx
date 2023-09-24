@@ -151,14 +151,14 @@ function IconList() {
     {
       name: "Language",
       description: `A programming language that I've mastered for at least ${new Date().getFullYear() - new Date("Jul 2017").getFullYear()} years.`,
-      list: [siJavascript, siTypescript],
+      list: [siJavascript],
       purified: [],
       bgColor: 0x1c1c1c
     },
     {
       name: "Technology",
       description: "This is my daily basis tools that I know how to use it, or familiar with.",
-      list: [siReact, siNextdotjs, siPnpm, siHtml5, siCss3, siWebpack, siAbletonlive, siAmazonaws, siNodedotjs, siTsnode, siNpm, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siMarkdown, siTrello, siGitbook, siSupabase, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
+      list: [siReact, siNextdotjs, siTypescript, siPnpm, siHtml5, siCss3, siWebpack, siAbletonlive, siAmazonaws, siNodedotjs, siTsnode, siNpm, siAdobephotoshop, siAdobepremierepro, siRedis, siMongodb, siGithub, siVisualstudio, siVisualstudiocode, siFirebase, siHeroku, siNginx, siTensorflow, siUbuntu, siExpress, siMarkdown, siTrello, siGitbook, siSupabase, siSolid, siVite, siPostgresql, siSequelize, siRoblox, siPostman, siPostcss, siAutoprefixer],
       purified: [],
       bgColor: 0x242424
     },
