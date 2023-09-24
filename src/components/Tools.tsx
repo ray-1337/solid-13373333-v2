@@ -163,7 +163,7 @@ function IconList() {
       bgColor: 0x242424
     },
     {
-      name: "I know, but rather not.",
+      name: "I know, but not anymore.",
       description: "This is a list of tools that I know how to use it, but rather not use it. It might not relevant to any of my projects anymore.",
       list: [siYarn, siJquery, siReactrouter],
       purified: [],
