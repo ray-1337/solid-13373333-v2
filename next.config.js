@@ -1,6 +1,8 @@
 const nextSafe = require("next-safe");
 const { cdnDomain, cdnURL } = require("./config");
 
+const isProd = process.env.NODE_ENV === "production";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   crossOrigin: "anonymous",
@@ -33,7 +35,7 @@ const nextConfig = {
       {
         source: '/:path*',
         headers: nextSafe({
-          isDev: process.env.NODE_ENV !== 'production',
+          isDev: !isProd,
 
           contentSecurityPolicy: {
             "prefetch-src": false,
