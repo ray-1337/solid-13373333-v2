@@ -19,6 +19,7 @@ const _projImg_mhsvsf = "/assets/proj/m_h_svsf.webp";
 const _projImg_dvm = "/assets/proj/dvm.webp";
 const _projImg_cdevDash = "/assets/proj/cdevdash.webp";
 const _projImg_cupcakke = "/assets/proj/cupcakke.webp";
+const _projImg_itchi = "/assets/proj/itchi.webp";
 
 const cupcakkeVideoExample = ["obiZGmIrcto", "mh9QhWIGsEQ", "wZ2M9IIYIpk"];
 
@@ -30,6 +31,14 @@ const projectList = [
     description: "A Discord bot dashboard for cDev (Community Development), created with Next.js from scratch.",
     tools: [siNextdotjs],
     projectId: "cdev-dash"
+  },
+  {
+    title: "ItchiHuskii's Personal Website",
+    image: _projImg_itchi,
+    description: "Bestie's personal website.",
+    tools: [siTypescript, siNextdotjs],
+    projectId: "itchi",
+    resigned: 4
   },
   {
     title: "13373333.one",

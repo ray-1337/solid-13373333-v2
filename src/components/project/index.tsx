@@ -19,6 +19,7 @@ export default function(props: { active?: boolean }) {
       case 1: return "Discontinued";
       case 2: return "Paused";
       case 3: return "Hiatus";
+      case 4: return "Under Construction";
       default: return "";
     };
   };
