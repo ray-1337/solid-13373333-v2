@@ -35,7 +35,7 @@ const projectList = [
   {
     title: "ItchiHuskii's Personal Website",
     image: _projImg_itchi,
-    description: "Bestie's personal website.",
+    description: "Best friend's personal website.",
     tools: [siTypescript, siNextdotjs],
     projectId: "itchi",
     resigned: 4
