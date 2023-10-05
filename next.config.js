@@ -7,13 +7,14 @@ const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
   crossOrigin: "anonymous",
   
-  assetPrefix: process.env.NODE_ENV === "production" ? cdnURL : undefined,
+  assetPrefix: isProd ? cdnURL : undefined,
 
   poweredByHeader: false,
 
   images: {
-    loader: "custom",
-    domains: ["itchi.cdn.13373333.one"]
+    loader: isProd ? "custom" : "default",
+    domains: isProd ? ["itchi.cdn.13373333.one"] : undefined,
+    unoptimized: isProd ? undefined : true
   },
 
   transpilePackages: ['@tabler/icons-react'],
