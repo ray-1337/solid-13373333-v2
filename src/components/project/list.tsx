@@ -117,7 +117,7 @@ const projectList = [
   {
     title: "Blob Project",
     image: _projImg_blobproj,
-    url: "https://blob-project.com",
+    url: "https://youtube.com/@blobproj",
     description: "Creating a YouTube programming content with no retakes, and no fillers.",
     tools: [siObsstudio, siDiscord, siYoutube],
     projectId: "blobproj"
