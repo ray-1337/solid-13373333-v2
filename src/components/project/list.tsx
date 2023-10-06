@@ -27,7 +27,7 @@ const projectList = [
   {
     title: "cDev: Dash",
     image: _projImg_cdevDash,
-    url: "https://dash.cdev.shop",
+    url: "https://dash.cdev.shop/demo",
     description: "A Discord bot dashboard for cDev (Community Development), created with Next.js from scratch.",
     tools: [siNextdotjs],
     projectId: "cdev-dash"
