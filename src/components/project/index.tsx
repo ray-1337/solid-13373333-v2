@@ -73,7 +73,7 @@ export default function(props: { active?: boolean }) {
                               return (
                                 <span key={icoIndex} className={style.brand}>
                                   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill={`#${ico.hex != "000000" || ico.title == "Ableton Live" ? ico.hex : "FFFFFF"}`} d={ico.path} />
+                                    <path fill={`#${ico.hex != "000000" || ico.title == "Ableton Live" || ico.title == "Express" ? ico.hex : "FFFFFF"}`} d={ico.path} />
                                   </svg>
                                 </span>
                               );
