@@ -167,11 +167,23 @@
   margin-bottom: 1rem;
 }
 
+.heading_together {
+  transform: translateY(-12.5%);
+  opacity: 0;
+}
+
+.heading_confront .heading_together {
+  transition: transform 375ms var(--expoOut), opacity 250ms;
+}
+
+div[data-itchi="true"] .heading_confront .heading_together {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
 .heading_confront .title h1 {
   margin: 0;
   font-size: 4em;
-  transform: translateY(100%);
-  transition: transform 375ms var(--expoOut) 250ms;
 }
 
 .heading_confront .sub p {
@@ -181,14 +193,6 @@
   line-height: 1;
   margin: 0;
   padding: 10px 0;
-  transform: translateY(100%);
-  transition: transform 375ms var(--expoOut) 375ms;
-}
-
-div[data-itchi="true"] .heading_confront .title h1,
-div[data-itchi="true"] .heading_confront .sub p {
-  transform: translateY(0%);
-  transition-delay: 500ms;
 }
 
 @media only screen and (max-width:1280px) {

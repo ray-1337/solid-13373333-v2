@@ -54,7 +54,7 @@ import {
   siWebassembly,
 } from "simple-icons/icons";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDebouncedValue } from "@mantine/hooks";
 import { Tooltip, Accordion, Text } from "@mantine/core";
 
@@ -65,8 +65,21 @@ import { textColorBasedOnBackground } from "./Utility";
 export default function(props: { active?: boolean }) {
   const [toggle, setToggle] = useState<boolean>(props?.active || false);
 
-  const [deferredToggle] = useDebouncedValue(toggle, 10);
-  useEffect(() => setToggle(true), []);
+  const [deferredToggle] = useDebouncedValue(toggle, 500);
+
+  const headingTogetherIconList = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    setToggle(true);
+
+    setTimeout(() => {
+      const eachContentTimeout: number = 100;
+
+      for (let i = 0; i < headingTogetherIconList.current.length; i++) {
+        setTimeout(() => headingTogetherIconList.current[i].classList.add(style.bayleaf), eachContentTimeout * i + 1);
+      };
+    }, 750);
+  }, []);
 
   const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -74,35 +87,39 @@ export default function(props: { active?: boolean }) {
     <div data-itchi={String(deferredToggle)}>
       {/* heading */}
       <div className={headingStyle.heading_confront} style={{ background: "linear-gradient(90deg, rgba(95,117,223,1) 0%, rgba(84,155,235,1) 100%)" }}>
-        <div className={headingStyle.title}> <h1>Tools</h1> </div>
-        <div className={headingStyle.sub}> <p>This is a list of my daily basis tools and other things that I choose to learn for.</p> </div>
+        <div className={headingStyle.heading_together}>
+          <div className={headingStyle.title}> <h1>Tools</h1> </div>
+          <div className={headingStyle.sub}> <p>This is a list of my daily basis tools and other things that I choose to learn for.</p> </div>
+        </div>
       </div>
 
       {
         IconList().map((content, iconIndex) => {
           return (
             <div key={iconIndex} className={style.tools} style={{ background: `#${content.bgColor.toString(16)}` }}>
-              <div className={style.info}>
-                <h3>{capitalize(content.name)}</h3>
-                <p>{content.description}</p>
-              </div>
+              <div className={`${headingStyle.heading_together} ${style.heading_together}`} ref={(el) => el ? headingTogetherIconList.current.push(el) : undefined}>
+                <div className={style.info}>
+                  <h3>{capitalize(content.name)}</h3>
+                  <p>{content.description}</p>
+                </div>
 
-              <div className={style.list}>
-                {
-                  content.purified.map((state, purifiedIndex) => {
-                    const purifiedColorHex = `#${state.hex != "000000" ? state.hex : "FFFFFF"}`;
+                <div className={style.list}>
+                  {
+                    content.purified.map((state, purifiedIndex) => {
+                      const purifiedColorHex = `#${state.hex != "000000" ? state.hex : "FFFFFF"}`;
 
-                    return (
-                      <Tooltip label={state.title} key={purifiedIndex} color={purifiedColorHex} sx={{color: textColorBasedOnBackground(purifiedColorHex)}} withArrow>
-                        <span className={style.brand} key={purifiedIndex} onClick={() => window.open(state.url, "_blank")}>
-                          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path fill={purifiedColorHex} d={state.path} />
-                          </svg>
-                        </span>
-                      </Tooltip>
-                    );
-                  })
-                }
+                      return (
+                        <Tooltip label={state.title} key={purifiedIndex} color={purifiedColorHex} sx={{ color: textColorBasedOnBackground(purifiedColorHex) }} withArrow>
+                          <span className={style.brand} key={purifiedIndex} onClick={() => window.open(state.url, "_blank")}>
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path fill={purifiedColorHex} d={state.path} />
+                            </svg>
+                          </span>
+                        </Tooltip>
+                      );
+                    })
+                  }
+                </div>
               </div>
             </div>
           );
