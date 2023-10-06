@@ -143,7 +143,7 @@ const projectList = [
     title: "Discord & YouTube bot music",
     image: _projImg_dbm,
     url: "https://github.com/ray-1337/discord-music-bot/",
-    description: "Newest project to solve concerns around Discord music bot era by giving it open source.",
+    description: "My first Discord Bot music, made from scratch, aiming for simplicity.",
     tools: [siTypescript, siDiscord, siYoutube, siFfmpeg],
     resigned: 0,
     projectId: "dbm"
