@@ -4,6 +4,7 @@
   display: block;
   position: relative;
   --easeOutQuint: cubic-bezier(0.22, 1, 0.36, 1);
+  background: black;
 }
 
 .project[data-hidewhencurrent] {
@@ -196,10 +197,136 @@
   opacity: 0.6;
 }
 
+.project_filter_work_button {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  color: white;
+  font-size: 1.5em;
+  width: 100%;
+  justify-content: center;
+  padding: 2.5rem 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  z-index: 12;
+  background: linear-gradient(0deg, black 0%, transparent 100%);
+}
+
+.project_filter_work_button h2 {
+  transition: opacity 125ms ease-out;
+}
+
+.project_filter_work_button:hover h2 {
+  opacity: 0.6;
+}
+
+.project_filter_work {
+  --brighterPink: #d80071;
+  position: fixed;
+  height: 100vh;
+  z-index: 69420;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 750ms var(--expoOut), opacity 125ms linear;
+  display: block;
+  width: 100%;
+}
+
+.project_filter_work_inner {
+  position: fixed;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background: #c8c8c8;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0 5.5rem;
+}
+
+.project_filter_work[data-state="true"] {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.project_filter_work_classification {
+  width: 100%;
+  padding: 0 5rem;
+}
+
+.project_filter_work_classification h3 {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.project_filter_work_classification_list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.project_filter_work_classification_individual {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.project_filter_work_classification_individual_name {
+  transition: transform 250ms var(--expoOut), color 125ms ease;
+  font-size: 1.25em;
+  position: relative;
+}
+
+.project_filter_work_classification_individual_name:after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  width: 0%;
+  background: var(--brighterPink);
+  transition: width 250ms var(--expoOut);
+}
+
+.project_filter_work_classification_individual:hover .project_filter_work_classification_individual_name,
+.project_filter_work_classification_individual[data-state="true"] .project_filter_work_classification_individual_name {
+  transform: skew(-5deg);
+  color: #880047;
+}
+
+.project_filter_work_classification_individual[data-state="true"] .project_filter_work_classification_individual_name {
+  color: var(--brighterPink);
+}
+
+.project_filter_work_classification_individual[data-state="true"] .project_filter_work_classification_individual_name:after {
+  width: 100%;
+}
+
+.project_filter_work_close_burger {
+  transition: background-color 125ms ease;
+}
+
+.project_filter_work_close:hover .project_filter_work_close_burger > *:before,
+.project_filter_work_close:hover .project_filter_work_close_burger > *:after {
+  background-color: var(--brighterPink);
+}
+
+.project_filter_work_button {
+  transition: transform 250ms ease, opacity 125ms linear;
+}
+
+.project_filter_work_button[data-state="true"] {
+  transform: translateY(100%);
+}
+
 @media only screen and (max-width:1024px) {
   .prismatics {
     height: 385px;
   }
+
+  .project_filter_work_inner {
+    width: 100%
+}
 }
 
 @media only screen and (max-width: 768px) {
