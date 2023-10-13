@@ -1,6 +1,9 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, type DocumentContext, type DocumentInitialProps } from 'next/document';
+import Script from "next/script";
 
-export default function Document() {
+type WebDocumentProps = DocumentInitialProps & { nonce: string };
+
+const WebDocument = (props: WebDocumentProps) => {
   const color = "#1c3474";
   const title = "13373333";
   const imageURL = "/og.v2.webp";
@@ -10,7 +13,7 @@ export default function Document() {
 
   return (
     <Html>
-      <Head>
+      <Head nonce={props.nonce}>
         <meta name="robots" content="index, follow" />
         <meta name="google" content="notranslate" />
         <meta name="theme-color" content={color} />
@@ -27,8 +30,23 @@ export default function Document() {
       </Head>
       <body>
         <Main />
-        <NextScript />
+
+        <NextScript nonce={props.nonce}/>
+
       </body>
     </Html>
   );
 };
+
+WebDocument.getInitialProps = async (ctx: DocumentContext): Promise<WebDocumentProps> => {
+  const initialProps = await Document.getInitialProps(ctx);
+
+  const nonce = ctx.req?.headers?.['x-nonce'] as string;
+
+  return {
+    ...initialProps,
+    nonce,
+  };
+};
+
+export default WebDocument;
