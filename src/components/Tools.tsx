@@ -109,7 +109,7 @@ export default function(props: { active?: boolean }) {
                       const purifiedColorHex = `#${state.hex != "000000" ? state.hex : "FFFFFF"}`;
 
                       return (
-                        <Tooltip label={state.title} key={purifiedIndex} color={purifiedColorHex} sx={{ color: textColorBasedOnBackground(purifiedColorHex) }} withArrow>
+                        <Tooltip label={state.title} key={purifiedIndex} color={purifiedColorHex} style={{ color: textColorBasedOnBackground(purifiedColorHex) }} withArrow>
                           <span className={style.brand} key={purifiedIndex} onClick={() => window.open(state.url, "_blank")}>
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                               <path fill={purifiedColorHex} d={state.path} />
@@ -133,7 +133,7 @@ export default function(props: { active?: boolean }) {
         </div>
 
         <div className={style.list}>
-          <Accordion variant="contained" sx={{width: "100%"}} styles={{
+          <Accordion variant="contained" style={{width: "100%"}} styles={{
             item: {
               backgroundColor: "#f1f1f1"
             },
@@ -150,7 +150,7 @@ export default function(props: { active?: boolean }) {
                       <Text fw={500}>{val.question}</Text>
                     </Accordion.Control>
 
-                    <Accordion.Panel sx={{paddingTop: "1rem"}}>{val.answer}</Accordion.Panel>
+                    <Accordion.Panel style={{paddingTop: "1rem"}}>{val.answer}</Accordion.Panel>
                   </Accordion.Item>
                 );
               })
