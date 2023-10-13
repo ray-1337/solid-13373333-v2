@@ -78,12 +78,8 @@ export default function(props: { active?: boolean }) {
                 }}>
 
                   <div className={style.prismatics}>
-                    <Image draggable={false} loading={"lazy"} onContextMenu={(evt) => preventClick(evt)} crossOrigin={"anonymous"} loader={ImageLoader} alt={ctx.description} fill={true} src={ctx.image} onLoad={(evt) => {
+                    <Image className={ctx?.intermittentType ? style.archive : undefined} draggable={false} loading={"lazy"} onContextMenu={(evt) => preventClick(evt)} crossOrigin={"anonymous"} loader={ImageLoader} alt={ctx.description} fill={true} src={ctx.image} onLoad={(evt) => {
                       evt.currentTarget.classList.add(style.jpuf);
-
-                      if (ctx?.intermittentType) {
-                        evt.currentTarget.classList.add(style.archive);
-                      };
                     }} />
                   </div>
 
