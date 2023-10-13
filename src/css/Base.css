@@ -36,3 +36,16 @@ u {
 u:hover {
   box-shadow: inset 0 -30px 0 -1px #484848
 }
+
+::-webkit-scrollbar {
+  height: auto;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #696969;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #121112;
+}

@@ -123,19 +123,6 @@
   transform: translateX(0%);
 }
 
-.panel::-webkit-scrollbar {
-  height: auto;
-  width: 3px
-}
-
-.panel::-webkit-scrollbar-thumb {
-  background-color: #696969
-}
-
-.panel::-webkit-scrollbar-track {
-  background-color: #121112
-}
-
 .close {
   position: absolute;
   width: 48px;
