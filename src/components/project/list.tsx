@@ -21,8 +21,6 @@ const _projImg_cdevDash = "/assets/proj/cdevdash.webp";
 const _projImg_cupcakke = "/assets/proj/cupcakke.webp";
 const _projImg_itchi = "/assets/proj/itchi.webp";
 
-const cupcakkeVideoExample = ["obiZGmIrcto", "mh9QhWIGsEQ", "wZ2M9IIYIpk"];
-
 const projectList = [
   {
     title: "cDev: Dash",
@@ -70,14 +68,7 @@ const projectList = [
     url: "https://www.youtube.com/playlist?list=PLGd05QsjGyxUrnRbKBGB9touvcyj51MJW",
     description: "A parodies of CupcakKe, remixed by me.",
     tools: [siYoutube, siAbletonlive, siSoundcloud],
-    projectId: "cupcakke",
-    html: `
-    This is my side project, is just creating a song with CupcakKe vocal chops.
-    This project is absolutely inappropriate to many viewers, yet focused just for fun.
-
-    There is nothing I can explain, but I made things similar like this, for example:
-    <iframe src="https://www.youtube-nocookie.com/embed/${cupcakkeVideoExample[Math.floor(Math.random() * cupcakkeVideoExample.length)]}"></iframe>
-    `
+    projectId: "cupcakke"
   },
   {
     title: "Catbox",
