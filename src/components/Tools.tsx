@@ -221,6 +221,10 @@ function QuestionsList(): Array<Record<"question" | "answer", string>> {
     {
       question: "What about Python?",
       answer: "I think Python is good and handy when it comes to analyzing data, or making a machine learning. For now, I have no time to learn a new programming language."
+    },
+    {
+      question: "Opinion about Tailwind",
+      answer: "I love making things from scratch, not from pre-built modules."
     }
   ];
 };
