@@ -185,7 +185,7 @@ function IconList() {
     },
     {
       name: "I know, but not anymore.",
-      description: "This is a list of tools that I know how to use it, but rather not use it. It might not relevant to any of my projects anymore.",
+      description: "This is a list of tools that I know how to use it, but rather not use it. The reason would be either I hate it, or it's just not suited with my current/ongoing projects.",
       list: [siYarn, siJquery, siReactrouter, siHeroku, siTailwindcss],
       purified: [],
       bgColor: 0x380b13
