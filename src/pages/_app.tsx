@@ -1,4 +1,5 @@
 import '../css/Reset.css';
+import '@mantine/core/styles.css';
 import '../css/Base.css';
 
 import Head from 'next/head';
