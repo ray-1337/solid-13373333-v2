@@ -4,6 +4,7 @@ import {
   siTypescript,
   siHtml5,
   siCss3,
+  siTailwindcss,
 
   // tools
   siReact,
@@ -185,7 +186,7 @@ function IconList() {
     {
       name: "I know, but not anymore.",
       description: "This is a list of tools that I know how to use it, but rather not use it. It might not relevant to any of my projects anymore.",
-      list: [siYarn, siJquery, siReactrouter, siHeroku],
+      list: [siYarn, siJquery, siReactrouter, siHeroku, siTailwindcss],
       purified: [],
       bgColor: 0x380b13
     },
