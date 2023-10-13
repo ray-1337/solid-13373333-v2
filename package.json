@@ -1,5 +1,5 @@
 {
-  "name": "solid-13373333-v2",
+  "name": "next-13373333",
   "scripts": {
     "dev": "node ./index.dev.js",
     "build": "next build",
