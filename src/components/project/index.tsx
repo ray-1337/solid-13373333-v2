@@ -6,26 +6,13 @@ import Image from "next/image";
 import { Burger } from "@mantine/core";
 import style from "../../css/components/project/Project.module.css";
 import Projects from "./list";
+import { IntermittentType } from "./typing";
 
 export default function(props: { active?: boolean }) {
   const derivedProps = () => props.active;
   const [toggle, setToggle] = useState<boolean>(false);
   const [filter, setFilter] = useState<string[]>([]);
   const [isFilterOpen, { open: openFilter, close: closeFilter }] = useDisclosure(false);
-
-  // const [currentProjectIndex, setCurrentProjectIndex] = createSignal<number | null>(null);
-  // const [currentProjectActive, setCurrentProjectActive] = createSignal<boolean>(false);
-
-  const resignedType = (number: number) => {
-    switch (number) {
-      case 0: return null;
-      case 1: return "Discontinued";
-      case 2: return "Paused";
-      case 3: return "Hiatus";
-      case 4: return "Under Construction";
-      default: return "";
-    };
-  };
 
   useEffect(() => {
     if (derivedProps()) {
@@ -101,7 +88,7 @@ export default function(props: { active?: boolean }) {
                   </div>
 
                   <div className={style.imagine}>
-                    <p className={style.sike}>{ctx?.intermittentType ? `${ctx.title} (${resignedType(ctx?.intermittentType)})` : ctx.title}</p>
+                    <p className={style.sike}>{ctx?.intermittentType ? `${ctx.title} (${IntermittentType[ctx?.intermittentType]})` : ctx.title}</p>
 
                     {(!ctx?.intermittentType || ctx?.intermittentType <= 0) && (<p className={style.cite}>Visit</p>)}
                   </div>
