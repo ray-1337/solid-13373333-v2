@@ -135,7 +135,7 @@ export default function MainPage() {
         <COLOR/>
       </div>
 
-      <div className={style.panel} data-appear={getPanel !== null}>
+      <div className={style.panel} data-appear={getPanel !== null} style={{overflowY: getPanel === "project" ? "hidden" : undefined}}>
         {/* close button */}
         {
           (getPanel !== null /*&& currentProjectIndex === null*/) && (
