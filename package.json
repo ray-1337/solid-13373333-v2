@@ -1,7 +1,7 @@
 {
   "name": "solid-13373333-v2",
   "scripts": {
-    "dev": "node ./devMode.js",
+    "dev": "node ./index.dev.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
