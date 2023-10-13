@@ -1,4 +1,4 @@
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure, useClickOutside } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import { preventClick, sleep } from "../Utility";
 import ImageLoader from "../Loader";
@@ -22,11 +22,13 @@ export default function(props: { active?: boolean }) {
     };
   });
 
+  const outsideFilterRef = useClickOutside(() => closeFilter());
+
   return (
     <section>
       {/* filter work */}
       <section className={style.project_filter_work} data-state={isFilterOpen}>
-        <section className={style.project_filter_work_inner}>
+        <section className={style.project_filter_work_inner} ref={outsideFilterRef}>
           {/* filtering tab */}
           <div className={style.project_filter_work_classification}>
             <h3>Filter</h3>
