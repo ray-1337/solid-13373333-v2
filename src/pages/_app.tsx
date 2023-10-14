@@ -6,7 +6,7 @@ import Head from 'next/head';
 import type { AppContext, AppInitialProps, AppProps } from 'next/app';
 import App from 'next/app';
 import { MantineProvider } from '@mantine/core';
-import { useEffect, useRef, createContext } from 'react';
+import { useEffect, useState, createContext } from 'react';
 
 export const NonceContext = createContext<string | undefined>(undefined);
 
@@ -17,20 +17,18 @@ type AppPostProps = AppExtendedProps & AppProps;
 const WebsiteApp = ({ Component, pageProps, nonce }: AppPostProps) => {
   const websiteTitle = "second hand embarrassment";
 
-  const nonceRef = useRef(nonce);
+  const [nonceState, setNonceState] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    if (nonce) {
-      nonceRef.current = nonce;
-    }
+    if (nonce) setNonceState(nonce);
   }, [nonce]);
 
   return (
-    <NonceContext.Provider value={nonceRef.current}>
+    <NonceContext.Provider value={nonceState}>
       <Head>
-        { process.env.NODE_ENV === "development" && (<link rel="preload stylesheet" href={"/preview.css"} as={"style"} nonce={nonceRef.current}></link>) }
+        { process.env.NODE_ENV === "development" && (<link rel="preload stylesheet" href={"/preview.css"} as={"style"} nonce={nonceState}></link>) }
 
-        <link rel={"preload stylesheet"} as={"style"} nonce={nonceRef.current} href={"https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"}/>
+        <link rel={"preload stylesheet"} as={"style"} nonce={nonceState} href={"https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"}/>
 
         <title>{websiteTitle}</title>
 
