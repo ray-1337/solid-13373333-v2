@@ -86,7 +86,10 @@ export default function(props: { active?: boolean }) {
                   </div>
 
                   <div className={style.imagine}>
-                    <p className={style.sike}>{ctx?.intermittentType ? `${ctx.title} (${IntermittentType[ctx?.intermittentType]})` : ctx.title}</p>
+                    <div className={style.project_content_info}>
+                      <p>{rootProject.name}</p>
+                      <h4 className={style.sike}>{ctx?.intermittentType ? `${ctx.title} (${IntermittentType[ctx?.intermittentType]})` : ctx.title}</h4>
+                    </div>
 
                     {(!ctx?.intermittentType || ctx?.intermittentType <= 0) && (<p className={style.cite}>Visit</p>)}
                   </div>
