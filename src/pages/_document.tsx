@@ -33,7 +33,7 @@ const WebDocument = (props: WebDocumentProps) => {
 
         <NextScript nonce={props.nonce}/>
 
-        <Script nonce={props.nonce} src="https://static.cloudflareinsights.com/beacon.min.js" defer={true} data-cf-beacon='{"token": "a50eee92fa594c1291d10ef3b1b7766b"}'/>
+        <Script nonce={props.nonce} strategy={"lazyOnload"} src="https://static.cloudflareinsights.com/beacon.min.js" defer={true} data-cf-beacon='{"token": "a50eee92fa594c1291d10ef3b1b7766b"}'/>
       </body>
     </Html>
   );
