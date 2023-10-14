@@ -1,12 +1,14 @@
 import { useDisclosure, useClickOutside } from "@mantine/hooks";
 import { useEffect, useState } from "react";
-import { preventClick, sleep } from "../Utility";
+import { preventClick, sleep, shuffleArray } from "../Utility";
 import ImageLoader from "../Loader";
 import Image from "next/image";
 import { Burger } from "@mantine/core";
 import style from "../../css/components/project/Project.module.css";
 import Projects from "./list";
 import { IntermittentType } from "./typing";
+
+Projects.forEach((val) => val.projects = shuffleArray(val.projects));
 
 export default function(props: { active?: boolean }) {
   const derivedProps = () => props.active;
