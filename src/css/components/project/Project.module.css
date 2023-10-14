@@ -331,7 +331,11 @@
   }
 
   .project_filter_work_inner {
-    width: 100%
+    width: 100%;
+  }
+
+  .project_filter_work_classification {
+    padding: 0 2.5rem;
   }
 }
 
