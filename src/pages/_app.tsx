@@ -35,7 +35,7 @@ const WebsiteApp = ({ Component, pageProps, nonce }: AppPostProps) => {
         <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, shrink-to-fit=no, initial-scale=1.0" />
       </Head>
       
-      <MantineProvider>
+      <MantineProvider getStyleNonce={() => nonceState as string}>
         <Component {...pageProps} />
       </MantineProvider>
     </NonceContext.Provider>
