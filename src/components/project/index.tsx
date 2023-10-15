@@ -10,6 +10,8 @@ import { IntermittentType } from "./typing";
 
 Projects.forEach((val) => val.projects = shuffleArray(val.projects));
 
+const shuffledProjects = shuffleArray(Projects);
+
 export default function(props: { active?: boolean }) {
   const derivedProps = () => props.active;
   const [toggle, setToggle] = useState<boolean>(false);
@@ -70,7 +72,7 @@ export default function(props: { active?: boolean }) {
         position: "absolute"
       }}>
         {
-          Projects.filter(val => filter?.length ? filter.includes(val.name) : true).map((rootProject) => {
+          shuffledProjects.filter(val => filter?.length ? filter.includes(val.name) : true).map((rootProject) => {
             const subProject = rootProject.projects;
 
             return subProject.map((ctx, subProjectIndex) => {
