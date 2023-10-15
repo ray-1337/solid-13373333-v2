@@ -20,6 +20,7 @@ const _projImg_dvm = "/assets/proj/dvm.webp";
 const _projImg_cdevDash = "/assets/proj/cdevdash.webp";
 const _projImg_cupcakke = "/assets/proj/cupcakke.webp";
 const _projImg_itchi = "/assets/proj/itchi.webp";
+const _projImg_yde = "/assets/proj/yde.webp";
 
 const website: ProjectConsonant = {
   name: "Website",
@@ -58,6 +59,13 @@ const website: ProjectConsonant = {
 const app: ProjectConsonant = {
   name: "Application",
   projects: [
+    {
+      title: "YouTube Discord Embed",
+      image: _projImg_yde,
+      url: "https://github.com/ray-1337/youtube-discord-embed",
+      description: "Embed YouTube video on Discord, inspired by FixTweet.",
+      tools: [siTypescript, siDiscord, siYoutube, siNextdotjs]
+    },
     {
       title: "Discord Voice Message",
       image: _projImg_dvm,
