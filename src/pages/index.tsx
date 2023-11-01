@@ -34,7 +34,7 @@ export default function MainPage() {
   
   const Content: { name: string, unique: string, redirect?: boolean }[] = [
     { name: "Biography", unique: "about" },
-    { name: "Projects", unique: "project" },
+    { name: "Works", unique: "project" },
     { name: "Production Tools", unique: "tools" },
     { name: "Social Media", unique: "social" },
     // { name: "File Storage", unique: "https://13373333.one/catbox", redirect: true }
