@@ -70,6 +70,21 @@
   transition: width 500ms var(--expoInOut), opacity 125ms linear 600ms;
 }
 
+.content:after {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+  top: 0;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.content:hover:after {
+  opacity: 1;
+}
+
 .bleed {
   user-select: none;
   width: 100%;
