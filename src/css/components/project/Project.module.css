@@ -92,7 +92,7 @@
   background: white;
   position: absolute;
   z-index: 12;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   top: 0;
   transform: translateY(100%);
   transition: transform 750ms var(--expoOut);
@@ -392,9 +392,5 @@
 
   .imagine {
     padding: 0 1.25rem;
-  }
-
-  .bleed {
-    padding: 1rem 1.25rem;
   }
 }
