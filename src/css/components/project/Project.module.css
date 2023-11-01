@@ -41,6 +41,10 @@
   overflow: hidden;
 }
 
+.content:last-child {
+  margin-bottom: 10rem;
+}
+
 .project .content {
   transform: translateX(100%);
 }
