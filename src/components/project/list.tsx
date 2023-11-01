@@ -2,7 +2,10 @@
 import { siAbletonlive, siNextdotjs, siValorant, siTypescript, siSony, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
 import { ProjectConsonant, IntermittentType } from "./typing";
 
-siNextdotjs.hex = "121112";
+// turn to white
+for (const icon of [siSony, siNextdotjs]) {
+  icon.hex = "121112";
+};
 
 // images
 const _projImg_ire = "/assets/proj/ire.webp";
