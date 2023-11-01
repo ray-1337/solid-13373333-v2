@@ -96,9 +96,9 @@ export default function(props: { active?: boolean }) {
                     </div>
 
                     {(!ctx?.intermittentType || ctx?.intermittentType <= 0) && (
-                      <div className={style.cite}>
+                      <div className={style.cite} onClick={() => openURLThroughWindow(ctx.url as string)}>
                         <span></span>
-                        <p onClick={() => openURLThroughWindow(ctx.url as string)}>Visit</p>
+                        <p>Visit</p>
                       </div>
                     )}
                   </div>
