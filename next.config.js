@@ -5,6 +5,8 @@ const isProd = process.env.NODE_ENV === "production";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   crossOrigin: "anonymous",
+
+  compress: isProd,
   
   assetPrefix: isProd ? cdnURL : undefined,
 
