@@ -24,7 +24,7 @@ const _projImg_cdevDash = "/assets/proj/cdevdash.webp";
 const _projImg_cupcakke = "/assets/proj/cupcakke.webp";
 const _projImg_itchi = "/assets/proj/itchi.webp";
 const _projImg_yde = "/assets/proj/yde.webp";
-const _projImg_valoedit = "/assets/proj/valoedit.webp";
+const _projImg_valoedit = "/assets/proj/valoedit.animated.webp";
 
 const website: ProjectConsonant = {
   name: "Website",
