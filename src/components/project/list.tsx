@@ -145,7 +145,7 @@ const entertainment: ProjectConsonant = {
       image: _projImg_valoedit,
       url: "https://www.youtube.com/playlist?list=PLGd05QsjGyxXeT6iFz9w4QaJA2d8L_YyF",
       description: "A compilation of VALORANT funny moments edit. Inspired by Jolidofc, edited on Sony Vegas.",
-      tools: [siYoutube, siValorant, siSony, siYoutube]
+      tools: [siYoutube, siValorant, siSony]
     },
     {
       title: "IRE (03.12.2021)",
