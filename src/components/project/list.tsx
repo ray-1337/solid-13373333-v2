@@ -1,5 +1,5 @@
 // icon
-import { siAbletonlive, siNextdotjs, siTypescript, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
+import { siAbletonlive, siNextdotjs, siValorant, siTypescript, siSony, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
 import { ProjectConsonant, IntermittentType } from "./typing";
 
 siNextdotjs.hex = "121112";
@@ -21,6 +21,7 @@ const _projImg_cdevDash = "/assets/proj/cdevdash.webp";
 const _projImg_cupcakke = "/assets/proj/cupcakke.webp";
 const _projImg_itchi = "/assets/proj/itchi.webp";
 const _projImg_yde = "/assets/proj/yde.webp";
+const _projImg_valoedit = "/assets/proj/valoedit.webp";
 
 const website: ProjectConsonant = {
   name: "Website",
@@ -136,7 +137,13 @@ const entertainment: ProjectConsonant = {
       description: "A parodies of CupcakKe, remixed by me.",
       tools: [siYoutube, siAbletonlive, siSoundcloud]
     },
-    
+    {
+      title: "VALORANT Funny Moment Edits",
+      image: _projImg_valoedit,
+      url: "https://www.youtube.com/playlist?list=PLGd05QsjGyxXeT6iFz9w4QaJA2d8L_YyF",
+      description: "A compilation of VALORANT funny moments edit. Inspired by Jolidofc, edited on Sony Vegas.",
+      tools: [siYoutube, siValorant, siSony, siYoutube]
+    },
     {
       title: "IRE (03.12.2021)",
       image: _projImg_ire,
