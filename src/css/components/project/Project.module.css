@@ -196,6 +196,27 @@
   font-weight: 500;
   cursor: pointer;
   transition: opacity 125ms linear;
+  position: relative;
+  display: flex;
+  max-width: 25%;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.cite:hover span {
+  width: 100%
+}
+
+.cite span {
+  width: 0%;
+  background: black;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  display: block;
+  margin-right: 1rem;
+  transition: width 500ms var(--expoOut);
 }
 
 .cite:hover {
