@@ -9,7 +9,7 @@ import ImageLoader from "./Loader";
 import style from "../css/components/About.module.css";
 
 export default function AboutPage(props: { active?: boolean }) {
-  const contextImg = "https://twitter.com/Gab_914/status/1674430803261149184";
+  const contextImg = "https://open.spotify.com/playlist/5gCKPGRO0Jh1gVsyoigVCi";
 
   const ShortBio = marked.parseInline(`
     **Hello.** I'm Ray, and I'm a *full-stack developer*, and my origin is from <u>Indonesia</u>.
