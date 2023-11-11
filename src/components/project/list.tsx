@@ -1,5 +1,5 @@
 // icon
-import { siAbletonlive, siNextdotjs, siValorant, siTypescript, siSony, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
+import { siAbletonlive, siNextdotjs, siAstro, siValorant, siTypescript, siSony, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
 import { ProjectConsonant, IntermittentType } from "./typing";
 
 // turn to white
@@ -29,13 +29,13 @@ const _projImg_valoedit = "/assets/proj/valoedit.animated.webp";
 const website: ProjectConsonant = {
   name: "Website",
   projects: [
-    // {
-    //   title: "???",
-    //   image: "/assets/proj/secret.1.webp",
-    //   description: "???",
-    //   tools: [siNextdotjs, siTypescript, siMongodb, siNodedotjs],
-    //   intermittentType: IntermittentType["Under Construction"]
-    // },
+    {
+      title: "Personal Project Authorization",
+      image: "/assets/proj/project-auth.webp",
+      description: "Accessing private/in-development personal project by through Discord or Telegram authorization, built with Astro.",
+      tools: [siAstro, siTypescript],
+      url: "https://project-authorization.13373333.one"
+    },
     {
       title: "cDev: Dash",
       image: _projImg_cdevDash,
