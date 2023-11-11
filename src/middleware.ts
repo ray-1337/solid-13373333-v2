@@ -8,7 +8,7 @@ export const config = {
 export function middleware(request: NextRequest) {
   const nonce = `nonce-${crypto.randomUUID()}`, nonceCoveredWithApostrophe = `'${nonce}'`;
 
-  const scriptCSP = ['script-src', "'self'", nonceCoveredWithApostrophe, cdnURL];
+  const scriptCSP = ['script-src', "'self'", "https://static.cloudflareinsights.com/beacon.min.js", nonceCoveredWithApostrophe, cdnURL];
 
   const styleCSP = ['style-src', "'self'", "https://fonts.googleapis.com/css2", nonceCoveredWithApostrophe, cdnURL];
 
