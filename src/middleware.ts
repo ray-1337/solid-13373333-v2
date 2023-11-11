@@ -6,7 +6,7 @@ export const config = {
 }
  
 export function middleware(request: NextRequest) {
-  const nonce = `nonce-${crypto.randomUUID()}`;
+  const nonce = `nonce-${crypto.randomUUID()}`, nonceCoveredWithApostrophe = `'${nonce}'`;
 
   const scriptCSP = ['script-src', "'self'", nonce, cdnURL];
 
@@ -19,13 +19,13 @@ export function middleware(request: NextRequest) {
   };
 
   const csp = [
-    ['default-src', "'self'", nonce, cdnURL],
+    ['default-src', "'self'", nonceCoveredWithApostrophe, cdnURL],
     scriptCSP, styleCSP,
-    ['connect-src', "'self'", nonce],
-    ['img-src', "'self'", nonce, cdnURL],
-    ['base-uri',  "'self'", nonce],
-    ['form-action', "'self'", nonce],
-    ['font-src', "'self'", "https://fonts.gstatic.com/s/", nonce, cdnURL],
+    ['connect-src', "'self'", nonceCoveredWithApostrophe],
+    ['img-src', "'self'", nonceCoveredWithApostrophe, cdnURL],
+    ['base-uri',  "'self'", nonceCoveredWithApostrophe],
+    ['form-action', "'self'", nonceCoveredWithApostrophe],
+    ['font-src', "'self'", "https://fonts.gstatic.com/s/", nonceCoveredWithApostrophe, cdnURL],
     ['object-src', "'none'"],
     ['frame-ancestors', "'none'"],
     ['block-all-mixed-content'],
