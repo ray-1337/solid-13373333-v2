@@ -10,13 +10,15 @@ export function middleware(request: NextRequest) {
 
   const scriptCSP = ['script-src', "'self'", "https://static.cloudflareinsights.com/beacon.min.js", nonceCoveredWithApostrophe, cdnURL];
 
-  const styleCSP = ['style-src', "'self'", "https://fonts.googleapis.com/css2", nonceCoveredWithApostrophe, cdnURL];
+  const styleCSP = ['style-src', "'self'", "https://fonts.googleapis.com/css2", cdnURL];
 
   if (process.env.NODE_ENV === "development") {
     scriptCSP.push("'unsafe-eval'");
 
     styleCSP.push("'unsafe-inline'");
-  };
+  } else {
+    styleCSP.push(nonceCoveredWithApostrophe);
+  }
 
   const csp = [
     ['default-src', "'self'", nonceCoveredWithApostrophe, cdnURL],
