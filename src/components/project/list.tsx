@@ -1,9 +1,9 @@
 // icon
-import { siAbletonlive, siNextdotjs, siAstro, siValorant, siTypescript, siSony, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
+import { siAbletonlive, siNextdotjs, siAstro, siMedium, siValorant, siTypescript, siSony, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
 import { ProjectConsonant, IntermittentType } from "./typing";
 
 // turn to white
-for (const icon of [siSony, siNextdotjs]) {
+for (const icon of [siSony, siNextdotjs, siMedium]) {
   icon.hex = "121112";
 };
 
@@ -172,6 +172,17 @@ const entertainment: ProjectConsonant = {
   ]
 };
 
+const article: ProjectConsonant = {
+  name: "Article",
+  projects: [{
+    title: "cDev & Fine-grained Discord bot security",
+    image: "/assets/proj/article.cdev_fine_grained_security.webp",
+    description: "An article about expanding Discord bot service to everyone and tackling persisted issue around Discord bots for almost 6 years.",
+    tools: [siMedium],
+    url: "https://diminishedfaith.medium.com/cdev-free-bot-finegrained-security-631f6f896f58"
+  }]
+}
+
 export default [
-  website, app, entertainment
+  website, app, entertainment, article
 ];
