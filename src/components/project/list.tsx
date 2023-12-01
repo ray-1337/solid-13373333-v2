@@ -175,11 +175,11 @@ const entertainment: ProjectConsonant = {
 const article: ProjectConsonant = {
   name: "Article",
   projects: [{
-    title: "cDev & Fine-grained Discord bot security",
+    title: "Solving a half of decade persisting issue around Discord bot",
     image: "/assets/proj/article.cdev_fine_grained_security.webp",
-    description: "An article about expanding Discord bot service to everyone and tackling persisted issue around Discord bots for almost 6 years.",
+    description: "An article about how I tried to tackle an issue that has been persisted for almost 6 years in Discord bots universe.",
     tools: [siMedium],
-    url: "https://diminishedfaith.medium.com/cdev-free-bot-finegrained-security-631f6f896f58"
+    url: "https://medium.com/@diminishedfaith/794b6c7db765"
   }]
 }
 
