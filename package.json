@@ -1,5 +1,6 @@
 {
   "name": "next-13373333",
+  "packageManager": "pnpm@8.11.0",
   "scripts": {
     "dev": "node ./index.dev.js",
     "build": "next build",
