@@ -1,5 +1,5 @@
 // icon
-import { siAbletonlive, siNextdotjs, siAstro, siMedium, siValorant, siTypescript, siSony, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
+import { siAbletonlive, siNextdotjs, siAstro, siAmazonaws, siFirebase, siMedium, siValorant, siTypescript, siSony, siPytorch, siSolid, siJavascript, siDiscord, siMongodb, siRedis, siObsstudio, siYoutube, siFfmpeg, siTensorflow, siExpress, siPostgresql, siSoundcloud, siNodedotjs } from "simple-icons/icons";
 import { ProjectConsonant, IntermittentType } from "./typing";
 
 // turn to white
@@ -45,6 +45,14 @@ export const honorableWork: ProjectConsonant<true> = {
       intermittentType: IntermittentType["Under Construction"],
       type: "Website"
     },
+    {
+      title: "Nusantara Furry Convention: Hidden Wonderland",
+      image: "/assets/proj/nufc_2024.webp",
+      description: "A new upcoming furry convention gathering, which will take place in South Jakarta, Indonesia.",
+      tools: [siNextdotjs, siAmazonaws, siFirebase],
+      url: "https://nusantarafurcon.com",
+      type: "Website"
+    }
   ]
 }
 
