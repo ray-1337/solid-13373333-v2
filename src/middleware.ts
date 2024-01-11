@@ -23,7 +23,7 @@ export function middleware(request: NextRequest) {
   const csp = [
     ['default-src', "'self'", nonceCoveredWithApostrophe, cdnURL],
     scriptCSP, styleCSP,
-    ['connect-src', "'self'", nonceCoveredWithApostrophe],
+    ['connect-src', "'self'", nonceCoveredWithApostrophe, "https://cloudflareinsights.com/"],
     ['img-src', "'self'", nonceCoveredWithApostrophe, cdnURL],
     ['base-uri',  "'self'", nonceCoveredWithApostrophe],
     ['form-action', "'self'", nonceCoveredWithApostrophe],
