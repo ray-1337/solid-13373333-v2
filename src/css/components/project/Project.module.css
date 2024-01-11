@@ -98,7 +98,8 @@
   transition: transform 750ms var(--expoOut);
 }
 
-.content:hover .imagine {
+.content:hover .imagine,
+.content[data-is-honored=true]:hover .imagine {
   color: black;
   transition: color 125ms linear 500ms;
 }
@@ -190,6 +191,29 @@
 
 .content:hover .prismatics:before {
   opacity: 0.75;
+}
+
+.content[data-is-honored=true] {
+  --honorableDefaultBackgroundHex: #FFB01B;
+  --honorableHoverForInfoBackgroundHex: #FC8C0C;
+  --honorableCallToActionHex: #FCA13A
+}
+
+.content[data-is-honored=true] .prismatics:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  background: var(--honorableDefaultBackgroundHex);
+}
+
+.content[data-is-honored=true] .bleed {
+  background: var(--honorableHoverForInfoBackgroundHex);
+}
+
+.content[data-is-honored=true] .imagine {
+  color: var(--honorableCallToActionHex);
 }
 
 .prismatics:before {

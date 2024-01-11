@@ -26,6 +26,28 @@ const _projImg_itchi = "/assets/proj/itchi.webp";
 const _projImg_yde = "/assets/proj/yde.webp";
 const _projImg_valoedit = "/assets/proj/valoedit.animated.webp";
 
+export const honorableWork: ProjectConsonant<true> = {
+  name: "Honorable Work",
+  projects: [
+    {
+      title: "cDev: Dash",
+      image: _projImg_cdevDash,
+      url: "https://dash.cdev.shop/demo",
+      description: "A Discord bot dashboard for cDev (Community Development), created with Next.js from scratch.",
+      tools: [siNextdotjs],
+      type: "Website"
+    },
+    {
+      title: "ItchiHuskii's Personal Website",
+      image: _projImg_itchi,
+      description: "Best friend's personal website.",
+      tools: [siTypescript, siNextdotjs],
+      intermittentType: IntermittentType["Under Construction"],
+      type: "Website"
+    },
+  ]
+}
+
 const website: ProjectConsonant = {
   name: "Website",
   projects: [
@@ -35,20 +57,6 @@ const website: ProjectConsonant = {
       description: "Accessing private/in-development personal project by through Discord or Telegram authorization, built with Astro.",
       tools: [siAstro, siTypescript],
       url: "https://project-authorization.13373333.one"
-    },
-    {
-      title: "cDev: Dash",
-      image: _projImg_cdevDash,
-      url: "https://dash.cdev.shop/demo",
-      description: "A Discord bot dashboard for cDev (Community Development), created with Next.js from scratch.",
-      tools: [siNextdotjs],
-    },
-    {
-      title: "ItchiHuskii's Personal Website",
-      image: _projImg_itchi,
-      description: "Best friend's personal website.",
-      tools: [siTypescript, siNextdotjs],
-      intermittentType: IntermittentType["Under Construction"]
     },
     {
       title: "13373333.one",

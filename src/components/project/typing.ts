@@ -14,7 +14,7 @@ interface ExtendedProjectConsonant {
   url?: string;
 };
 
-export interface ProjectConsonant {
+export interface ProjectConsonant<T extends boolean = false> {
   name: string;
-  projects: Array<Record<"title" | "description" | "image", string> & ExtendedProjectConsonant>;
+  projects: Array<(T extends true ? {type: string} : {}) & Record<"title" | "description" | "image", string> & ExtendedProjectConsonant>;
 };

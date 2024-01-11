@@ -5,7 +5,7 @@ import ImageLoader from "../Loader";
 import Image from "next/image";
 import { Burger } from "@mantine/core";
 import style from "../../css/components/project/Project.module.css";
-import Projects from "./list";
+import Projects, { honorableWork } from "./list";
 import { IntermittentType } from "./typing";
 
 Projects.forEach((val) => val.projects = shuffleArray(val.projects));
@@ -43,9 +43,9 @@ export default function(props: { active?: boolean }) {
 
             <div className={style.project_filter_work_classification_list}>
               {
-                Projects.map((val, index) => {
+                [honorableWork, ...Projects].map((val, index) => {
                   return (
-                    <div className={style.project_filter_work_classification_individual} data-state={filter.includes(val.name)} key={index}
+                    <div className={style.project_filter_work_classification_individual} data-is-honored={val.name === honorableWork.name} data-state={filter.includes(val.name)} key={index}
                     onClick={() => setFilter((prev) => prev.includes(val.name) ? prev.filter(i => i !== val.name) : [...prev, val.name])}>
                       <div className={style.project_filter_work_classification_individual_name}>
                         <p>{val.name}</p>
@@ -76,13 +76,12 @@ export default function(props: { active?: boolean }) {
         position: "absolute"
       }}>
         {
-          shuffledProjects.filter(val => filter?.length ? filter.includes(val.name) : true).map((rootProject) => {
+          [honorableWork, ...shuffledProjects].filter(val => filter?.length ? filter.includes(val.name) : true).map((rootProject) => {
             const subProject = rootProject.projects;
 
             return subProject.map((ctx, subProjectIndex) => {
               return (
-                <div key={subProjectIndex} className={style.content}>
-
+                <div key={subProjectIndex} className={style.content} data-is-honored={rootProject.name === honorableWork.name}>
                   <div className={style.prismatics}>
                     <Image className={ctx?.intermittentType ? style.archive : undefined} draggable={false} loading={"lazy"} onContextMenu={(evt) => preventClick(evt)} crossOrigin={"anonymous"} loader={ImageLoader} alt={ctx.description} fill={true} src={ctx.image} onLoad={(evt) => {
                       evt.currentTarget.classList.add(style.jpuf);
@@ -91,7 +90,7 @@ export default function(props: { active?: boolean }) {
 
                   <div className={style.imagine}>
                     <div className={style.project_content_info}>
-                      <p>{rootProject.name}</p>
+                      <p>{(rootProject.name === honorableWork.name && "type" in ctx) ? (ctx.type + "/") : ""}{rootProject.name}</p>
                       <h4 className={style.sike}>{ctx?.intermittentType ? `${ctx.title} (${IntermittentType[ctx?.intermittentType]})` : ctx.title}</h4>
                     </div>
 
