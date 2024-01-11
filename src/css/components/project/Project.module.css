@@ -200,6 +200,10 @@
   --honorableCallToActionHex: #FCA13A
 }
 
+.content[data-is-honored=true]:after {
+  background: linear-gradient(0deg, rgba(102, 56, 6, 1) 0%, transparent 100%);
+}
+
 .content[data-is-honored=true] .prismatics:after {
   position: absolute;
   content: "";
