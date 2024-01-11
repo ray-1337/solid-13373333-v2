@@ -159,7 +159,7 @@
   transition: opacity 125ms linear;
 }
 
-.prismatics img.archive {
+.content[data-is-onhold=true] .prismatics img {
   filter: grayscale(1) brightness(0.5);
 }
 
@@ -195,6 +195,7 @@
 
 .content[data-is-honored=true] {
   --honorableDefaultBackgroundHex: #FFB01B;
+  --honorableDefaultBackgroundDiscontinuedHex: #5c3c00;
   --honorableHoverForInfoBackgroundHex: #FC8C0C;
   --honorableCallToActionHex: #FCA13A
 }
@@ -206,6 +207,10 @@
   height: 100%;
   opacity: 0.25;
   background: var(--honorableDefaultBackgroundHex);
+}
+
+.content[data-is-honored=true][data-is-onhold=true] .prismatics:after {
+  background: var(--honorableDefaultBackgroundDiscontinuedHex);
 }
 
 .content[data-is-honored=true] .bleed {

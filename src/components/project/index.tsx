@@ -81,9 +81,9 @@ export default function(props: { active?: boolean }) {
 
             return subProject.map((ctx, subProjectIndex) => {
               return (
-                <div key={subProjectIndex} className={style.content} data-is-honored={rootProject.name === honorableWork.name}>
+                <div key={subProjectIndex} className={style.content} data-is-honored={rootProject.name === honorableWork.name} data-is-onhold={"intermittentType" in ctx}>
                   <div className={style.prismatics}>
-                    <Image className={ctx?.intermittentType ? style.archive : undefined} draggable={false} loading={"lazy"} onContextMenu={(evt) => preventClick(evt)} crossOrigin={"anonymous"} loader={ImageLoader} alt={ctx.description} fill={true} src={ctx.image} onLoad={(evt) => {
+                    <Image draggable={false} loading={"lazy"} onContextMenu={(evt) => preventClick(evt)} crossOrigin={"anonymous"} loader={ImageLoader} alt={ctx.description} fill={true} src={ctx.image} onLoad={(evt) => {
                       evt.currentTarget.classList.add(style.jpuf);
                     }} />
                   </div>
@@ -94,7 +94,7 @@ export default function(props: { active?: boolean }) {
                       <h4 className={style.sike}>{ctx?.intermittentType ? `${ctx.title} (${IntermittentType[ctx?.intermittentType]})` : ctx.title}</h4>
                     </div>
 
-                    {(!ctx?.intermittentType || ctx?.intermittentType <= 0) && (
+                    {(!("intermittentType" in ctx)) && (
                       <div className={style.cite} onClick={() => openURLThroughWindow(ctx.url as string)}>
                         <span></span>
                         <p>Visit</p>
