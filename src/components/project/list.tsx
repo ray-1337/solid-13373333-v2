@@ -45,14 +45,14 @@ export const honorableWork: ProjectConsonant<true> = {
       intermittentType: IntermittentType["Under Construction"],
       type: "Website"
     },
-    {
-      title: "Nusantara Furry Convention: Hidden Wonderland",
-      image: "/assets/proj/nufc_2024.webp",
-      description: "A new upcoming furry convention gathering, which will take place in South Jakarta, Indonesia.",
-      tools: [siNextdotjs, siAmazonaws, siFirebase],
-      url: "https://nusantarafurcon.com",
-      type: "Website"
-    }
+    // {
+    //   title: "Nusantara Furry Convention: Hidden Wonderland",
+    //   image: "/assets/proj/nufc_2024.webp",
+    //   description: "A new upcoming furry convention gathering, which will take place in South Jakarta, Indonesia.",
+    //   tools: [siNextdotjs, siAmazonaws, siFirebase],
+    //   url: "https://nusantarafurcon.com",
+    //   type: "Website"
+    // }
   ]
 }
 
