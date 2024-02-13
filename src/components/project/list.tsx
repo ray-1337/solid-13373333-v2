@@ -183,7 +183,8 @@ const entertainment: ProjectConsonant = {
       image: _projImg_blobproj,
       url: "https://youtube.com/@blobproj",
       description: "Creating a YouTube programming content with no retakes, and no fillers.",
-      tools: [siObsstudio, siDiscord, siYoutube]
+      tools: [siObsstudio, siDiscord, siYoutube],
+      intermittentType: IntermittentType["Discontinued"]
     },
   ]
 };
