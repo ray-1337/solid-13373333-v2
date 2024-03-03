@@ -62,11 +62,11 @@ function List() {
       title: "YouTube",
       colorArray: ["#ff0000", "#282828"]
     },
-    {
-      url: "https://discord.id/?prefill=1162577144585658448",
-      title: "Discord",
-      colorArray: ["#5866EF", "#7289DA"]
-    },
+    // {
+    //   url: "https://discord.id/?prefill=1162577144585658448",
+    //   title: "Discord",
+    //   colorArray: ["#5866EF", "#7289DA"]
+    // },
     // {
     //   url: "https://www.tiktok.com/@goodfaithforever",
     //   title: "TikTok",
