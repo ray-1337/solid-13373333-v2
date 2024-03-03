@@ -112,11 +112,11 @@ function List() {
     //   title: "Spotify",
     //   colorArray: ["#1db954", "#191414"]
     // },
-    {
-      url: "https://soundcloud.com/13373333",
-      title: "SoundCloud",
-      colorArray: ["#ff9533", "#ff7f34", "#fe6d35", "#ff5836", "#ff4137"]
-    },
+    // {
+    //   url: "https://soundcloud.com/13373333",
+    //   title: "SoundCloud",
+    //   colorArray: ["#ff9533", "#ff7f34", "#fe6d35", "#ff5836", "#ff4137"]
+    // },
     // {
     //   url: "https://twitter.com/ray__1337",
     //   title: "Twitter",
