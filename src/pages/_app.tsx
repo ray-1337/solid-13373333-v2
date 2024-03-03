@@ -15,7 +15,7 @@ type AppExtendedProps = { nonce?: string };
 type AppPostProps = AppExtendedProps & AppProps;
 
 const WebsiteApp = ({ Component, pageProps, nonce }: AppPostProps) => {
-  const websiteTitle = "second hand embarrassment";
+  const websiteTitle = "greatest \"web developer\" that's ever lived.";
 
   const [nonceState, setNonceState] = useState<string | undefined>(undefined);
 
