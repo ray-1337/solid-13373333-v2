@@ -12,6 +12,7 @@ interface ExtendedProjectConsonant {
   tools: SimpleIcon[];
   intermittentType?: IntermittentType;
   url?: string;
+  intermittentReason?: string;
 };
 
 export interface ProjectConsonant<T extends boolean = false> {

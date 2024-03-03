@@ -184,7 +184,8 @@ const entertainment: ProjectConsonant = {
       url: "https://youtube.com/@blobproj",
       description: "Creating a YouTube programming content with no retakes, and no fillers.",
       tools: [siObsstudio, siDiscord, siYoutube],
-      intermittentType: IntermittentType["Discontinued"]
+      intermittentType: IntermittentType["Discontinued"],
+      intermittentReason: "A never-ending burnout, losing interest over Discord, and more related."
     },
   ]
 };

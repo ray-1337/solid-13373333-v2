@@ -1,3 +1,5 @@
+import { Flex, ActionIcon, Box, Popover, Text } from "@mantine/core";
+import { IconQuestionMark } from "@tabler/icons-react";
 import { useDisclosure, useClickOutside } from "@mantine/hooks";
 import { useEffect, useState } from "react";
 import { preventClick, sleep, shuffleArray } from "../Utility";
@@ -91,7 +93,29 @@ export default function(props: { active?: boolean }) {
                   <div className={style.imagine}>
                     <div className={style.project_content_info}>
                       <p>{(rootProject.name === honorableWork.name && "type" in ctx) ? (ctx.type + "/") : ""}{rootProject.name}</p>
-                      <h4 className={style.sike}>{typeof ctx?.intermittentType === "number" ? `${ctx.title} (${IntermittentType[ctx.intermittentType]})` : ctx.title}</h4>
+                      <Flex direction={"row"} justify={"center"}>
+                        <h4 className={style.sike}>{typeof ctx?.intermittentType === "number" ? `${ctx.title} (${IntermittentType[ctx.intermittentType]})` : ctx.title}</h4>
+
+                        {
+                          (typeof ctx?.intermittentType === "number" && typeof ctx?.intermittentReason === "string") && (
+                            <Box style={{ marginLeft: "0.5rem" }}>
+                              <Popover width={200} position="top" withArrow shadow="md">
+                                <Popover.Target>
+                                  <ActionIcon variant="filled" color="gray" size={"sm"} radius="xl" aria-label="Reasoning">
+                                    <IconQuestionMark style={{color: "black", width: "70%", height: "70%"}} stroke={2} />
+                                  </ActionIcon>
+                                </Popover.Target>
+
+                                <Popover.Dropdown>
+                                  <Text size="sm">
+                                    {ctx.intermittentReason}
+                                  </Text>
+                                </Popover.Dropdown>
+                              </Popover>
+                            </Box>
+                          )
+                        }
+                      </Flex>
                     </div>
 
                     {(!("intermittentType" in ctx)) && (
