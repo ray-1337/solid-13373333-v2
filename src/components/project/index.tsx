@@ -91,7 +91,7 @@ export default function(props: { active?: boolean }) {
                   <div className={style.imagine}>
                     <div className={style.project_content_info}>
                       <p>{(rootProject.name === honorableWork.name && "type" in ctx) ? (ctx.type + "/") : ""}{rootProject.name}</p>
-                      <h4 className={style.sike}>{ctx?.intermittentType ? `${ctx.title} (${IntermittentType[ctx?.intermittentType]})` : ctx.title}</h4>
+                      <h4 className={style.sike}>{typeof ctx?.intermittentType === "number" ? `${ctx.title} (${IntermittentType[ctx.intermittentType]})` : ctx.title}</h4>
                     </div>
 
                     {(!("intermittentType" in ctx)) && (
