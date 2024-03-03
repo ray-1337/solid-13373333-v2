@@ -62,6 +62,11 @@ function List() {
       title: "YouTube",
       colorArray: ["#ff0000", "#282828"]
     },
+    {
+      url: "mailto:personal@13373333.one",
+      title: "E-mail",
+      colorArray: ["#60696b", "#858e96"]
+    },
     // {
     //   url: "https://discord.id/?prefill=1162577144585658448",
     //   title: "Discord",
