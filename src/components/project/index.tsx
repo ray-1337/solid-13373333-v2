@@ -105,7 +105,7 @@ export default function(props: { active?: boolean }) {
                               {
                                 (hasIntermittentReasoning) && (
                                   <Box style={{ marginLeft: "0.5rem" }}>
-                                    <Popover width={200} position="top" withArrow shadow="md">
+                                    <Popover withinPortal={false} width={200} position="top" withArrow shadow="md">
                                       <Popover.Target>
                                         <ActionIcon variant="filled" color="gray" size={"sm"} radius="xl" aria-label="Reasoning">
                                           <IconQuestionMark style={{color: "black", width: "70%", height: "70%"}} stroke={2} />
