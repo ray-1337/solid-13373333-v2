@@ -113,7 +113,7 @@ export default function(props: { active?: boolean }) {
                                       </Popover.Target>
 
                                       <Popover.Dropdown>
-                                        <Text size="sm">
+                                        <Text style={{fontSize: "13px"}}>
                                           {ctx.intermittentReason}
                                         </Text>
                                       </Popover.Dropdown>
